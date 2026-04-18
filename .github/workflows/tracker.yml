@@ -1,0 +1,62 @@
+name: Flex Gateway Release Tracker
+
+on:
+  schedule:
+    # Runs daily at 07:30 UTC (staggered 30 min after Qualys tracker at 07:00)
+    - cron: "30 7 * * *"
+
+  workflow_dispatch:
+    inputs:
+      force_notify:
+        description: "Send email even if no new releases (true/false)"
+        required: false
+        default: "false"
+
+permissions:
+  contents: write   # needed to commit the updated snapshot.json
+
+jobs:
+  track:
+    name: Check for new Flex Gateway releases
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      # ── 1. Checkout ────────────────────────────────────────────────────────
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      # ── 2. Python setup ────────────────────────────────────────────────────
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      # ── 3. Run tracker ─────────────────────────────────────────────────────
+      - name: Run release tracker
+        env:
+          SMTP_HOST:     ${{ secrets.SMTP_HOST }}
+          SMTP_PORT:     ${{ secrets.SMTP_PORT }}
+          SMTP_USER:     ${{ secrets.SMTP_USER }}
+          SMTP_PASSWORD: ${{ secrets.SMTP_PASSWORD }}
+          EMAIL_TO:      ${{ secrets.EMAIL_TO }}
+          FORCE_NOTIFY:  ${{ github.event.inputs.force_notify }}
+          LOG_LEVEL:     INFO
+        run: python scraper.py
+
+      # ── 4. Commit updated snapshot ─────────────────────────────────────────
+      - name: Commit snapshot update
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add snapshot.json
+          # Only commit if snapshot actually changed
+          git diff --cached --quiet || git commit -m \
+            "chore: update snapshot $(date -u '+%Y-%m-%d %H:%M UTC')"
+          git push
