@@ -1,4 +1,30 @@
 {
+  "1.12.3": {
+    "version": "1.12.3",
+    "url": "https://docs.mulesoft.com/release-notes/flex-gateway/flex-gateway-release-notes#1-12-3",
+    "date": "April 22, 2026",
+    "summary": "MuleSoft announces the release of Anypoint Flex Gateway 1.12.3.",
+    "whats_new": [],
+    "fixed_issues": [
+      {
+        "description": "Vulnerabilities detected by scanners are now fixed.",
+        "id": "W-22028896"
+      },
+      {
+        "description": "The DataWeave -- operator now correctly removes entries from an object.",
+        "id": "W-21643871"
+      },
+      {
+        "description": "The OpenID Policy now correctly sends identity provider credentials in the header instead of the body.",
+        "id": "W-22061343"
+      },
+      {
+        "description": "Rate Limiting policies now correctly distribute the quota between replicas when distributed rate-limiting is enabled.",
+        "id": "W-22108203"
+      }
+    ],
+    "full_text_snippet": "April 22, 2026\nMuleSoft announces the release of Anypoint Flex Gateway 1.12.3.\nFixed Issues\nIssue Resolution\nID\nVulnerabilities detected by scanners are now fixed.\nW-22028896\nThe DataWeave\n--\noperator now correctly removes entries from an object.\nW-21643871\nThe OpenID Policy now correctly sends identity provider credentials in the header instead of the body.\nW-22061343\nRate Limiting policies now c"
+  },
   "1.12.2": {
     "version": "1.12.2",
     "url": "https://docs.mulesoft.com/release-notes/flex-gateway/flex-gateway-release-notes#1-12-2",
