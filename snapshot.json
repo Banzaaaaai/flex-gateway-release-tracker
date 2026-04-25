@@ -109,6 +109,20 @@
     ],
     "full_text_snippet": "February 25, 2026\nMuleSoft announces the release of Anypoint Flex Gateway 1.12.0.\nWhat’s New\nManaged Flex Gateway now supports Runtime Fabric deployments.\nSee\nDeploying Managed Flex Gateway on Runtime Fabric\n.\nExtra Large Managed Flex Gateway is now available for production purposes with higher throughput and more process demanding policies.\nTo learn more about the performance metrics for Extra La"
   },
+  "1.11.7": {
+    "version": "1.11.7",
+    "url": "https://docs.mulesoft.com/release-notes/flex-gateway/flex-gateway-release-notes#1-11-7",
+    "date": "April 24, 2026",
+    "summary": "MuleSoft announces the release of Anypoint Flex Gateway 1.11.7.",
+    "whats_new": [],
+    "fixed_issues": [
+      {
+        "description": "Vulnerabilities detected by scanners are now fixed.",
+        "id": "W-22028896"
+      }
+    ],
+    "full_text_snippet": "This version of the product has entered\nExtended Support\n.\nApril 24, 2026\nMuleSoft announces the release of Anypoint Flex Gateway 1.11.7.\nFixed Issues\nIssue Resolution\nID\nVulnerabilities detected by scanners are now fixed.\nW-22028896"
+  },
   "1.11.6": {
     "version": "1.11.6",
     "url": "https://docs.mulesoft.com/release-notes/flex-gateway/flex-gateway-release-notes#1-11-6",
@@ -291,6 +305,20 @@
       }
     ],
     "full_text_snippet": "This version of the product has entered\nExtended Support\n.\nOctober 13, 2025\nMuleSoft announces the release of Anypoint Flex Gateway 1.11.0.\nWhat’s New\nEnvoy is now updated to version 1.35.3.\nTLS 1.1 support is removed for enhanced security compliance.\nFlex Gateway now provides the outbound AWS Signature policy to inject client credentials into upstream requests.\nFlex Gateway now provides the outbo"
+  },
+  "1.9.12": {
+    "version": "1.9.12",
+    "url": "https://docs.mulesoft.com/release-notes/flex-gateway/flex-gateway-release-notes#1-9-12",
+    "date": "April 24, 2026",
+    "summary": "MuleSoft announces the release of Anypoint Flex Gateway 1.9.12.",
+    "whats_new": [],
+    "fixed_issues": [
+      {
+        "description": "Vulnerabilities detected by scanners are now fixed.",
+        "id": "W-22028896"
+      }
+    ],
+    "full_text_snippet": "April 24, 2026\nMuleSoft announces the release of Anypoint Flex Gateway 1.9.12.\nFixed Issues\nIssue Resolution\nID\nVulnerabilities detected by scanners are now fixed.\nW-22028896"
   },
   "1.9.11": {
     "version": "1.9.11",
