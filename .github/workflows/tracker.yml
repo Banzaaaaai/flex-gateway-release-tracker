@@ -2,8 +2,9 @@ name: Flex Gateway Release Tracker
 
 on:
   schedule:
-    # Runs daily at 07:30 UTC (staggered 30 min after Qualys tracker at 07:00)
-    - cron: "30 7 * * *"
+    # Runs every day at 07:25 UTC = 09:25 Madrid time (CEST, UTC+2)
+    # Note: In winter (CET, UTC+1) this delivers at 08:25 Madrid — adjust to 08:25 UTC if needed
+    - cron: "25 7 * * *"
 
   workflow_dispatch:
     inputs:
