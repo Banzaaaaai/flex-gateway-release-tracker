@@ -1,0 +1,116 @@
+name: DST Schedule Adjuster
+
+on:
+  schedule:
+    # Runs twice a year, just after Madrid DST transitions:
+    # Last Sunday of October at 02:00 Madrid → clocks go back → switch to CET (UTC+1) → use 08:25 UTC
+    # Last Sunday of March at 02:00 Madrid  → clocks go forward → switch to CEST (UTC+2) → use 07:25 UTC
+    #
+    # We run on Oct 26 and Mar 29 at 03:00 UTC (safely after the 01:00 UTC transition)
+    # These dates cover 2026–2030 transitions conservatively; the script itself
+    # checks the actual current UTC offset for Madrid and sets the correct value.
+    - cron: "0 3 25-31 10 0"   # Last Sunday of October  (clocks back → CET)
+    - cron: "0 3 25-31 3  0"   # Last Sunday of March    (clocks forward → CEST)
+
+  workflow_dispatch:
+    inputs:
+      force_offset:
+        description: "Force UTC offset for Madrid: 1 (CET/winter) or 2 (CEST/summer)"
+        required: false
+        default: ""
+
+permissions:
+  contents: write
+
+jobs:
+  adjust:
+    name: Adjust tracker cron for Madrid DST
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Compute correct cron and patch tracker.yml
+        shell: python3 {0}
+        run: |
+          import os, re, subprocess
+          from datetime import datetime, timezone, timedelta
+
+          # ── Determine current Madrid UTC offset ──────────────────────────
+          force = os.environ.get("FORCE_OFFSET", "").strip()
+          if force in ("1", "2"):
+              offset = int(force)
+              source = f"forced via workflow_dispatch (offset={offset})"
+          else:
+              # Madrid is CEST (UTC+2) Mar last-Sun → Oct last-Sun, else CET (UTC+1)
+              now = datetime.now(timezone.utc)
+              # Find last Sunday of March and October for current year
+              def last_sunday(year, month):
+                  import calendar
+                  last_day = calendar.monthrange(year, month)[1]
+                  d = datetime(year, month, last_day, 1, 0, tzinfo=timezone.utc)
+                  while d.weekday() != 6:   # 6 = Sunday
+                      d -= timedelta(days=1)
+                  return d
+
+              spring = last_sunday(now.year, 3)
+              autumn = last_sunday(now.year, 10)
+              offset = 2 if spring <= now < autumn else 1
+              source = f"auto-detected (spring={spring.date()}, autumn={autumn.date()})"
+
+          # Target delivery: 09:25 Madrid
+          utc_hour = 9 - offset          # 07 for CEST, 08 for CET
+          new_cron  = f"25 {utc_hour} * * *"
+          season    = "CEST (UTC+2)" if offset == 2 else "CET (UTC+1)"
+
+          print(f"Madrid offset : UTC+{offset} — {season}")
+          print(f"Source        : {source}")
+          print(f"New cron      : {new_cron}  →  09:25 Madrid")
+
+          # ── Patch tracker.yml ────────────────────────────────────────────
+          path = ".github/workflows/tracker.yml"
+          text = open(path).read()
+
+          # Replace the cron line (handles both 07 and 08)
+          patched = re.sub(
+              r'(- cron:\s*")[^"]+(")',
+              rf'\g<1>{new_cron}\g<2>',
+              text
+          )
+          # Update the comment line
+          patched = re.sub(
+              r'# Runs every day at \d+:\d+ UTC.*',
+              f'# Runs every day at {utc_hour:02d}:25 UTC = 09:25 Madrid time ({season})',
+              patched
+          )
+
+          if patched == text:
+              print("No change needed — cron already correct.")
+          else:
+              open(path, "w").write(patched)
+              print("tracker.yml patched.")
+
+          # Write outputs for the next step
+          with open(os.environ["GITHUB_ENV"], "a") as f:
+              f.write(f"CRON_CHANGED={'true' if patched != text else 'false'}\n")
+              f.write(f"NEW_CRON={new_cron}\n")
+              f.write(f"SEASON={season}\n")
+        env:
+          FORCE_OFFSET: ${{ github.event.inputs.force_offset }}
+
+      - name: Commit updated schedule
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add .github/workflows/tracker.yml
+          if git diff --cached --quiet; then
+            echo "Nothing to commit — schedule already correct."
+          else
+            git commit -m "chore: adjust cron to '$NEW_CRON' for $SEASON DST transition"
+            git push
+            echo "✅ Schedule updated to: $NEW_CRON ($SEASON)"
+          fi
