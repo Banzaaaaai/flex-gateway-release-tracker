@@ -1,4 +1,20 @@
 {
+  "1.12.4": {
+    "version": "1.12.4",
+    "url": "https://docs.mulesoft.com/release-notes/flex-gateway/flex-gateway-release-notes#1-12-4",
+    "date": "April 29, 2026",
+    "summary": "MuleSoft announces the release of Anypoint Flex Gateway 1.12.4.",
+    "whats_new": [
+      "Envoy is now updated to version 1.35.10."
+    ],
+    "fixed_issues": [
+      {
+        "description": "Vulnerabilities detected by scanners are now fixed.",
+        "id": "W-22139443"
+      }
+    ],
+    "full_text_snippet": "April 29, 2026\nMuleSoft announces the release of Anypoint Flex Gateway 1.12.4.\nWhat’s New\nEnvoy is now updated to version 1.35.10.\nFixed Issues\nIssue Resolution\nID\nVulnerabilities detected by scanners are now fixed.\nW-22139443"
+  },
   "1.12.3": {
     "version": "1.12.3",
     "url": "https://docs.mulesoft.com/release-notes/flex-gateway/flex-gateway-release-notes#1-12-3",
@@ -108,6 +124,22 @@
       }
     ],
     "full_text_snippet": "February 25, 2026\nMuleSoft announces the release of Anypoint Flex Gateway 1.12.0.\nWhat’s New\nManaged Flex Gateway now supports Runtime Fabric deployments.\nSee\nDeploying Managed Flex Gateway on Runtime Fabric\n.\nExtra Large Managed Flex Gateway is now available for production purposes with higher throughput and more process demanding policies.\nTo learn more about the performance metrics for Extra La"
+  },
+  "1.11.8": {
+    "version": "1.11.8",
+    "url": "https://docs.mulesoft.com/release-notes/flex-gateway/flex-gateway-release-notes#1-11-8",
+    "date": "April 29, 2026",
+    "summary": "MuleSoft announces the release of Anypoint Flex Gateway 1.11.8.",
+    "whats_new": [
+      "Envoy is now updated to version 1.35.10."
+    ],
+    "fixed_issues": [
+      {
+        "description": "Vulnerabilities detected by scanners are now fixed.",
+        "id": "W-22139443"
+      }
+    ],
+    "full_text_snippet": "April 29, 2026\nMuleSoft announces the release of Anypoint Flex Gateway 1.11.8.\nWhat’s New\nEnvoy is now updated to version 1.35.10.\nFixed Issues\nIssue Resolution\nID\nVulnerabilities detected by scanners are now fixed.\nW-22139443"
   },
   "1.11.7": {
     "version": "1.11.7",
