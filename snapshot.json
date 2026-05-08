@@ -1,4 +1,22 @@
 {
+  "1.12.5": {
+    "version": "1.12.5",
+    "url": "https://docs.mulesoft.com/release-notes/flex-gateway/flex-gateway-release-notes#1-12-5",
+    "date": "May 7, 2026",
+    "summary": "MuleSoft announces the release of Anypoint Flex Gateway 1.12.5.",
+    "whats_new": [],
+    "fixed_issues": [
+      {
+        "description": "MCP and A2A metrics are now reported correctly.",
+        "id": "W-22346105"
+      },
+      {
+        "description": "The OAuth 2.0 Token Introspection and OpenID Connect OAuth 2.0 Token Enforcement policies now correctly use the consumer URL for protected resource metadata.",
+        "id": "W-22215222"
+      }
+    ],
+    "full_text_snippet": "May 7, 2026\nMuleSoft announces the release of Anypoint Flex Gateway 1.12.5.\nFixed Issues\nIssue Resolution\nID\nMCP and A2A metrics are now reported correctly.\nW-22346105\nThe OAuth 2.0 Token Introspection and OpenID Connect OAuth 2.0 Token Enforcement policies now correctly use the consumer URL for protected resource metadata.\nW-22215222"
+  },
   "1.12.4": {
     "version": "1.12.4",
     "url": "https://docs.mulesoft.com/release-notes/flex-gateway/flex-gateway-release-notes#1-12-4",
@@ -124,6 +142,20 @@
       }
     ],
     "full_text_snippet": "February 25, 2026\nMuleSoft announces the release of Anypoint Flex Gateway 1.12.0.\nWhat’s New\nManaged Flex Gateway now supports Runtime Fabric deployments.\nSee\nDeploying Managed Flex Gateway on Runtime Fabric\n.\nExtra Large Managed Flex Gateway is now available for production purposes with higher throughput and more process demanding policies.\nTo learn more about the performance metrics for Extra La"
+  },
+  "1.11.9": {
+    "version": "1.11.9",
+    "url": "https://docs.mulesoft.com/release-notes/flex-gateway/flex-gateway-release-notes#1-11-9",
+    "date": "May 7, 2026",
+    "summary": "MuleSoft announces the release of Anypoint Flex Gateway 1.11.9.",
+    "whats_new": [],
+    "fixed_issues": [
+      {
+        "description": "MCP and A2A metrics are now reported correctly.",
+        "id": "W-22346105"
+      }
+    ],
+    "full_text_snippet": "May 7, 2026\nMuleSoft announces the release of Anypoint Flex Gateway 1.11.9.\nFixed Issues\nIssue Resolution\nID\nMCP and A2A metrics are now reported correctly.\nW-22346105"
   },
   "1.11.8": {
     "version": "1.11.8",
