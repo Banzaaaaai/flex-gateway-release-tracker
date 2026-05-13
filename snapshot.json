@@ -10,6 +10,7 @@
       "Omni Gateway now provides these policies to support GraphQL APIs: GraphQL Schema Validation : Validates incoming GraphQL operations against a GraphQL schema definition GraphQL Introspection Control : Blocks or allows requests that  access the schema , type , and __typename GraphQL meta fields GraphQL Operation Limits : Limits GraphQL operation depth, aliases, root fields, and directives GraphQL Static Query Complexity : Calculates query complexity and blocks requests that exceed the defined budget",
       "Omni Gateway now supports WebSocket APIs. To add a WebSocket API to Omni Gateway, see Adding an Omni Gateway API Instance .",
       "Omni Gateway now provides the WebSocket Connection Limit to limit the number of simultaneous WebSocket connections that each API instance allows.",
+      "Omni Gateway is now supported in CloudHub 2.0 shared spaces. To deploy a gateway to a shared space, see Deploy a Managed Omni Gateway .",
       "Managed Omni Gateways deployed to CloudHub 2.0 private spaces now provide the Cluster endpoint for traffic internal to the cluster to bypass the CloudHub 2.0 ingress. See Managed Omni Gateway Endpoints .",
       "MCP Bridge now provides an improved creation experience. See Adding an MCP Bridge Instance .",
       "Omni Gateway now supports conditional policy application for inbound policies to apply policies to specific methods, URI paths, hosts, and headers. Outbound policies support conditional policy application for specific methods and headers. See Apply Inbound Omni Gateway Policies .",
