@@ -1,4 +1,101 @@
 {
+  "1.13.0": {
+    "version": "1.13.0",
+    "url": "https://docs.mulesoft.com/release-notes/flex-gateway/flex-gateway-release-notes#1-13-0",
+    "date": "May 11, 2026",
+    "summary": "MuleSoft announces the release of Anypoint Omni Gateway 1.13.0.",
+    "whats_new": [
+      "Flex Gateway is now named to Omni Gateway. Currently, this is a non-breaking change and only cosmetically affects the UI and documentation. This change shouldn’t affect CI/CD pipelines. There are no changes to these areas: Anypoint Platform CLI Anypoint Platform APIs Logging Environment variables Documentation URL links MCP tool names",
+      "Omni Gateway now supports GraphQL APIs. To add a GraphQL API to Omni Gateway, see Adding an Omni Gateway API Instance .",
+      "Omni Gateway now provides these policies to support GraphQL APIs: GraphQL Schema Validation : Validates incoming GraphQL operations against a GraphQL schema definition GraphQL Introspection Control : Blocks or allows requests that  access the schema , type , and __typename GraphQL meta fields GraphQL Operation Limits : Limits GraphQL operation depth, aliases, root fields, and directives GraphQL Static Query Complexity : Calculates query complexity and blocks requests that exceed the defined budget",
+      "Omni Gateway now supports WebSocket APIs. To add a WebSocket API to Omni Gateway, see Adding an Omni Gateway API Instance .",
+      "Omni Gateway now provides the WebSocket Connection Limit to limit the number of simultaneous WebSocket connections that each API instance allows.",
+      "Omni Gateway is now supported in CloudHub 2.0 shared spaces. To deploy a gateway to a shared space, see Deploy a Managed Omni Gateway .",
+      "Managed Omni Gateways deployed to CloudHub 2.0 private spaces now provide the Cluster endpoint for traffic internal to the cluster to bypass the CloudHub 2.0 ingress. See Managed Omni Gateway Endpoints .",
+      "MCP Bridge now provides an improved creation experience. See Adding an MCP Bridge Instance .",
+      "Omni Gateway now supports conditional policy application for inbound policies to apply policies to specific methods, URI paths, hosts, and headers. Outbound policies support conditional policy application for specific methods and headers. See Apply Inbound Omni Gateway Policies .",
+      "Envoy is now upgrade to version 1.37.2."
+    ],
+    "fixed_issues": [
+      {
+        "description": "Contracts are no longer dropped when the client secret is null.",
+        "id": "W-21177259"
+      },
+      {
+        "description": "The OAuth 2.0 Token Introspection policy now correctly retrieves contracts when skip_client_id_validation is true .",
+        "id": "W-21371313"
+      },
+      {
+        "description": "Readiness signal errors in the OpenID Connect OAuth 2.0 Token Enforcement and OAuth 2.0 Token Introspection policies are now fixed.",
+        "id": "W-21526778"
+      },
+      {
+        "description": "When FLEX_DATASOURCE_CONTROL_NODE_ENABLED=true , Connected Mode Omni Gateway can now scale up if Anypoint is unavailable.",
+        "id": "W-22300290"
+      }
+    ],
+    "full_text_snippet": "May 11, 2026\nMuleSoft announces the release of Anypoint Omni Gateway 1.13.0.\nWhat’s New\nFlex Gateway is now named to Omni Gateway.\nCurrently, this is a non-breaking change and only cosmetically affects the UI and documentation. This change shouldn’t affect CI/CD pipelines. There are no changes to these areas:\nAnypoint Platform CLI\nAnypoint Platform APIs\nLogging\nEnvironment variables\nDocumentation "
+  },
+  "1.12.5": {
+    "version": "1.12.5",
+    "url": "https://docs.mulesoft.com/release-notes/flex-gateway/flex-gateway-release-notes#1-12-5",
+    "date": "May 7, 2026",
+    "summary": "MuleSoft announces the release of Anypoint Flex Gateway 1.12.5.",
+    "whats_new": [],
+    "fixed_issues": [
+      {
+        "description": "MCP and A2A metrics are now reported correctly.",
+        "id": "W-22346105"
+      },
+      {
+        "description": "The OAuth 2.0 Token Introspection and OpenID Connect OAuth 2.0 Token Enforcement policies now correctly use the consumer URL for protected resource metadata.",
+        "id": "W-22215222"
+      }
+    ],
+    "full_text_snippet": "May 7, 2026\nMuleSoft announces the release of Anypoint Flex Gateway 1.12.5.\nFixed Issues\nIssue Resolution\nID\nMCP and A2A metrics are now reported correctly.\nW-22346105\nThe OAuth 2.0 Token Introspection and OpenID Connect OAuth 2.0 Token Enforcement policies now correctly use the consumer URL for protected resource metadata.\nW-22215222"
+  },
+  "1.12.4": {
+    "version": "1.12.4",
+    "url": "https://docs.mulesoft.com/release-notes/flex-gateway/flex-gateway-release-notes#1-12-4",
+    "date": "April 29, 2026",
+    "summary": "MuleSoft announces the release of Anypoint Flex Gateway 1.12.4.",
+    "whats_new": [
+      "Envoy is now updated to version 1.35.10."
+    ],
+    "fixed_issues": [
+      {
+        "description": "Vulnerabilities detected by scanners are now fixed.",
+        "id": "W-22139443"
+      }
+    ],
+    "full_text_snippet": "April 29, 2026\nMuleSoft announces the release of Anypoint Flex Gateway 1.12.4.\nWhat’s New\nEnvoy is now updated to version 1.35.10.\nFixed Issues\nIssue Resolution\nID\nVulnerabilities detected by scanners are now fixed.\nW-22139443"
+  },
+  "1.12.3": {
+    "version": "1.12.3",
+    "url": "https://docs.mulesoft.com/release-notes/flex-gateway/flex-gateway-release-notes#1-12-3",
+    "date": "April 22, 2026",
+    "summary": "MuleSoft announces the release of Anypoint Flex Gateway 1.12.3.",
+    "whats_new": [],
+    "fixed_issues": [
+      {
+        "description": "Vulnerabilities detected by scanners are now fixed.",
+        "id": "W-22028896"
+      },
+      {
+        "description": "The DataWeave -- operator now correctly removes entries from an object.",
+        "id": "W-21643871"
+      },
+      {
+        "description": "The OpenID Policy now correctly sends identity provider credentials in the header instead of the body.",
+        "id": "W-22061343"
+      },
+      {
+        "description": "Rate Limiting policies now correctly distribute the quota between replicas when distributed rate-limiting is enabled.",
+        "id": "W-22108203"
+      }
+    ],
+    "full_text_snippet": "April 22, 2026\nMuleSoft announces the release of Anypoint Flex Gateway 1.12.3.\nFixed Issues\nIssue Resolution\nID\nVulnerabilities detected by scanners are now fixed.\nW-22028896\nThe DataWeave\n--\noperator now correctly removes entries from an object.\nW-21643871\nThe OpenID Policy now correctly sends identity provider credentials in the header instead of the body.\nW-22061343\nRate Limiting policies now c"
+  },
   "1.12.2": {
     "version": "1.12.2",
     "url": "https://docs.mulesoft.com/release-notes/flex-gateway/flex-gateway-release-notes#1-12-2",
@@ -48,7 +145,7 @@
       "Functionality is added to configure TLS for outgoing HTTP requests from Self-Managed Flex Gateway policies. See Configuring TLS for Outgoing Policy Requests .",
       "Managed Flex Gateway and Self-Managed Flex Gateway running in Connected Mode now provides the Runtime Configuration tab in Runtime Manager to configure and edit logging, tracing, timeouts, circuit breakers, probes, and other runtime properties.",
       "SOAP APIs now support Payloads over 1MB.",
-      "Managed Flex Gateway replicas now communicate directly with each other for real-time sharing of HTTP caching and rate limiting data instead of using Object Storage V2. See Managed Flex Gateway High Availability and Disaster Recovery Deployments .",
+      "Managed Flex Gateway replicas now communicate directly with each other for real-time sharing of HTTP caching and rate limiting data instead of using Object Storage V2. See Managed Omni Gateway High Availability and Disaster Recovery Deployments .",
       "Flex Gateway now supports dw::Core::-- DataWeave functions. See -- Functions ."
     ],
     "fixed_issues": [
@@ -82,6 +179,50 @@
       }
     ],
     "full_text_snippet": "February 25, 2026\nMuleSoft announces the release of Anypoint Flex Gateway 1.12.0.\nWhat’s New\nManaged Flex Gateway now supports Runtime Fabric deployments.\nSee\nDeploying Managed Flex Gateway on Runtime Fabric\n.\nExtra Large Managed Flex Gateway is now available for production purposes with higher throughput and more process demanding policies.\nTo learn more about the performance metrics for Extra La"
+  },
+  "1.11.9": {
+    "version": "1.11.9",
+    "url": "https://docs.mulesoft.com/release-notes/flex-gateway/flex-gateway-release-notes#1-11-9",
+    "date": "May 7, 2026",
+    "summary": "MuleSoft announces the release of Anypoint Flex Gateway 1.11.9.",
+    "whats_new": [],
+    "fixed_issues": [
+      {
+        "description": "MCP and A2A metrics are now reported correctly.",
+        "id": "W-22346105"
+      }
+    ],
+    "full_text_snippet": "May 7, 2026\nMuleSoft announces the release of Anypoint Flex Gateway 1.11.9.\nFixed Issues\nIssue Resolution\nID\nMCP and A2A metrics are now reported correctly.\nW-22346105"
+  },
+  "1.11.8": {
+    "version": "1.11.8",
+    "url": "https://docs.mulesoft.com/release-notes/flex-gateway/flex-gateway-release-notes#1-11-8",
+    "date": "April 29, 2026",
+    "summary": "MuleSoft announces the release of Anypoint Flex Gateway 1.11.8.",
+    "whats_new": [
+      "Envoy is now updated to version 1.35.10."
+    ],
+    "fixed_issues": [
+      {
+        "description": "Vulnerabilities detected by scanners are now fixed.",
+        "id": "W-22139443"
+      }
+    ],
+    "full_text_snippet": "April 29, 2026\nMuleSoft announces the release of Anypoint Flex Gateway 1.11.8.\nWhat’s New\nEnvoy is now updated to version 1.35.10.\nFixed Issues\nIssue Resolution\nID\nVulnerabilities detected by scanners are now fixed.\nW-22139443"
+  },
+  "1.11.7": {
+    "version": "1.11.7",
+    "url": "https://docs.mulesoft.com/release-notes/flex-gateway/flex-gateway-release-notes#1-11-7",
+    "date": "April 24, 2026",
+    "summary": "MuleSoft announces the release of Anypoint Flex Gateway 1.11.7.",
+    "whats_new": [],
+    "fixed_issues": [
+      {
+        "description": "Vulnerabilities detected by scanners are now fixed.",
+        "id": "W-22028896"
+      }
+    ],
+    "full_text_snippet": "This version of the product has entered\nExtended Support\n.\nApril 24, 2026\nMuleSoft announces the release of Anypoint Flex Gateway 1.11.7.\nFixed Issues\nIssue Resolution\nID\nVulnerabilities detected by scanners are now fixed.\nW-22028896"
   },
   "1.11.6": {
     "version": "1.11.6",
@@ -265,6 +406,20 @@
       }
     ],
     "full_text_snippet": "This version of the product has entered\nExtended Support\n.\nOctober 13, 2025\nMuleSoft announces the release of Anypoint Flex Gateway 1.11.0.\nWhat’s New\nEnvoy is now updated to version 1.35.3.\nTLS 1.1 support is removed for enhanced security compliance.\nFlex Gateway now provides the outbound AWS Signature policy to inject client credentials into upstream requests.\nFlex Gateway now provides the outbo"
+  },
+  "1.9.12": {
+    "version": "1.9.12",
+    "url": "https://docs.mulesoft.com/release-notes/flex-gateway/flex-gateway-release-notes#1-9-12",
+    "date": "April 24, 2026",
+    "summary": "MuleSoft announces the release of Anypoint Flex Gateway 1.9.12.",
+    "whats_new": [],
+    "fixed_issues": [
+      {
+        "description": "Vulnerabilities detected by scanners are now fixed.",
+        "id": "W-22028896"
+      }
+    ],
+    "full_text_snippet": "April 24, 2026\nMuleSoft announces the release of Anypoint Flex Gateway 1.9.12.\nFixed Issues\nIssue Resolution\nID\nVulnerabilities detected by scanners are now fixed.\nW-22028896"
   },
   "1.9.11": {
     "version": "1.9.11",
@@ -456,12 +611,12 @@
     "date": "May 28, 2025",
     "summary": "MuleSoft announces the release of Anypoint Flex Gateway 1.9.3.",
     "whats_new": [
-      "You can Publish Flex Gateway MCP and A2A Server instances. See Publishing Flex Gateway Agent and Tool instances .",
+      "You can Publish Flex Gateway MCP and A2A Server instances. See Publishing Omni Gateway Agent and Tool instances .",
       "Flex Gateway now includes MCP and A2A policies. Using these new policies, you can: Protect agent interactions: Require that agents are invoked with appropriate authentication and authorization. Enhance agent requests: Modify incoming prompts with additional context to improve server agent execution. Provide centralized oversight: Enable frictionless agent visibility, logging, and insights for debugging and optimization. Secure connections: Restrict MCP endpoint access to authorized agents only. Simplify governance: Provide centralized visibility and control over all interactions.",
       "Flex Gateway now includes these policies: A2A Policies: A2A Schema Validation : Verify requests conform to the A2A schema. See A2A Schema Validation Policy . A2A Agent Card : Proxy the agent through Flex Gateway by rewriting the agent card. See A2A Agent Card Policy A2A PII Detector : Detect sensitive information in messages sent to and from agents. See A2A Personally Identifiable Information (PII) Detector Policy . A2A Prompt Decorator : Modify prompt behavior by injecting custom prompts into requests. See A2A Prompt Decorator Policy . Server-Sent Events (SSE) Content Logging : Log content sent by agents for audit and compliance needs. See SSE Logging Policy . MCP Policies: MCP Schema Validation : Verify requests conform to the MCP schema. See MCP Schema Validation Policy . MCP Support : Enable MCP support and enable Server-Sent Events (SSE). See MCP Support Policy . Attribute-Based Access Control : Allows you to control access to tools, resources, and prompts, based on Cedar expressions. See MCP Attribute-Based Access Control Policy ."
     ],
     "fixed_issues": [],
-    "full_text_snippet": "May 28, 2025\nMuleSoft announces the release of Anypoint Flex Gateway 1.9.3.\nWhat’s New\nFlex Gateway now supports the Model Context Protocol (MCP) and the Agent2Agent (A2A) Protocol, enabling you to secure, manage, and govern agent interactions:\nYou can Publish Flex Gateway MCP and A2A Server instances.\nSee\nPublishing Flex Gateway Agent and Tool instances\n.\nFlex Gateway now includes MCP and A2A pol"
+    "full_text_snippet": "May 28, 2025\nMuleSoft announces the release of Anypoint Flex Gateway 1.9.3.\nWhat’s New\nFlex Gateway now supports the Model Context Protocol (MCP) and the Agent2Agent (A2A) Protocol, enabling you to secure, manage, and govern agent interactions:\nYou can Publish Flex Gateway MCP and A2A Server instances.\nSee\nPublishing Omni Gateway Agent and Tool instances\n.\nFlex Gateway now includes MCP and A2A pol"
   },
   "1.9.2": {
     "version": "1.9.2",
@@ -513,12 +668,12 @@
     "date": "March 18, 2025",
     "summary": "MuleSoft announces the release of Anypoint Flex Gateway 1.9.0.",
     "whats_new": [
-      "Managed Flex Gateway on CloudHub 2.0 Flex Gateway now includes Managed Flex Gateway, a fully hosted version of Flex Gateway on CloudHub 2.0.\nManaged Flex Gateway provides high availability, autoscaling, less operational overhead, and regular automatic patches and upgrades. Note: To use Managed Flex Gateway, ensure the business group you want to deploy your gateway to has Managed Flex Gateway Resources. See Deploy a Managed Flex Gateway .",
-      "Flex Gateway Version Lifecycle MuleSoft introduces two new release channels, Edge and Long-term Support (LTS). Both release channels are available in all deployment models: Managed Flex Gateway, Self-Managed Flex Gateway Connected Mode, and Self-Managed Flex Gateway Local Mode. Edge releases will be available three times per year, and LTS releases will be available once a year. See Flex Gateway Version Lifecycle .",
-      "Outbound Policy Support Outbound policies are policies applied to specific upstreams. To find the new outbound policies, see Outbound Policies Directory . To apply outbound policies with UI, see Applying Policies for Managed Flex Gateways and Connected Mode . To apply a policy to a service in Local Mode, see Secure an API with an Automated Resource-Level Policy .",
-      "Flex Local Configuration Cache Flex Gateway running in Connected mode can now cache its gateway configuration in shared storage for faster replica initiation, reduced startup times, and accelerated autoscaling. See Configuring Flex Gateway Configuration Caching in Connected Mode .",
+      "Managed Flex Gateway on CloudHub 2.0 Flex Gateway now includes Managed Flex Gateway, a fully hosted version of Flex Gateway on CloudHub 2.0.\nManaged Flex Gateway provides high availability, autoscaling, less operational overhead, and regular automatic patches and upgrades. Note: To use Managed Flex Gateway, ensure the business group you want to deploy your gateway to has Managed Flex Gateway Resources. See Deploy a Managed Omni Gateway .",
+      "Flex Gateway Version Lifecycle MuleSoft introduces two new release channels, Edge and Long-term Support (LTS). Both release channels are available in all deployment models: Managed Flex Gateway, Self-Managed Flex Gateway Connected Mode, and Self-Managed Flex Gateway Local Mode. Edge releases will be available three times per year, and LTS releases will be available once a year. See Omni Gateway Version Lifecycle .",
+      "Outbound Policy Support Outbound policies are policies applied to specific upstreams. To find the new outbound policies, see Outbound Policies Directory . To apply outbound policies with UI, see Applying Policies for Managed Omni Gateways and Connected Mode . To apply a policy to a service in Local Mode, see Secure an API with an Automated Resource-Level Policy .",
+      "Flex Local Configuration Cache Flex Gateway running in Connected mode can now cache its gateway configuration in shared storage for faster replica initiation, reduced startup times, and accelerated autoscaling. See Configuring Omni Gateway Configuration Caching in Connected Mode .",
       "Flex Scalability Flex Gateway now supports up to 1,000 APIs per gateway.",
-      "API Timeouts Flex Gateway now provides the Stream Idle timeout, Response timeout, and Upstream Idle timeout. You can apply the timeouts to the gateway or individual APIs and upstreams as policies. To learn more, see: Deploy a Managed Flex Gateway Configuring Timeouts in Connected Mode Configuring Timeouts in Local Mode"
+      "API Timeouts Flex Gateway now provides the Stream Idle timeout, Response timeout, and Upstream Idle timeout. You can apply the timeouts to the gateway or individual APIs and upstreams as policies. To learn more, see: Deploy a Managed Omni Gateway Configuring Timeouts in Connected Mode Configuring Timeouts in Local Mode"
     ],
     "fixed_issues": [
       {
