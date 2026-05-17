@@ -2,18 +2,24 @@ name: Flex Gateway Release Tracker
 
 on:
   schedule:
-    # Runs daily at 07:30 UTC (staggered 30 min after Qualys tracker at 07:00)
-    - cron: "30 7 * * *"
-
+    # Daily tracker — 07:25 UTC = 09:25 Madrid (CEST, summer)
+    # DST adjuster patches this line automatically each Oct/Mar
+    - cron: "25 7 * * *"
+    # Monthly digest — first day of each month at 08:30 UTC (staggered from Qualys)
+    - cron: "30 8 1 * *"
   workflow_dispatch:
     inputs:
       force_notify:
         description: "Send email even if no new releases (true/false)"
         required: false
         default: "false"
+      monthly_digest:
+        description: "Send monthly digest email now (true/false)"
+        required: false
+        default: "false"
 
 permissions:
-  contents: write   # needed to commit the updated snapshot.json
+  contents: write   # needed to commit snapshot.json, run_log.json, badge.json
 
 jobs:
   track:
@@ -38,25 +44,38 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements.txt
 
-      # ── 3. Run tracker ─────────────────────────────────────────────────────
+      # ── 3. Detect if this is a monthly-digest run ──────────────────────────
+      - name: Set MONTHLY_DIGEST flag
+        id: flags
+        run: |
+          DAY=$(date -u +%d)
+          MANUAL="${{ github.event.inputs.monthly_digest }}"
+          if [[ "$DAY" == "01" && "${{ github.event_name }}" == "schedule" ]] || [[ "$MANUAL" == "true" ]]; then
+            echo "monthly_digest=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "monthly_digest=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      # ── 4. Run tracker ─────────────────────────────────────────────────────
       - name: Run release tracker
         env:
-          SMTP_HOST:     ${{ secrets.SMTP_HOST }}
-          SMTP_PORT:     ${{ secrets.SMTP_PORT }}
-          SMTP_USER:     ${{ secrets.SMTP_USER }}
-          SMTP_PASSWORD: ${{ secrets.SMTP_PASSWORD }}
-          EMAIL_TO:      ${{ secrets.EMAIL_TO }}
-          FORCE_NOTIFY:  ${{ github.event.inputs.force_notify }}
-          LOG_LEVEL:     INFO
+          SMTP_HOST:      ${{ secrets.SMTP_HOST }}
+          SMTP_PORT:      ${{ secrets.SMTP_PORT }}
+          SMTP_USER:      ${{ secrets.SMTP_USER }}
+          SMTP_PASSWORD:  ${{ secrets.SMTP_PASSWORD }}
+          EMAIL_TO:       ${{ secrets.EMAIL_TO }}
+          FORCE_NOTIFY:   ${{ github.event.inputs.force_notify }}
+          MONTHLY_DIGEST: ${{ steps.flags.outputs.monthly_digest }}
+          LOG_LEVEL:      INFO
         run: python scraper.py
 
-      # ── 4. Commit updated snapshot ─────────────────────────────────────────
-      - name: Commit snapshot update
+      # ── 5. Commit updated files ────────────────────────────────────────────
+      - name: Commit updated files
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add snapshot.json
-          # Only commit if snapshot actually changed
+          git add snapshot.json run_log.json badge.json
+          git add snapshot_archive.json 2>/dev/null || true
           git diff --cached --quiet || git commit -m \
-            "chore: update snapshot $(date -u '+%Y-%m-%d %H:%M UTC')"
+            "chore: tracker run $(date -u '+%Y-%m-%d %H:%M UTC')"
           git push

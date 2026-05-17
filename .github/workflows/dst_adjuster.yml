@@ -1,0 +1,99 @@
+name: DST Schedule Adjuster — Flex Gateway Tracker
+
+# Fires on the last Sunday of March (CEST → UTC+2 → cron hour 7)
+# and the last Sunday of October (CET  → UTC+1 → cron hour 8).
+
+on:
+  schedule:
+    - cron: "50 1 24-31 3  0"   # last week of March,   Sundays at 01:50 UTC
+    - cron: "50 1 24-31 10 0"   # last week of October, Sundays at 01:50 UTC
+  workflow_dispatch:
+    inputs:
+      force_offset:
+        description: "Force UTC offset (1 = CET winter, 2 = CEST summer). Leave blank for auto."
+        required: false
+        default: ""
+
+permissions:
+  contents: write
+
+jobs:
+  adjust:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GH_PAT }}
+          fetch-depth: 1
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Compute correct UTC offset and patch cron
+        env:
+          FORCE_OFFSET: ${{ github.event.inputs.force_offset }}
+        run: |
+          python - <<'EOF'
+          import os, re, calendar
+          from datetime import date, timedelta
+
+          def last_sunday(year: int, month: int) -> date:
+              last_day = date(year, month, calendar.monthrange(year, month)[1])
+              offset   = last_day.weekday() + 1
+              return last_day - timedelta(days=0 if offset == 7 else offset)
+
+          force = os.getenv("FORCE_OFFSET", "").strip()
+          if force in ("1", "2"):
+              utc_offset = int(force)
+              reason = f"forced (force_offset={force})"
+          else:
+              today        = date.today()
+              y            = today.year
+              summer_start = last_sunday(y, 3)
+              summer_end   = last_sunday(y, 10)
+              utc_offset   = 2 if summer_start <= today < summer_end else 1
+              reason = f"auto (today={today}, summer={summer_start}→{summer_end})"
+
+          cron_hour = 9 - utc_offset
+          print(f"UTC offset={utc_offset} ({reason}) → cron hour={cron_hour}")
+
+          wf_path = ".github/workflows/tracker.yml"
+          text    = open(wf_path).read()
+
+          pattern  = r'(# Daily tracker.*?cron:\s*")[^"]+(")'
+          new_text, n = re.subn(pattern, rf'\g<1>25 {cron_hour} * * *\2', text, flags=re.DOTALL)
+
+          if n == 0:
+              pattern2 = r'(- cron: "25 )\d+( \* \* \*")'
+              new_text, n = re.subn(pattern2, rf'\g<1>{cron_hour}\2', text, count=1)
+
+          if n == 0:
+              print("WARNING: Could not locate daily-tracker cron line — no changes made.")
+          else:
+              with open(wf_path, "w") as f:
+                  f.write(new_text)
+              print(f"Patched {wf_path} → cron hour {cron_hour} UTC")
+          EOF
+
+      - name: Commit cron change
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add .github/workflows/tracker.yml
+          git diff --cached --quiet && echo "No cron change needed — already correct." && exit 0
+          OFFSET=$(python -c "
+          import calendar; from datetime import date, timedelta
+          def ls(y,m):
+              ld=date(y,m,calendar.monthrange(y,m)[1]); off=ld.weekday()+1
+              return ld-timedelta(days=0 if off==7 else off)
+          d=date.today(); y=d.year
+          print(2 if ls(y,3)<=d<ls(y,10) else 1)
+          ")
+          LABEL=$([ "$OFFSET" = "2" ] && echo "CEST UTC+2" || echo "CET UTC+1")
+          git commit -m "chore: adjust cron to $LABEL (09:25 Madrid)"
+          git push
