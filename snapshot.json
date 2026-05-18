@@ -34,7 +34,8 @@
         "id": "W-22300290"
       }
     ],
-    "full_text_snippet": "May 11, 2026\nMuleSoft announces the release of Anypoint Omni Gateway 1.13.0.\nWhat’s New\nFlex Gateway is now named to Omni Gateway.\nCurrently, this is a non-breaking change and only cosmetically affects the UI and documentation. This change shouldn’t affect CI/CD pipelines. There are no changes to these areas:\nAnypoint Platform CLI\nAnypoint Platform APIs\nLogging\nEnvironment variables\nDocumentation "
+    "full_text_snippet": "May 11, 2026\nMuleSoft announces the release of Anypoint Omni Gateway 1.13.0.\nWhat’s New\nFlex Gateway is now named to Omni Gateway.\nCurrently, this is a non-breaking change and only cosmetically affects the UI and documentation. This change shouldn’t affect CI/CD pipelines. There are no changes to these areas:\nAnypoint Platform CLI\nAnypoint Platform APIs\nLogging\nEnvironment variables\nDocumentation ",
+    "detected_at": "2026-05-18T17:20:03+00:00"
   },
   "1.12.5": {
     "version": "1.12.5",
@@ -52,7 +53,8 @@
         "id": "W-22215222"
       }
     ],
-    "full_text_snippet": "May 7, 2026\nMuleSoft announces the release of Anypoint Flex Gateway 1.12.5.\nFixed Issues\nIssue Resolution\nID\nMCP and A2A metrics are now reported correctly.\nW-22346105\nThe OAuth 2.0 Token Introspection and OpenID Connect OAuth 2.0 Token Enforcement policies now correctly use the consumer URL for protected resource metadata.\nW-22215222"
+    "full_text_snippet": "May 7, 2026\nMuleSoft announces the release of Anypoint Flex Gateway 1.12.5.\nFixed Issues\nIssue Resolution\nID\nMCP and A2A metrics are now reported correctly.\nW-22346105\nThe OAuth 2.0 Token Introspection and OpenID Connect OAuth 2.0 Token Enforcement policies now correctly use the consumer URL for protected resource metadata.\nW-22215222",
+    "detected_at": "2026-05-18T17:20:03+00:00"
   },
   "1.12.4": {
     "version": "1.12.4",
@@ -68,7 +70,8 @@
         "id": "W-22139443"
       }
     ],
-    "full_text_snippet": "April 29, 2026\nMuleSoft announces the release of Anypoint Flex Gateway 1.12.4.\nWhat’s New\nEnvoy is now updated to version 1.35.10.\nFixed Issues\nIssue Resolution\nID\nVulnerabilities detected by scanners are now fixed.\nW-22139443"
+    "full_text_snippet": "April 29, 2026\nMuleSoft announces the release of Anypoint Flex Gateway 1.12.4.\nWhat’s New\nEnvoy is now updated to version 1.35.10.\nFixed Issues\nIssue Resolution\nID\nVulnerabilities detected by scanners are now fixed.\nW-22139443",
+    "detected_at": "2026-05-18T17:20:03+00:00"
   },
   "1.12.3": {
     "version": "1.12.3",
@@ -94,7 +97,8 @@
         "id": "W-22108203"
       }
     ],
-    "full_text_snippet": "April 22, 2026\nMuleSoft announces the release of Anypoint Flex Gateway 1.12.3.\nFixed Issues\nIssue Resolution\nID\nVulnerabilities detected by scanners are now fixed.\nW-22028896\nThe DataWeave\n--\noperator now correctly removes entries from an object.\nW-21643871\nThe OpenID Policy now correctly sends identity provider credentials in the header instead of the body.\nW-22061343\nRate Limiting policies now c"
+    "full_text_snippet": "April 22, 2026\nMuleSoft announces the release of Anypoint Flex Gateway 1.12.3.\nFixed Issues\nIssue Resolution\nID\nVulnerabilities detected by scanners are now fixed.\nW-22028896\nThe DataWeave\n--\noperator now correctly removes entries from an object.\nW-21643871\nThe OpenID Policy now correctly sends identity provider credentials in the header instead of the body.\nW-22061343\nRate Limiting policies now c",
+    "detected_at": "2026-05-18T17:20:03+00:00"
   },
   "1.12.2": {
     "version": "1.12.2",
@@ -114,7 +118,8 @@
         "id": "W-21471214"
       }
     ],
-    "full_text_snippet": "March 31, 2026\nMuleSoft announces the release of Anypoint Flex Gateway 1.12.2.\nWhat’s New\nThe\nOAuth 2.0 Token Introspection Policy\nand\nOpenID Connect OAuth 2.0 Token Enforcement Policy\nnow support the OAuth 2.0 discovery flow and parameters required for MCP clients.\nFixed Issues\nIssue Resolution\nID\nVulnerabilities detected by scanners are now fixed.\nW-21668427\nWhen making outbound requests from po"
+    "full_text_snippet": "March 31, 2026\nMuleSoft announces the release of Anypoint Flex Gateway 1.12.2.\nWhat’s New\nThe\nOAuth 2.0 Token Introspection Policy\nand\nOpenID Connect OAuth 2.0 Token Enforcement Policy\nnow support the OAuth 2.0 discovery flow and parameters required for MCP clients.\nFixed Issues\nIssue Resolution\nID\nVulnerabilities detected by scanners are now fixed.\nW-21668427\nWhen making outbound requests from po",
+    "detected_at": "2026-05-18T17:20:03+00:00"
   },
   "1.12.1": {
     "version": "1.12.1",
@@ -128,7 +133,8 @@
         "id": "W-21361063"
       }
     ],
-    "full_text_snippet": "March 2, 2026\nMuleSoft announces the release of Anypoint Flex Gateway 1.12.1.\nFixed Issues\nIssue Resolution\nID\nManaged Flex Gateway deployed on CloudHub 2.0 no longer produces UDP log errors.\nW-21361063"
+    "full_text_snippet": "March 2, 2026\nMuleSoft announces the release of Anypoint Flex Gateway 1.12.1.\nFixed Issues\nIssue Resolution\nID\nManaged Flex Gateway deployed on CloudHub 2.0 no longer produces UDP log errors.\nW-21361063",
+    "detected_at": "2026-05-18T17:20:03+00:00"
   },
   "1.12.0": {
     "version": "1.12.0",
@@ -178,7 +184,8 @@
         "id": "W-21016899"
       }
     ],
-    "full_text_snippet": "February 25, 2026\nMuleSoft announces the release of Anypoint Flex Gateway 1.12.0.\nWhat’s New\nManaged Flex Gateway now supports Runtime Fabric deployments.\nSee\nDeploying Managed Flex Gateway on Runtime Fabric\n.\nExtra Large Managed Flex Gateway is now available for production purposes with higher throughput and more process demanding policies.\nTo learn more about the performance metrics for Extra La"
+    "full_text_snippet": "February 25, 2026\nMuleSoft announces the release of Anypoint Flex Gateway 1.12.0.\nWhat’s New\nManaged Flex Gateway now supports Runtime Fabric deployments.\nSee\nDeploying Managed Flex Gateway on Runtime Fabric\n.\nExtra Large Managed Flex Gateway is now available for production purposes with higher throughput and more process demanding policies.\nTo learn more about the performance metrics for Extra La",
+    "detected_at": "2026-05-18T17:20:03+00:00"
   },
   "1.11.9": {
     "version": "1.11.9",
@@ -192,7 +199,8 @@
         "id": "W-22346105"
       }
     ],
-    "full_text_snippet": "May 7, 2026\nMuleSoft announces the release of Anypoint Flex Gateway 1.11.9.\nFixed Issues\nIssue Resolution\nID\nMCP and A2A metrics are now reported correctly.\nW-22346105"
+    "full_text_snippet": "May 7, 2026\nMuleSoft announces the release of Anypoint Flex Gateway 1.11.9.\nFixed Issues\nIssue Resolution\nID\nMCP and A2A metrics are now reported correctly.\nW-22346105",
+    "detected_at": "2026-05-18T17:20:03+00:00"
   },
   "1.11.8": {
     "version": "1.11.8",
@@ -208,7 +216,8 @@
         "id": "W-22139443"
       }
     ],
-    "full_text_snippet": "April 29, 2026\nMuleSoft announces the release of Anypoint Flex Gateway 1.11.8.\nWhat’s New\nEnvoy is now updated to version 1.35.10.\nFixed Issues\nIssue Resolution\nID\nVulnerabilities detected by scanners are now fixed.\nW-22139443"
+    "full_text_snippet": "April 29, 2026\nMuleSoft announces the release of Anypoint Flex Gateway 1.11.8.\nWhat’s New\nEnvoy is now updated to version 1.35.10.\nFixed Issues\nIssue Resolution\nID\nVulnerabilities detected by scanners are now fixed.\nW-22139443",
+    "detected_at": "2026-05-18T17:20:03+00:00"
   },
   "1.11.7": {
     "version": "1.11.7",
@@ -222,7 +231,8 @@
         "id": "W-22028896"
       }
     ],
-    "full_text_snippet": "This version of the product has entered\nExtended Support\n.\nApril 24, 2026\nMuleSoft announces the release of Anypoint Flex Gateway 1.11.7.\nFixed Issues\nIssue Resolution\nID\nVulnerabilities detected by scanners are now fixed.\nW-22028896"
+    "full_text_snippet": "This version of the product has entered\nExtended Support\n.\nApril 24, 2026\nMuleSoft announces the release of Anypoint Flex Gateway 1.11.7.\nFixed Issues\nIssue Resolution\nID\nVulnerabilities detected by scanners are now fixed.\nW-22028896",
+    "detected_at": "2026-05-18T17:20:03+00:00"
   },
   "1.11.6": {
     "version": "1.11.6",
@@ -236,7 +246,8 @@
         "id": "W-21668427"
       }
     ],
-    "full_text_snippet": "This version of the product has entered\nExtended Support\n.\nMarch 31, 2026\nMuleSoft announces the release of Anypoint Flex Gateway 1.11.6.\nFixed Issues\nIssue Resolution\nID\nVulnerabilities detected by scanners are now fixed.\nW-21668427"
+    "full_text_snippet": "This version of the product has entered\nExtended Support\n.\nMarch 31, 2026\nMuleSoft announces the release of Anypoint Flex Gateway 1.11.6.\nFixed Issues\nIssue Resolution\nID\nVulnerabilities detected by scanners are now fixed.\nW-21668427",
+    "detected_at": "2026-05-18T17:20:03+00:00"
   },
   "1.11.5": {
     "version": "1.11.5",
@@ -266,7 +277,8 @@
         "id": "W-21016899"
       }
     ],
-    "full_text_snippet": "This version of the product has entered\nExtended Support\n.\nMarch 5, 2026\nMuleSoft announces the release of Anypoint Flex Gateway 1.11.5.\nFixed Issues\nIssue Resolution\nID\nVulnerabilities detected by scanners are now fixed.\nW-21259850\nTrace configuration now supports a trusted CA.\nW-21018187\nThe JSON Threat Protection policy no longer rejects numeric exponential notation.\nW-21186984\nFlex Gateway no "
+    "full_text_snippet": "This version of the product has entered\nExtended Support\n.\nMarch 5, 2026\nMuleSoft announces the release of Anypoint Flex Gateway 1.11.5.\nFixed Issues\nIssue Resolution\nID\nVulnerabilities detected by scanners are now fixed.\nW-21259850\nTrace configuration now supports a trusted CA.\nW-21018187\nThe JSON Threat Protection policy no longer rejects numeric exponential notation.\nW-21186984\nFlex Gateway no ",
+    "detected_at": "2026-05-18T17:20:03+00:00"
   },
   "1.11.4": {
     "version": "1.11.4",
@@ -286,7 +298,8 @@
         "id": "W-20911125"
       }
     ],
-    "full_text_snippet": "This version of the product has entered\nExtended Support\n.\nJanuary 15, 2026\nMuleSoft announces the release of Anypoint Flex Gateway 1.11.4.\nWhat’s New\nEnvoy is now updated to version 1.35.3.\nFixed Issues\nIssue Resolution\nID\nThe Schema Validation policy now validates the raw URL-encoded raw value instead of the URL-decoded value.\nW-20531156\nVulnerabilities detected by scanners are now fixed.\nW-2091"
+    "full_text_snippet": "This version of the product has entered\nExtended Support\n.\nJanuary 15, 2026\nMuleSoft announces the release of Anypoint Flex Gateway 1.11.4.\nWhat’s New\nEnvoy is now updated to version 1.35.3.\nFixed Issues\nIssue Resolution\nID\nThe Schema Validation policy now validates the raw URL-encoded raw value instead of the URL-decoded value.\nW-20531156\nVulnerabilities detected by scanners are now fixed.\nW-2091",
+    "detected_at": "2026-05-18T17:20:03+00:00"
   },
   "1.11.3": {
     "version": "1.11.3",
@@ -322,7 +335,8 @@
         "id": "W-20510872"
       }
     ],
-    "full_text_snippet": "This version of the product has entered\nExtended Support\n.\nJanuary 7, 2026\nMuleSoft announces the release of Anypoint Flex Gateway 1.11.3.\nWhat’s New\nThe Credential Injection OAuth 2.0 policy now provides the\nCredential location\nparameter to specify where the OAuth 2.0 credentials are located in the request.\nSee\nCredential Injection OAuth 2.0 Policy\n.\nFixed Issues\nIssue Resolution\nID\nVulnerabiliti"
+    "full_text_snippet": "This version of the product has entered\nExtended Support\n.\nJanuary 7, 2026\nMuleSoft announces the release of Anypoint Flex Gateway 1.11.3.\nWhat’s New\nThe Credential Injection OAuth 2.0 policy now provides the\nCredential location\nparameter to specify where the OAuth 2.0 credentials are located in the request.\nSee\nCredential Injection OAuth 2.0 Policy\n.\nFixed Issues\nIssue Resolution\nID\nVulnerabiliti",
+    "detected_at": "2026-05-18T17:20:03+00:00"
   },
   "1.11.2": {
     "version": "1.11.2",
@@ -344,7 +358,8 @@
         "id": "W-20129783"
       }
     ],
-    "full_text_snippet": "This version of the product has entered\nExtended Support\n.\nNovember 13, 2025\nMuleSoft announces the release of Anypoint Flex Gateway 1.11.2.\nFixed Issues\nIssue Resolution\nID\nFlex Gateway running in Connected Mode now retries when requests to Anypoint Platform fail.\nW-20037629\nVulnerabilities detected by scanners are now fixed.\nW-20125828\nThe OpenID Connect OAuth 2.0 Token Enforcement policy no lon"
+    "full_text_snippet": "This version of the product has entered\nExtended Support\n.\nNovember 13, 2025\nMuleSoft announces the release of Anypoint Flex Gateway 1.11.2.\nFixed Issues\nIssue Resolution\nID\nFlex Gateway running in Connected Mode now retries when requests to Anypoint Platform fail.\nW-20037629\nVulnerabilities detected by scanners are now fixed.\nW-20125828\nThe OpenID Connect OAuth 2.0 Token Enforcement policy no lon",
+    "detected_at": "2026-05-18T17:20:03+00:00"
   },
   "1.11.1": {
     "version": "1.11.1",
@@ -362,7 +377,8 @@
         "id": "W-19979621"
       }
     ],
-    "full_text_snippet": "This version of the product has entered\nExtended Support\n.\nOctober 22, 2025\nMuleSoft announces the release of Anypoint Flex Gateway 1.11.1.\nFixed Issues\nIssue Resolution\nID\nVulnerabilities detected by scanners are now fixed.\nW-19971092\nEnvoy was downgraded to 1.34.0 to fix a segmentation fault error.\nW-19979621"
+    "full_text_snippet": "This version of the product has entered\nExtended Support\n.\nOctober 22, 2025\nMuleSoft announces the release of Anypoint Flex Gateway 1.11.1.\nFixed Issues\nIssue Resolution\nID\nVulnerabilities detected by scanners are now fixed.\nW-19971092\nEnvoy was downgraded to 1.34.0 to fix a segmentation fault error.\nW-19979621",
+    "detected_at": "2026-05-18T17:20:03+00:00"
   },
   "1.11.0": {
     "version": "1.11.0",
@@ -405,7 +421,8 @@
         "id": "W-19861373"
       }
     ],
-    "full_text_snippet": "This version of the product has entered\nExtended Support\n.\nOctober 13, 2025\nMuleSoft announces the release of Anypoint Flex Gateway 1.11.0.\nWhat’s New\nEnvoy is now updated to version 1.35.3.\nTLS 1.1 support is removed for enhanced security compliance.\nFlex Gateway now provides the outbound AWS Signature policy to inject client credentials into upstream requests.\nFlex Gateway now provides the outbo"
+    "full_text_snippet": "This version of the product has entered\nExtended Support\n.\nOctober 13, 2025\nMuleSoft announces the release of Anypoint Flex Gateway 1.11.0.\nWhat’s New\nEnvoy is now updated to version 1.35.3.\nTLS 1.1 support is removed for enhanced security compliance.\nFlex Gateway now provides the outbound AWS Signature policy to inject client credentials into upstream requests.\nFlex Gateway now provides the outbo",
+    "detected_at": "2026-05-18T17:20:03+00:00"
   },
   "1.9.12": {
     "version": "1.9.12",
@@ -419,7 +436,8 @@
         "id": "W-22028896"
       }
     ],
-    "full_text_snippet": "April 24, 2026\nMuleSoft announces the release of Anypoint Flex Gateway 1.9.12.\nFixed Issues\nIssue Resolution\nID\nVulnerabilities detected by scanners are now fixed.\nW-22028896"
+    "full_text_snippet": "April 24, 2026\nMuleSoft announces the release of Anypoint Flex Gateway 1.9.12.\nFixed Issues\nIssue Resolution\nID\nVulnerabilities detected by scanners are now fixed.\nW-22028896",
+    "detected_at": "2026-05-18T17:20:03+00:00"
   },
   "1.9.11": {
     "version": "1.9.11",
@@ -433,7 +451,8 @@
         "id": "W-21668427"
       }
     ],
-    "full_text_snippet": "March 31, 2026\nMuleSoft announces the release of Anypoint Flex Gateway 1.9.11.\nFixed Issues\nIssue Resolution\nID\nVulnerabilities detected by scanners are now fixed.\nW-21668427"
+    "full_text_snippet": "March 31, 2026\nMuleSoft announces the release of Anypoint Flex Gateway 1.9.11.\nFixed Issues\nIssue Resolution\nID\nVulnerabilities detected by scanners are now fixed.\nW-21668427",
+    "detected_at": "2026-05-18T17:20:03+00:00"
   },
   "1.9.10": {
     "version": "1.9.10",
@@ -463,7 +482,8 @@
         "id": "W-21016899"
       }
     ],
-    "full_text_snippet": "March 5, 2026\nMuleSoft announces the release of Anypoint Flex Gateway 1.9.10.\nFixed Issues\nIssue Resolution\nID\nVulnerabilities detected by scanners are now fixed.\nW-21259850\nTrace configuration now supports setting up a trusted CA.\nW-21018187\nThe JSON Threat Protection policy no longer rejects numeric exponential notation.\nW-21186984\nThe Schema Validation policy now validates the raw URL-encoded r"
+    "full_text_snippet": "March 5, 2026\nMuleSoft announces the release of Anypoint Flex Gateway 1.9.10.\nFixed Issues\nIssue Resolution\nID\nVulnerabilities detected by scanners are now fixed.\nW-21259850\nTrace configuration now supports setting up a trusted CA.\nW-21018187\nThe JSON Threat Protection policy no longer rejects numeric exponential notation.\nW-21186984\nThe Schema Validation policy now validates the raw URL-encoded r",
+    "detected_at": "2026-05-18T17:20:03+00:00"
   },
   "1.9.9": {
     "version": "1.9.9",
@@ -485,7 +505,8 @@
         "id": "W-20365743"
       }
     ],
-    "full_text_snippet": "January 7, 2026\nMuleSoft announces the release of Anypoint Flex Gateway 1.9.9.\nFixed Issues\nIssue Resolution\nID\nVulnerabilities detected by scanners are now fixed.\nW-20365927\nIf an error occurs when the JWT Validation policy calls the JWKS server, the time between retry requests now doubles with each request.\nW-19647107\nFlex Gateway now correctly sends logging information to Anypoint Platform.\nW-2"
+    "full_text_snippet": "January 7, 2026\nMuleSoft announces the release of Anypoint Flex Gateway 1.9.9.\nFixed Issues\nIssue Resolution\nID\nVulnerabilities detected by scanners are now fixed.\nW-20365927\nIf an error occurs when the JWT Validation policy calls the JWKS server, the time between retry requests now doubles with each request.\nW-19647107\nFlex Gateway now correctly sends logging information to Anypoint Platform.\nW-2",
+    "detected_at": "2026-05-18T17:20:03+00:00"
   },
   "1.9.8": {
     "version": "1.9.8",
@@ -503,7 +524,8 @@
         "id": "W-20125828"
       }
     ],
-    "full_text_snippet": "November 13, 2025\nMuleSoft announces the release of Anypoint Flex Gateway 1.9.8.\nFixed Issues\nIssue Resolution\nID\nFlex Gateway running in Connected Mode now retries when requests to Anypoint Platform fail.\nW-20037629\nVulnerabilities detected by scanners are now fixed.\nW-20125828"
+    "full_text_snippet": "November 13, 2025\nMuleSoft announces the release of Anypoint Flex Gateway 1.9.8.\nFixed Issues\nIssue Resolution\nID\nFlex Gateway running in Connected Mode now retries when requests to Anypoint Platform fail.\nW-20037629\nVulnerabilities detected by scanners are now fixed.\nW-20125828",
+    "detected_at": "2026-05-18T17:20:03+00:00"
   },
   "1.9.7": {
     "version": "1.9.7",
@@ -527,7 +549,8 @@
         "id": "W-19861373"
       }
     ],
-    "full_text_snippet": "October 17, 2025\nMuleSoft announces the release of Anypoint Flex Gateway 1.9.7.\nWhat’s New\nFor the Rate Limiting and SLA-Based Rate Limiting policies, if distributed rate limiting is enabled, the policy resizes time windows under 10 seconds linearly. For example, if you configure a max of 10 requests per 5 seconds, the policy resizes that window to a max of 20 requests per 10 seconds.\nSee\nRate Lim"
+    "full_text_snippet": "October 17, 2025\nMuleSoft announces the release of Anypoint Flex Gateway 1.9.7.\nWhat’s New\nFor the Rate Limiting and SLA-Based Rate Limiting policies, if distributed rate limiting is enabled, the policy resizes time windows under 10 seconds linearly. For example, if you configure a max of 10 requests per 5 seconds, the policy resizes that window to a max of 20 requests per 10 seconds.\nSee\nRate Lim",
+    "detected_at": "2026-05-18T17:20:03+00:00"
   },
   "1.9.6": {
     "version": "1.9.6",
@@ -561,7 +584,8 @@
         "id": "W-19149269"
       }
     ],
-    "full_text_snippet": "August 26, 2025\nMuleSoft announces the release of Anypoint Flex Gateway 1.9.6.\nFixed Issues\nIssue Resolution\nID\nOAS Schemas are now correctly present in the local configuration cache.\nW-18833198\nThe Envoy agent now properly restarts child processes that end with a core dump or kill signal.\nW-19327530\nThe readiness probe no longer fails when the OAuth Token Introspection policy has\nskip_client_id_v"
+    "full_text_snippet": "August 26, 2025\nMuleSoft announces the release of Anypoint Flex Gateway 1.9.6.\nFixed Issues\nIssue Resolution\nID\nOAS Schemas are now correctly present in the local configuration cache.\nW-18833198\nThe Envoy agent now properly restarts child processes that end with a core dump or kill signal.\nW-19327530\nThe readiness probe no longer fails when the OAuth Token Introspection policy has\nskip_client_id_v",
+    "detected_at": "2026-05-18T17:20:03+00:00"
   },
   "1.9.5": {
     "version": "1.9.5",
@@ -589,7 +613,8 @@
         "id": "W-18883397"
       }
     ],
-    "full_text_snippet": "July 2, 2025\nMuleSoft announces the release of Anypoint Flex Gateway 1.9.5.\nWhat’s New\nFluent Bit is now updated to version 3.2.10.\nFixed Issues\nIssue Resolution\nID\nFlex Gateway no longer ignores the\njson_date_format\nFluent-Bit option.\nW-18465012\nVulnerabilities detected by scanners are now fixed.\nW-18820570\nThe Credential Injection OAuth 2.0 policy no longer fails if the\nexpires_in\nattribute is a"
+    "full_text_snippet": "July 2, 2025\nMuleSoft announces the release of Anypoint Flex Gateway 1.9.5.\nWhat’s New\nFluent Bit is now updated to version 3.2.10.\nFixed Issues\nIssue Resolution\nID\nFlex Gateway no longer ignores the\njson_date_format\nFluent-Bit option.\nW-18465012\nVulnerabilities detected by scanners are now fixed.\nW-18820570\nThe Credential Injection OAuth 2.0 policy no longer fails if the\nexpires_in\nattribute is a",
+    "detected_at": "2026-05-18T17:20:03+00:00"
   },
   "1.9.4": {
     "version": "1.9.4",
@@ -603,7 +628,8 @@
         "id": "W-18671361"
       }
     ],
-    "full_text_snippet": "June 4, 2025\nMuleSoft announces the release of Anypoint Flex Gateway 1.9.4.\nFixed Issues\nIssue Resolution\nID\nDeploying Flex Gateway with IPv6 disabled no longer causes an error.\nW-18671361"
+    "full_text_snippet": "June 4, 2025\nMuleSoft announces the release of Anypoint Flex Gateway 1.9.4.\nFixed Issues\nIssue Resolution\nID\nDeploying Flex Gateway with IPv6 disabled no longer causes an error.\nW-18671361",
+    "detected_at": "2026-05-18T17:20:03+00:00"
   },
   "1.9.3": {
     "version": "1.9.3",
@@ -616,7 +642,8 @@
       "Flex Gateway now includes these policies: A2A Policies: A2A Schema Validation : Verify requests conform to the A2A schema. See A2A Schema Validation Policy . A2A Agent Card : Proxy the agent through Flex Gateway by rewriting the agent card. See A2A Agent Card Policy A2A PII Detector : Detect sensitive information in messages sent to and from agents. See A2A Personally Identifiable Information (PII) Detector Policy . A2A Prompt Decorator : Modify prompt behavior by injecting custom prompts into requests. See A2A Prompt Decorator Policy . Server-Sent Events (SSE) Content Logging : Log content sent by agents for audit and compliance needs. See SSE Logging Policy . MCP Policies: MCP Schema Validation : Verify requests conform to the MCP schema. See MCP Schema Validation Policy . MCP Support : Enable MCP support and enable Server-Sent Events (SSE). See MCP Support Policy . Attribute-Based Access Control : Allows you to control access to tools, resources, and prompts, based on Cedar expressions. See MCP Attribute-Based Access Control Policy ."
     ],
     "fixed_issues": [],
-    "full_text_snippet": "May 28, 2025\nMuleSoft announces the release of Anypoint Flex Gateway 1.9.3.\nWhat’s New\nFlex Gateway now supports the Model Context Protocol (MCP) and the Agent2Agent (A2A) Protocol, enabling you to secure, manage, and govern agent interactions:\nYou can Publish Flex Gateway MCP and A2A Server instances.\nSee\nPublishing Omni Gateway Agent and Tool instances\n.\nFlex Gateway now includes MCP and A2A pol"
+    "full_text_snippet": "May 28, 2025\nMuleSoft announces the release of Anypoint Flex Gateway 1.9.3.\nWhat’s New\nFlex Gateway now supports the Model Context Protocol (MCP) and the Agent2Agent (A2A) Protocol, enabling you to secure, manage, and govern agent interactions:\nYou can Publish Flex Gateway MCP and A2A Server instances.\nSee\nPublishing Omni Gateway Agent and Tool instances\n.\nFlex Gateway now includes MCP and A2A pol",
+    "detected_at": "2026-05-18T17:20:03+00:00"
   },
   "1.9.2": {
     "version": "1.9.2",
@@ -630,7 +657,8 @@
         "id": "W-18483362"
       }
     ],
-    "full_text_snippet": "May 12, 2025\nMuleSoft announces the release of Anypoint Flex Gateway 1.9.2.\nFixed Issues\nIssue Resolution\nID\nThe Flex Gateway 1.9.1 TLS context configuration deployment regression is now fixed.\nW-18483362"
+    "full_text_snippet": "May 12, 2025\nMuleSoft announces the release of Anypoint Flex Gateway 1.9.2.\nFixed Issues\nIssue Resolution\nID\nThe Flex Gateway 1.9.1 TLS context configuration deployment regression is now fixed.\nW-18483362",
+    "detected_at": "2026-05-18T17:20:03+00:00"
   },
   "1.9.1": {
     "version": "1.9.1",
@@ -660,7 +688,8 @@
         "id": "W-17737710"
       }
     ],
-    "full_text_snippet": "May 8, 2025\nMuleSoft announces the release of Anypoint Flex Gateway 1.9.1.\nFixed Issues\nIssue Resolution\nID\nThe\nonDelete\nevent no longer causes a panic.\nW-18368903\nThe Flex Gateway 1.9.0 ForwardProxy regression is now fixed.\nW-18202000\nThe\nexpires_in\nattribute in the OAuth credential injection policy is now correctly spelled.\nW-18201673\nRedis keys no longer collide if multiple Flex Gateways use th"
+    "full_text_snippet": "May 8, 2025\nMuleSoft announces the release of Anypoint Flex Gateway 1.9.1.\nFixed Issues\nIssue Resolution\nID\nThe\nonDelete\nevent no longer causes a panic.\nW-18368903\nThe Flex Gateway 1.9.0 ForwardProxy regression is now fixed.\nW-18202000\nThe\nexpires_in\nattribute in the OAuth credential injection policy is now correctly spelled.\nW-18201673\nRedis keys no longer collide if multiple Flex Gateways use th",
+    "detected_at": "2026-05-18T17:20:03+00:00"
   },
   "1.9.0": {
     "version": "1.9.0",
@@ -681,6 +710,7 @@
         "id": "W-17640917"
       }
     ],
-    "full_text_snippet": "March 18, 2025\nMuleSoft announces the release of Anypoint Flex Gateway 1.9.0.\nWhat’s New\nManaged Flex Gateway on CloudHub 2.0\nFlex Gateway now includes Managed Flex Gateway, a fully hosted version of Flex Gateway on CloudHub 2.0.\nManaged Flex Gateway provides high availability, autoscaling, less operational overhead, and regular automatic patches and upgrades.\nNote:\nTo use Managed Flex Gateway, en"
+    "full_text_snippet": "March 18, 2025\nMuleSoft announces the release of Anypoint Flex Gateway 1.9.0.\nWhat’s New\nManaged Flex Gateway on CloudHub 2.0\nFlex Gateway now includes Managed Flex Gateway, a fully hosted version of Flex Gateway on CloudHub 2.0.\nManaged Flex Gateway provides high availability, autoscaling, less operational overhead, and regular automatic patches and upgrades.\nNote:\nTo use Managed Flex Gateway, en",
+    "detected_at": "2026-05-18T17:20:03+00:00"
   }
 }
