@@ -8,5 +8,15 @@
     "stale_alert": false,
     "duration_s": 0.3,
     "error": ""
+  },
+  {
+    "timestamp": "2026-05-19T10:46:47+00:00",
+    "status": "success",
+    "new_releases": 0,
+    "total_tracked": 30,
+    "email_sent": false,
+    "stale_alert": false,
+    "duration_s": 0.2,
+    "error": ""
   }
 ]

@@ -32,6 +32,10 @@
       {
         "description": "When FLEX_DATASOURCE_CONTROL_NODE_ENABLED=true , Connected Mode Omni Gateway can now scale up if Anypoint is unavailable.",
         "id": "W-22300290"
+      },
+      {
+        "description": "CORS policy now supports wildcard (*) origins.",
+        "id": "W-19971117"
       }
     ],
     "full_text_snippet": "May 11, 2026\nMuleSoft announces the release of Anypoint Omni Gateway 1.13.0.\nWhat’s New\nFlex Gateway is now named to Omni Gateway.\nCurrently, this is a non-breaking change and only cosmetically affects the UI and documentation. This change shouldn’t affect CI/CD pipelines. There are no changes to these areas:\nAnypoint Platform CLI\nAnypoint Platform APIs\nLogging\nEnvironment variables\nDocumentation ",
