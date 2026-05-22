@@ -1,4 +1,39 @@
 {
+  "1.13.1": {
+    "version": "1.13.1",
+    "url": "https://docs.mulesoft.com/release-notes/flex-gateway/flex-gateway-release-notes#1-13-1",
+    "date": "May 20, 2026",
+    "summary": "MuleSoft announces the release of Anypoint Omni Gateway 1.13.1.",
+    "whats_new": [],
+    "fixed_issues": [
+      {
+        "description": "The OpenTelemetry Collector now correctly starts in environments (such as Google Cloud Run) that were previously failing.",
+        "id": "W-22419420"
+      },
+      {
+        "description": "The configuration caching (control-node) temporal inconsistency in the watcher and notifier is now fixed.",
+        "id": "W-21484884"
+      },
+      {
+        "description": "The flexctl dump error message is now improved when redis is unavailable.",
+        "id": "W-22365034"
+      },
+      {
+        "description": "Contract resiliency for PDK now improves resource usage.",
+        "id": "W-22048194"
+      },
+      {
+        "description": "These vulnerabilities detected by scanners are now fixed: CVE-2026-33811 CVE-2026-33814 CVE-2026-39820 CVE-2026-39836 CVE-2026-42499 CVE-2026-42501 CVE-2026-39817 CVE-2026-39819 CVE-2026-39823 CVE-2026-39825 CVE-2026-39826 GHSA-8rm2-7qqf-34qm GHSA-wg65-39gg-5wfj GHSA-fw8g-cg8f-9j28 GHSA-vffh-x6r8-xx99 GHSA-wg65-39gg-5wfj",
+        "id": "CVE-2026-33811CVE-2026-33814CVE-2026-39820CVE-2026-39836CVE-2026-42499CVE-2026-42501CVE-2026-39817CVE-2026-39819"
+      },
+      {
+        "description": "CVE-2026-33811 CVE-2026-33814 CVE-2026-39820 CVE-2026-39836 CVE-2026-42499 CVE-2026-42501 CVE-2026-39817 CVE-2026-39819",
+        "id": "CVE-2026-39823CVE-2026-39825CVE-2026-39826GHSA-8rm2-7qqf-34qmGHSA-wg65-39gg-5wfjGHSA-fw8g-cg8f-9j28GHSA-vffh-x6r8-xx99GHSA-wg65-39gg-5wfj"
+      }
+    ],
+    "full_text_snippet": "May 20, 2026\nMuleSoft announces the release of Anypoint Omni Gateway 1.13.1.\nFixed Issues\nIssue Resolution\nID\nThe OpenTelemetry Collector now correctly starts in environments (such as Google Cloud Run) that were previously failing.\nW-22419420\nThe configuration caching (control-node) temporal inconsistency in the watcher and notifier is now fixed.\nW-21484884\nThe\nflexctl dump\nerror message is now im",
+    "detected_at": "2026-05-22T10:30:51+00:00"
+  },
   "1.13.0": {
     "version": "1.13.0",
     "url": "https://docs.mulesoft.com/release-notes/flex-gateway/flex-gateway-release-notes#1-13-0",
@@ -40,6 +75,45 @@
     ],
     "full_text_snippet": "May 11, 2026\nMuleSoft announces the release of Anypoint Omni Gateway 1.13.0.\nWhat’s New\nFlex Gateway is now named to Omni Gateway.\nCurrently, this is a non-breaking change and only cosmetically affects the UI and documentation. This change shouldn’t affect CI/CD pipelines. There are no changes to these areas:\nAnypoint Platform CLI\nAnypoint Platform APIs\nLogging\nEnvironment variables\nDocumentation ",
     "detected_at": "2026-05-18T17:20:03+00:00"
+  },
+  "1.12.6": {
+    "version": "1.12.6",
+    "url": "https://docs.mulesoft.com/release-notes/flex-gateway/flex-gateway-release-notes#1-12-6",
+    "date": "May 20, 2026",
+    "summary": "MuleSoft announces the release of Anypoint Flex Gateway 1.12.6.",
+    "whats_new": [],
+    "fixed_issues": [
+      {
+        "description": "The OpenTelemetry Collector now correctly starts in environments (such as Google Cloud Run) that were previously failing.",
+        "id": "W-22419420"
+      },
+      {
+        "description": "The configuration caching (control-node) temporal inconsistency in the watcher and notifier is now fixed.",
+        "id": "W-21484884"
+      },
+      {
+        "description": "The flexctl dump error message is now improved when redis is unavailable.",
+        "id": "W-22365034"
+      },
+      {
+        "description": "The Injection Protection Policy now allows you to apply a policy that only uses custom protections.",
+        "id": "W-22491337"
+      },
+      {
+        "description": "Contract resiliency for PDK now improves resource usage.",
+        "id": "W-22048194"
+      },
+      {
+        "description": "These vulnerabilities detected by scanners are now fixed: CVE-2026-33811 CVE-2026-33814 CVE-2026-39820 CVE-2026-39836 CVE-2026-42499 CVE-2026-42501 CVE-2026-39817 CVE-2026-39819 CVE-2026-39823 CVE-2026-39825 CVE-2026-39826 GHSA-8rm2-7qqf-34qm GHSA-wg65-39gg-5wfj GHSA-fw8g-cg8f-9j28 GHSA-vffh-x6r8-xx99 GHSA-wg65-39gg-5wfj",
+        "id": "CVE-2026-33811CVE-2026-33814CVE-2026-39820CVE-2026-39836CVE-2026-42499CVE-2026-42501CVE-2026-39817CVE-2026-39819"
+      },
+      {
+        "description": "CVE-2026-33811 CVE-2026-33814 CVE-2026-39820 CVE-2026-39836 CVE-2026-42499 CVE-2026-42501 CVE-2026-39817 CVE-2026-39819",
+        "id": "CVE-2026-39823CVE-2026-39825CVE-2026-39826GHSA-8rm2-7qqf-34qmGHSA-wg65-39gg-5wfjGHSA-fw8g-cg8f-9j28GHSA-vffh-x6r8-xx99GHSA-wg65-39gg-5wfj"
+      }
+    ],
+    "full_text_snippet": "May 20, 2026\nMuleSoft announces the release of Anypoint Flex Gateway 1.12.6.\nFixed Issues\nIssue Resolution\nID\nThe OpenTelemetry Collector now correctly starts in environments (such as Google Cloud Run) that were previously failing.\nW-22419420\nThe configuration caching (control-node) temporal inconsistency in the watcher and notifier is now fixed.\nW-21484884\nThe\nflexctl dump\nerror message is now im",
+    "detected_at": "2026-05-22T10:30:51+00:00"
   },
   "1.12.5": {
     "version": "1.12.5",
@@ -190,6 +264,37 @@
     ],
     "full_text_snippet": "February 25, 2026\nMuleSoft announces the release of Anypoint Flex Gateway 1.12.0.\nWhat’s New\nManaged Flex Gateway now supports Runtime Fabric deployments.\nSee\nDeploying Managed Flex Gateway on Runtime Fabric\n.\nExtra Large Managed Flex Gateway is now available for production purposes with higher throughput and more process demanding policies.\nTo learn more about the performance metrics for Extra La",
     "detected_at": "2026-05-18T17:20:03+00:00"
+  },
+  "1.11.10": {
+    "version": "1.11.10",
+    "url": "https://docs.mulesoft.com/release-notes/flex-gateway/flex-gateway-release-notes#1-11-10",
+    "date": "May 20, 2026",
+    "summary": "MuleSoft announces the release of Anypoint Omni Gateway 1.11.10.",
+    "whats_new": [],
+    "fixed_issues": [
+      {
+        "description": "The OpenTelemetry Collector now correctly starts in environments (such as Google Cloud Run) that were previously failing.",
+        "id": "W-22419420"
+      },
+      {
+        "description": "The configuration caching (control-node) temporal inconsistency in the watcher and notifier is now fixed.",
+        "id": "W-21484884"
+      },
+      {
+        "description": "The flexctl dump error message is now improved when redis is unavailable.",
+        "id": "W-22365034"
+      },
+      {
+        "description": "These vulnerabilities detected by scanners are now fixed: CVE-2026-33811 CVE-2026-33814 CVE-2026-39820 CVE-2026-39836 CVE-2026-42499 CVE-2026-42501 CVE-2026-39817 CVE-2026-39819 CVE-2026-39823 CVE-2026-39825 CVE-2026-39826 GHSA-8rm2-7qqf-34qm GHSA-wg65-39gg-5wfj GHSA-fw8g-cg8f-9j28 GHSA-vffh-x6r8-xx99 GHSA-wg65-39gg-5wfj",
+        "id": "CVE-2026-33811CVE-2026-33814CVE-2026-39820CVE-2026-39836CVE-2026-42499CVE-2026-42501CVE-2026-39817CVE-2026-39819"
+      },
+      {
+        "description": "CVE-2026-33811 CVE-2026-33814 CVE-2026-39820 CVE-2026-39836 CVE-2026-42499 CVE-2026-42501 CVE-2026-39817 CVE-2026-39819",
+        "id": "CVE-2026-39823CVE-2026-39825CVE-2026-39826GHSA-8rm2-7qqf-34qmGHSA-wg65-39gg-5wfjGHSA-fw8g-cg8f-9j28GHSA-vffh-x6r8-xx99GHSA-wg65-39gg-5wfj"
+      }
+    ],
+    "full_text_snippet": "May 20, 2026\nMuleSoft announces the release of Anypoint Omni Gateway 1.11.10.\nFixed Issues\nIssue Resolution\nID\nThe OpenTelemetry Collector now correctly starts in environments (such as Google Cloud Run) that were previously failing.\nW-22419420\nThe configuration caching (control-node) temporal inconsistency in the watcher and notifier is now fixed.\nW-21484884\nThe\nflexctl dump\nerror message is now i",
+    "detected_at": "2026-05-22T10:30:51+00:00"
   },
   "1.11.9": {
     "version": "1.11.9",
@@ -427,6 +532,29 @@
     ],
     "full_text_snippet": "This version of the product has entered\nExtended Support\n.\nOctober 13, 2025\nMuleSoft announces the release of Anypoint Flex Gateway 1.11.0.\nWhat’s New\nEnvoy is now updated to version 1.35.3.\nTLS 1.1 support is removed for enhanced security compliance.\nFlex Gateway now provides the outbound AWS Signature policy to inject client credentials into upstream requests.\nFlex Gateway now provides the outbo",
     "detected_at": "2026-05-18T17:20:03+00:00"
+  },
+  "1.9.13": {
+    "version": "1.9.13",
+    "url": "https://docs.mulesoft.com/release-notes/flex-gateway/flex-gateway-release-notes#1-9-13",
+    "date": "May 20, 2026",
+    "summary": "MuleSoft announces the release of Anypoint Flex Gateway 1.9.13.",
+    "whats_new": [],
+    "fixed_issues": [
+      {
+        "description": "The flexctl dump error message is now improved when redis is unavailable.",
+        "id": "W-22365034"
+      },
+      {
+        "description": "These vulnerabilities detected by scanners are now fixed: CVE-2026-33811 CVE-2026-33814 CVE-2026-39820 CVE-2026-39836 CVE-2026-42499 CVE-2026-42501 CVE-2026-39817 CVE-2026-39819 CVE-2026-39823 CVE-2026-39825 CVE-2026-39826",
+        "id": "CVE-2026-33811CVE-2026-33814CVE-2026-39820CVE-2026-39836CVE-2026-42499CVE-2026-42501"
+      },
+      {
+        "description": "CVE-2026-33811 CVE-2026-33814 CVE-2026-39820 CVE-2026-39836 CVE-2026-42499 CVE-2026-42501",
+        "id": "CVE-2026-39817CVE-2026-39819CVE-2026-39823CVE-2026-39825CVE-2026-39826"
+      }
+    ],
+    "full_text_snippet": "May 20, 2026\nMuleSoft announces the release of Anypoint Flex Gateway 1.9.13.\nFixed Issues\nIssue Resolution\nID\nThe\nflexctl dump\nerror message is now improved when redis is unavailable.\nW-22365034\nThese vulnerabilities detected by scanners are now fixed:\nCVE-2026-33811\nCVE-2026-33814\nCVE-2026-39820\nCVE-2026-39836\nCVE-2026-42499\nCVE-2026-42501\nCVE-2026-39817\nCVE-2026-39819\nCVE-2026-39823\nCVE-2026-398",
+    "detected_at": "2026-05-22T10:30:51+00:00"
   },
   "1.9.12": {
     "version": "1.9.12",
