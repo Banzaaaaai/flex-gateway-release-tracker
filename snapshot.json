@@ -3,7 +3,7 @@
     "version": "1.13.1",
     "url": "https://docs.mulesoft.com/release-notes/flex-gateway/flex-gateway-release-notes#1-13-1",
     "date": "May 20, 2026",
-    "summary": "MuleSoft announces the release of Anypoint Omni Gateway 1.13.1.",
+    "summary": "MuleSoft announces the release of Omni Gateway 1.13.1.",
     "whats_new": [],
     "fixed_issues": [
       {
@@ -31,14 +31,14 @@
         "id": "CVE-2026-39823CVE-2026-39825CVE-2026-39826GHSA-8rm2-7qqf-34qmGHSA-wg65-39gg-5wfjGHSA-fw8g-cg8f-9j28GHSA-vffh-x6r8-xx99GHSA-wg65-39gg-5wfj"
       }
     ],
-    "full_text_snippet": "May 20, 2026\nMuleSoft announces the release of Anypoint Omni Gateway 1.13.1.\nFixed Issues\nIssue Resolution\nID\nThe OpenTelemetry Collector now correctly starts in environments (such as Google Cloud Run) that were previously failing.\nW-22419420\nThe configuration caching (control-node) temporal inconsistency in the watcher and notifier is now fixed.\nW-21484884\nThe\nflexctl dump\nerror message is now im",
+    "full_text_snippet": "May 20, 2026\nMuleSoft announces the release of Omni Gateway 1.13.1.\nFixed Issues\nIssue Resolution\nID\nThe OpenTelemetry Collector now correctly starts in environments (such as Google Cloud Run) that were previously failing.\nW-22419420\nThe configuration caching (control-node) temporal inconsistency in the watcher and notifier is now fixed.\nW-21484884\nThe\nflexctl dump\nerror message is now improved wh",
     "detected_at": "2026-05-22T10:30:51+00:00"
   },
   "1.13.0": {
     "version": "1.13.0",
     "url": "https://docs.mulesoft.com/release-notes/flex-gateway/flex-gateway-release-notes#1-13-0",
     "date": "May 11, 2026",
-    "summary": "MuleSoft announces the release of Anypoint Omni Gateway 1.13.0.",
+    "summary": "MuleSoft announces the release of Omni Gateway 1.13.0.",
     "whats_new": [
       "Flex Gateway is now named to Omni Gateway. Currently, this is a non-breaking change and only cosmetically affects the UI and documentation. This change shouldn’t affect CI/CD pipelines. There are no changes to these areas: Anypoint Platform CLI Anypoint Platform APIs Logging Environment variables Documentation URL links MCP tool names",
       "Omni Gateway now supports GraphQL APIs. To add a GraphQL API to Omni Gateway, see Adding an Omni Gateway API Instance .",
@@ -73,7 +73,7 @@
         "id": "W-19971117"
       }
     ],
-    "full_text_snippet": "May 11, 2026\nMuleSoft announces the release of Anypoint Omni Gateway 1.13.0.\nWhat’s New\nFlex Gateway is now named to Omni Gateway.\nCurrently, this is a non-breaking change and only cosmetically affects the UI and documentation. This change shouldn’t affect CI/CD pipelines. There are no changes to these areas:\nAnypoint Platform CLI\nAnypoint Platform APIs\nLogging\nEnvironment variables\nDocumentation ",
+    "full_text_snippet": "May 11, 2026\nMuleSoft announces the release of Omni Gateway 1.13.0.\nWhat’s New\nFlex Gateway is now named to Omni Gateway.\nCurrently, this is a non-breaking change and only cosmetically affects the UI and documentation. This change shouldn’t affect CI/CD pipelines. There are no changes to these areas:\nAnypoint Platform CLI\nAnypoint Platform APIs\nLogging\nEnvironment variables\nDocumentation URL links",
     "detected_at": "2026-05-18T17:20:03+00:00"
   },
   "1.12.6": {
@@ -269,7 +269,7 @@
     "version": "1.11.10",
     "url": "https://docs.mulesoft.com/release-notes/flex-gateway/flex-gateway-release-notes#1-11-10",
     "date": "May 20, 2026",
-    "summary": "MuleSoft announces the release of Anypoint Omni Gateway 1.11.10.",
+    "summary": "MuleSoft announces the release of Omni Gateway 1.11.10.",
     "whats_new": [],
     "fixed_issues": [
       {
@@ -293,7 +293,7 @@
         "id": "CVE-2026-39823CVE-2026-39825CVE-2026-39826GHSA-8rm2-7qqf-34qmGHSA-wg65-39gg-5wfjGHSA-fw8g-cg8f-9j28GHSA-vffh-x6r8-xx99GHSA-wg65-39gg-5wfj"
       }
     ],
-    "full_text_snippet": "May 20, 2026\nMuleSoft announces the release of Anypoint Omni Gateway 1.11.10.\nFixed Issues\nIssue Resolution\nID\nThe OpenTelemetry Collector now correctly starts in environments (such as Google Cloud Run) that were previously failing.\nW-22419420\nThe configuration caching (control-node) temporal inconsistency in the watcher and notifier is now fixed.\nW-21484884\nThe\nflexctl dump\nerror message is now i",
+    "full_text_snippet": "May 20, 2026\nMuleSoft announces the release of Omni Gateway 1.11.10.\nFixed Issues\nIssue Resolution\nID\nThe OpenTelemetry Collector now correctly starts in environments (such as Google Cloud Run) that were previously failing.\nW-22419420\nThe configuration caching (control-node) temporal inconsistency in the watcher and notifier is now fixed.\nW-21484884\nThe\nflexctl dump\nerror message is now improved w",
     "detected_at": "2026-05-22T10:30:51+00:00"
   },
   "1.11.9": {
