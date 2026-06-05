@@ -158,5 +158,15 @@
     "stale_alert": false,
     "duration_s": 0.6,
     "error": ""
+  },
+  {
+    "timestamp": "2026-06-05T10:56:55+00:00",
+    "status": "success",
+    "new_releases": 0,
+    "total_tracked": 34,
+    "email_sent": false,
+    "stale_alert": true,
+    "duration_s": 1.1,
+    "error": ""
   }
 ]
