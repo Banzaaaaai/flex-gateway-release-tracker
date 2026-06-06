@@ -1,4 +1,39 @@
 {
+  "1.13.2": {
+    "version": "1.13.2",
+    "url": "https://docs.mulesoft.com/release-notes/flex-gateway/flex-gateway-release-notes#1-13-2",
+    "date": "June 6, 2026",
+    "summary": "MuleSoft announces the release of Omni Gateway 1.13.2.",
+    "whats_new": [],
+    "fixed_issues": [
+      {
+        "description": "Logging for the flexctl readiness probe is now improved.",
+        "id": "W-21615708"
+      },
+      {
+        "description": "The statsEvictionInterval configuration is now added to Envoy bootstrap.",
+        "id": "W-22545512"
+      },
+      {
+        "description": "The OpenID Connect OAuth 2.0 Token Enforcement and OAuth 2.0 Token Introspection policies now properly populate the authentication.principal property.",
+        "id": "W-22696442"
+      },
+      {
+        "description": "The Injection Protection Policy now allows you to apply a policy that uses only custom protections.",
+        "id": "W-22491337"
+      },
+      {
+        "description": "These vulnerabilities detected by scanners are now fixed: VE-2025-15281 CVE-2026-0861 CVE-2026-0915 CVE-2026-25680 CVE-2026-25681 CVE-2026-27136 CVE-2026-32952 CVE-2026-33814 CVE-2026-39821 CVE-2026-39824 CVE-2026-39827 CVE-2026-39828 CVE-2026-39829 CVE-2026-39830 CVE-2026-39831 CVE-2026-39832 CVE-2026-39833 CVE-2026-39834 CVE-2026-39835 CVE-2026-4046 CVE-2026-42502 CVE-2026-42506 CVE-2026-42508 CVE-2026-4437 CVE-2026-4438 CVE-2026-46595 CVE-2026-46597 CVE-2026-46598 CVE-2026-4878",
+        "id": "VE-2025-15281CVE-2026-0861CVE-2026-0915CVE-2026-25680CVE-2026-25681CVE-2026-27136CVE-2026-32952CVE-2026-33814CVE-2026-39821CVE-2026-39824CVE-2026-39827CVE-2026-39828CVE-2026-39829CVE-2026-39830CVE-2026-39831"
+      },
+      {
+        "description": "VE-2025-15281 CVE-2026-0861 CVE-2026-0915 CVE-2026-25680 CVE-2026-25681 CVE-2026-27136 CVE-2026-32952 CVE-2026-33814 CVE-2026-39821 CVE-2026-39824 CVE-2026-39827 CVE-2026-39828 CVE-2026-39829 CVE-2026-39830 CVE-2026-39831",
+        "id": "CVE-2026-39832CVE-2026-39833CVE-2026-39834CVE-2026-39835CVE-2026-4046CVE-2026-42502CVE-2026-42506CVE-2026-42508CVE-2026-4437CVE-2026-4438CVE-2026-46595CVE-2026-46597CVE-2026-46598CVE-2026-4878"
+      }
+    ],
+    "full_text_snippet": "June 6, 2026\nMuleSoft announces the release of Omni Gateway 1.13.2.\nFixed Issues\nIssue Resolution\nID\nLogging for the\nflexctl\nreadiness probe is now improved.\nW-21615708\nThe\nstatsEvictionInterval\nconfiguration is now added to Envoy bootstrap.\nW-22545512\nThe OpenID Connect OAuth 2.0 Token Enforcement and OAuth 2.0 Token Introspection policies now properly populate the\nauthentication.principal\nproper",
+    "detected_at": "2026-06-06T09:32:26+00:00"
+  },
   "1.13.1": {
     "version": "1.13.1",
     "url": "https://docs.mulesoft.com/release-notes/flex-gateway/flex-gateway-release-notes#1-13-1",
@@ -75,6 +110,29 @@
     ],
     "full_text_snippet": "May 11, 2026\nMuleSoft announces the release of Omni Gateway 1.13.0.\nWhat’s New\nFlex Gateway is now named to Omni Gateway.\nCurrently, this is a non-breaking change and only cosmetically affects the UI and documentation. This change shouldn’t affect CI/CD pipelines. There are no changes to these areas:\nAnypoint Platform CLI\nAnypoint Platform APIs\nLogging\nEnvironment variables\nDocumentation URL links",
     "detected_at": "2026-05-18T17:20:03+00:00"
+  },
+  "1.12.7": {
+    "version": "1.12.7",
+    "url": "https://docs.mulesoft.com/release-notes/flex-gateway/flex-gateway-release-notes#1-12-7",
+    "date": "June 6, 2026",
+    "summary": "MuleSoft announces the release of Anypoint Omni Gateway 1.12.7.",
+    "whats_new": [],
+    "fixed_issues": [
+      {
+        "description": "The principal is no longer always null in the authentication object for OpenID Connect OAuth 2.0 Token Enforcement and OAuth 2.0 Token Introspection policies.",
+        "id": "W-22696442"
+      },
+      {
+        "description": "These vulnerabilities detected by scanners are now fixed: VE-2025-15281 CVE-2026-0861 CVE-2026-0915 CVE-2026-25680 CVE-2026-25681 CVE-2026-27136 CVE-2026-32952 CVE-2026-33814 CVE-2026-39821 CVE-2026-39824 CVE-2026-39827 CVE-2026-39828 CVE-2026-39829 CVE-2026-39830 CVE-2026-39831 CVE-2026-39832 CVE-2026-39833 CVE-2026-39834 CVE-2026-39835 CVE-2026-4046 CVE-2026-42502 CVE-2026-42506 CVE-2026-42508 CVE-2026-4437 CVE-2026-4438 CVE-2026-46595 CVE-2026-46597 CVE-2026-46598 CVE-2026-4878",
+        "id": "VE-2025-15281CVE-2026-0861CVE-2026-0915CVE-2026-25680CVE-2026-25681CVE-2026-27136CVE-2026-32952CVE-2026-33814CVE-2026-39821CVE-2026-39824CVE-2026-39827CVE-2026-39828CVE-2026-39829CVE-2026-39830CVE-2026-39831"
+      },
+      {
+        "description": "VE-2025-15281 CVE-2026-0861 CVE-2026-0915 CVE-2026-25680 CVE-2026-25681 CVE-2026-27136 CVE-2026-32952 CVE-2026-33814 CVE-2026-39821 CVE-2026-39824 CVE-2026-39827 CVE-2026-39828 CVE-2026-39829 CVE-2026-39830 CVE-2026-39831",
+        "id": "CVE-2026-39832CVE-2026-39833CVE-2026-39834CVE-2026-39835CVE-2026-4046CVE-2026-42502CVE-2026-42506CVE-2026-42508CVE-2026-4437CVE-2026-4438CVE-2026-46595CVE-2026-46597CVE-2026-46598CVE-2026-4878"
+      }
+    ],
+    "full_text_snippet": "June 6, 2026\nMuleSoft announces the release of Anypoint Omni Gateway 1.12.7.\nFixed Issues\nIssue Resolution\nID\nThe principal is no longer always null in the authentication object for OpenID Connect OAuth 2.0 Token Enforcement and OAuth 2.0 Token Introspection policies.\nW-22696442\nThese vulnerabilities detected by scanners are now fixed:\nVE-2025-15281\nCVE-2026-0861\nCVE-2026-0915\nCVE-2026-25680\nCVE-2",
+    "detected_at": "2026-06-06T09:32:26+00:00"
   },
   "1.12.6": {
     "version": "1.12.6",
@@ -532,6 +590,25 @@
     ],
     "full_text_snippet": "This version of the product has entered\nExtended Support\n.\nOctober 13, 2025\nMuleSoft announces the release of Anypoint Flex Gateway 1.11.0.\nWhat’s New\nEnvoy is now updated to version 1.35.3.\nTLS 1.1 support is removed for enhanced security compliance.\nFlex Gateway now provides the outbound AWS Signature policy to inject client credentials into upstream requests.\nFlex Gateway now provides the outbo",
     "detected_at": "2026-05-18T17:20:03+00:00"
+  },
+  "1.9.14": {
+    "version": "1.9.14",
+    "url": "https://docs.mulesoft.com/release-notes/flex-gateway/flex-gateway-release-notes#1-9-14",
+    "date": "June 6, 2026",
+    "summary": "MuleSoft announces the release of Anypoint Omni Gateway 1.9.14.",
+    "whats_new": [],
+    "fixed_issues": [
+      {
+        "description": "These vulnerabilities detected by scanners are now fixed: VE-2025-15281 CVE-2026-0861 CVE-2026-0915 CVE-2026-25680 CVE-2026-25681 CVE-2026-27136 CVE-2026-32952 CVE-2026-33814 CVE-2026-39821 CVE-2026-39824 CVE-2026-39827 CVE-2026-39828 CVE-2026-39829 CVE-2026-39830 CVE-2026-39831 CVE-2026-39832 CVE-2026-39833 CVE-2026-39834 CVE-2026-39835 CVE-2026-4046 CVE-2026-42502 CVE-2026-42506 CVE-2026-42508 CVE-2026-4437 CVE-2026-4438 CVE-2026-46595 CVE-2026-46597 CVE-2026-46598 CVE-2026-4878",
+        "id": "VE-2025-15281CVE-2026-0861CVE-2026-0915CVE-2026-25680CVE-2026-25681CVE-2026-27136CVE-2026-32952CVE-2026-33814CVE-2026-39821CVE-2026-39824CVE-2026-39827CVE-2026-39828CVE-2026-39829CVE-2026-39830CVE-2026-39831"
+      },
+      {
+        "description": "VE-2025-15281 CVE-2026-0861 CVE-2026-0915 CVE-2026-25680 CVE-2026-25681 CVE-2026-27136 CVE-2026-32952 CVE-2026-33814 CVE-2026-39821 CVE-2026-39824 CVE-2026-39827 CVE-2026-39828 CVE-2026-39829 CVE-2026-39830 CVE-2026-39831",
+        "id": "CVE-2026-39832CVE-2026-39833CVE-2026-39834CVE-2026-39835CVE-2026-4046CVE-2026-42502CVE-2026-42506CVE-2026-42508CVE-2026-4437CVE-2026-4438CVE-2026-46595CVE-2026-46597CVE-2026-46598CVE-2026-4878"
+      }
+    ],
+    "full_text_snippet": "June 6, 2026\nMuleSoft announces the release of Anypoint Omni Gateway 1.9.14.\nFixed Issues\nIssue Resolution\nID\nThese vulnerabilities detected by scanners are now fixed:\nVE-2025-15281\nCVE-2026-0861\nCVE-2026-0915\nCVE-2026-25680\nCVE-2026-25681\nCVE-2026-27136\nCVE-2026-32952\nCVE-2026-33814\nCVE-2026-39821\nCVE-2026-39824\nCVE-2026-39827\nCVE-2026-39828\nCVE-2026-39829\nCVE-2026-39830\nCVE-2026-39831\nCVE-2026-3",
+    "detected_at": "2026-06-06T09:32:26+00:00"
   },
   "1.9.13": {
     "version": "1.9.13",
