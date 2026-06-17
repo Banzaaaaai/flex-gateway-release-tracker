@@ -921,5 +921,15 @@
     ],
     "full_text_snippet": "March 18, 2025\nMuleSoft announces the release of Anypoint Flex Gateway 1.9.0.\nWhat’s New\nManaged Flex Gateway on CloudHub 2.0\nFlex Gateway now includes Managed Flex Gateway, a fully hosted version of Flex Gateway on CloudHub 2.0.\nManaged Flex Gateway provides high availability, autoscaling, less operational overhead, and regular automatic patches and upgrades.\nNote:\nTo use Managed Flex Gateway, en",
     "detected_at": "2026-05-18T17:20:03+00:00"
+  },
+  "See Also": {
+    "version": "See Also",
+    "url": "https://docs.mulesoft.com/release-notes/flex-gateway/flex-gateway-release-notes#see-also",
+    "date": "",
+    "summary": "",
+    "whats_new": [],
+    "fixed_issues": [],
+    "full_text_snippet": "Known Issues",
+    "detected_at": "2026-06-17T12:01:05+00:00"
   }
 }
