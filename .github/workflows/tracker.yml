@@ -17,6 +17,10 @@ on:
         description: "Send monthly digest email now (true/false)"
         required: false
         default: "false"
+      digest_month:
+        description: "Digest target month, e.g. 2026-06 (optional; blank = current month)"
+        required: false
+        default: ""
 
 permissions:
   contents: write   # needed to commit snapshot.json, run_log.json, badge.json
@@ -66,6 +70,7 @@ jobs:
           EMAIL_TO:       ${{ secrets.EMAIL_TO }}
           FORCE_NOTIFY:   ${{ github.event.inputs.force_notify }}
           MONTHLY_DIGEST: ${{ steps.flags.outputs.monthly_digest }}
+          DIGEST_MONTH:   ${{ github.event.inputs.digest_month }}
           LOG_LEVEL:      INFO
         run: python scraper.py
 

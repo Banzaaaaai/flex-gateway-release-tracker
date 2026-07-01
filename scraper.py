@@ -19,6 +19,7 @@ Environment variables (GitHub Actions secrets):
 """
 
 import json
+import re
 import logging
 import os
 import smtplib
@@ -550,14 +551,28 @@ def build_staleness_email_html(days: int, total: int) -> str:
 </body></html>"""
 
 
-def build_monthly_digest_html(run_log: list[dict], snapshot: dict) -> str:
+VERSION_RE = re.compile(r"^\d+(\.\d+)*$")
+
+
+def build_monthly_digest_html(
+    run_log: list[dict], snapshot: dict, target_month: datetime | None = None
+) -> str:
     now        = datetime.now(timezone.utc)
-    month_name = now.strftime("%B %Y")
-    cutoff     = now - timedelta(days=31)
+    target     = target_month or now
+    month_name = target.strftime("%B %Y")
+
+    month_start = target.replace(day=1, hour=0, minute=0, second=0, microsecond=0)
+    month_end = (
+        month_start.replace(year=month_start.year + 1, month=1)
+        if month_start.month == 12
+        else month_start.replace(month=month_start.month + 1)
+    )
+    ms_iso = month_start.isoformat(timespec="seconds")
+    me_iso = month_end.isoformat(timespec="seconds")
 
     month_entries = [
         e for e in run_log
-        if e.get("timestamp", "") >= cutoff.isoformat(timespec="seconds")
+        if ms_iso <= e.get("timestamp", "") < me_iso
     ]
     total_runs   = len(month_entries)
     success_runs = sum(1 for e in month_entries if e.get("status") == "success")
@@ -569,6 +584,46 @@ def build_monthly_digest_html(run_log: list[dict], snapshot: dict) -> str:
     major = sum(1 for v in snapshot if classify_version(v) == "major")
     minor = sum(1 for v in snapshot if classify_version(v) == "minor")
     patch = sum(1 for v in snapshot if classify_version(v) == "patch")
+
+    # Versions actually detected/released this calendar month
+    released = sorted(
+        ((v, e) for v, e in snapshot.items()
+         if ms_iso <= e.get("detected_at", "") < me_iso),
+        key=lambda ve: ve[1].get("detected_at", ""),
+    )
+    released_rows = ""
+    for version, entry in released:
+        suspect = not VERSION_RE.match(version)
+        vtype = classify_version(version) if not suspect else "?"
+        colour = VERSION_COLORS.get(vtype, "#757575")
+        label = f"{version}" + (" \u26a0\ufe0f not a version-like string" if suspect else "")
+        badge = f"<span style='{BADGE_STYLE}background:{colour}'>{vtype.upper()}</span>"
+        date_str = entry.get("date") or "&mdash;"
+        url = entry.get("url", "")
+        released_rows += f"""
+        <tr>
+          <td style="padding:10px 12px;border-bottom:1px solid #eee;vertical-align:top;">
+            <a href="{url}" style="color:#0d47a1;font-weight:600;text-decoration:none;font-size:13px;">{label}</a>
+          </td>
+          <td style="padding:10px 12px;border-bottom:1px solid #eee;vertical-align:top;">{badge}</td>
+          <td style="padding:10px 12px;border-bottom:1px solid #eee;vertical-align:top;font-size:12px;white-space:nowrap;">{date_str}</td>
+        </tr>"""
+    if not released_rows:
+        released_rows = '<tr><td colspan="3" style="padding:10px 12px;color:#888;">No versions detected this month.</td></tr>'
+    released_section = f"""
+    <h3 style="font-size:14px;color:#0d47a1;margin:22px 0 10px;">
+      Versions released &mdash; {month_name} ({len(released)})
+    </h3>
+    <table style="width:100%;border-collapse:collapse;font-size:13px;">
+      <thead>
+        <tr style="background:#f0f4f8;">
+          <th style="padding:8px 12px;text-align:left;color:#444;font-weight:700;border-bottom:2px solid #dde3ea;width:45%;">Version</th>
+          <th style="padding:8px 12px;text-align:left;color:#444;font-weight:700;border-bottom:2px solid #dde3ea;width:20%;">Type</th>
+          <th style="padding:8px 12px;text-align:left;color:#444;font-weight:700;border-bottom:2px solid #dde3ea;width:35%;">Date</th>
+        </tr>
+      </thead>
+      <tbody>{released_rows}</tbody>
+    </table>"""
 
     def stat_cell(value, label, colour="#0d47a1"):
         return (
@@ -615,6 +670,7 @@ def build_monthly_digest_html(run_log: list[dict], snapshot: dict) -> str:
         <td style="padding:8px 12px;text-align:right;font-weight:700;">{patch}</td>
       </tr>
     </table>
+    {released_section}
   </div>
   <div style="background:#f0f4f8;padding:12px 28px;font-size:11px;color:#aaa;text-align:center;">
     Automated by <strong>flex-gateway-release-tracker</strong> · GitHub Actions
@@ -673,10 +729,17 @@ def main() -> None:
                 run_log = json.loads(RUN_LOG_FILE.read_text(encoding="utf-8"))
             except json.JSONDecodeError:
                 pass
-        month_name = datetime.now(timezone.utc).strftime("%B %Y")
+        digest_month_env = os.getenv("DIGEST_MONTH", "").strip()
+        target_month = None
+        if digest_month_env:
+            target_month = datetime.strptime(digest_month_env, "%Y-%m").replace(
+                tzinfo=timezone.utc
+            )
+            log.info("DIGEST_MONTH=%s — targeting that month", digest_month_env)
+        month_name = (target_month or datetime.now(timezone.utc)).strftime("%B %Y")
         _send(
-            f"[Flex Tracker] 📊 Monthly digest — {month_name}",
-            build_monthly_digest_html(run_log, snapshot),
+            f"[Flex Tracker] \U0001F4CA Monthly digest — {month_name}",
+            build_monthly_digest_html(run_log, snapshot, target_month),
         )
         return
 
