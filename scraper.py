@@ -48,6 +48,7 @@ USER_AGENT       = "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 Chrome/12
 
 # Staleness: alert if no new release detected in this many days
 STALENESS_DAYS      = 14           # Flex releases less frequently than Qualys
+STALENESS_SILENCE_DAYS = 10        # min days between two staleness alert emails
 ARCHIVE_AFTER_DAYS  = 730          # 2 years
 SNAPSHOT_WARN_BYTES = 500_000      # 500 KB (snapshot is smaller for Flex)
 
@@ -329,6 +330,40 @@ def check_staleness(snapshot: dict) -> bool:
         )
         return True
     return False
+
+
+def last_staleness_alert_age() -> int | None:
+    """
+    Return the number of days since the last staleness alert email was sent,
+    by scanning run_log.json for entries where stale_alert=True and email_sent=True.
+    Returns None if no such entry exists (i.e. never sent before).
+    """
+    if not RUN_LOG_FILE.exists():
+        return None
+    try:
+        entries = json.loads(RUN_LOG_FILE.read_text(encoding="utf-8"))
+        if not isinstance(entries, list):
+            return None
+    except (json.JSONDecodeError, OSError):
+        return None
+
+    last_sent = None
+    for entry in entries:
+        if entry.get("stale_alert") and entry.get("email_sent"):
+            ts = entry.get("timestamp")
+            if ts:
+                try:
+                    dt = datetime.fromisoformat(ts)
+                    if dt.tzinfo is None:
+                        dt = dt.replace(tzinfo=timezone.utc)
+                    if last_sent is None or dt > last_sent:
+                        last_sent = dt
+                except (ValueError, TypeError):
+                    pass
+
+    if last_sent is None:
+        return None
+    return (datetime.now(timezone.utc) - last_sent).days
 
 
 # ── 6. Run log ────────────────────────────────────────────────────────────────
@@ -795,10 +830,19 @@ def main() -> None:
             email_sent = True
 
         if stale and not new:
-            _send(
-                f"[Flex Tracker] 🟡 Staleness alert — no new release in {STALENESS_DAYS} days",
-                build_staleness_email_html(STALENESS_DAYS, len(snapshot)),
-            )
+            _silence = last_staleness_alert_age()
+            _suppress = _silence is not None and _silence < STALENESS_SILENCE_DAYS
+            if _suppress:
+                log.info(
+                    "Staleness suppressed — last alert was %d day(s) ago "
+                    "(silence window: %d days)",
+                    _silence, STALENESS_SILENCE_DAYS,
+                )
+            else:
+                _send(
+                    f"[Flex Tracker] 🟡 Staleness alert — no new release in {STALENESS_DAYS} days",
+                    build_staleness_email_html(STALENESS_DAYS, len(snapshot)),
+                )
 
         # Save updated snapshot
         save_snapshot(current)
