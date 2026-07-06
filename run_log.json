@@ -458,5 +458,15 @@
     "stale_alert": true,
     "duration_s": 1.0,
     "error": ""
+  },
+  {
+    "timestamp": "2026-07-06T11:47:09+00:00",
+    "status": "success",
+    "new_releases": 0,
+    "total_tracked": 38,
+    "email_sent": false,
+    "stale_alert": true,
+    "duration_s": 2.0,
+    "error": ""
   }
 ]
