@@ -1,4 +1,57 @@
 {
+  "1.13.3": {
+    "version": "1.13.3",
+    "url": "https://docs.mulesoft.com/release-notes/flex-gateway/flex-gateway-release-notes#1-13-3",
+    "date": "July 8, 2026",
+    "summary": "MuleSoft announces the release of Omni Gateway 1.13.3.",
+    "whats_new": [
+      "Envoy is now upgraded to version 1.37.5."
+    ],
+    "fixed_issues": [
+      {
+        "description": "Omni Replicas no longer fail to receive configuration updates in Connected Mode when the hostname changed.",
+        "id": "W-23123632"
+      },
+      {
+        "description": "Omni Gateway now supports deployments in environments using non-standard IP address ranges (240.0.0.0/4).",
+        "id": "W-22771253"
+      },
+      {
+        "description": "The handling of rate-limited responses when downloading API configurations is now improved to reduce failures during high-traffic periods.",
+        "id": "W-23202349"
+      },
+      {
+        "description": "The readiness probe accuracy is now improved to ensure Omni Gateway only reports as ready when all API configurations are successfully loaded and available for processing traffic. Set --allow-api-errors to false to enable this behavior.",
+        "id": "W-23297348"
+      },
+      {
+        "description": "The XML Threat Protection policy now correctly validates and processes XML payloads.",
+        "id": "W-18172654"
+      },
+      {
+        "description": "SLA tier tracking across authentication policies (Client ID Enforcement, JWT Validation) and Rate Limiting SLA policy is now improved for better analytics and governance.",
+        "id": "W-22937088"
+      },
+      {
+        "description": "The Injection Protection policy pattern matching is now improved for better threat detection accuracy.",
+        "id": "W-22693332"
+      },
+      {
+        "description": "The SOAP Schema Validation policy now correctly processes requests containing nested XOP elements in MTOM payloads",
+        "id": "W-18172654"
+      },
+      {
+        "description": "These vulnerabilities detected by scanners are now fixed: CVE-2026-34182 CVE-2026-45447 CVE-2026-34180 CVE-2026-7383 CVE-2026-45445 CVE-2026-9076 CVE-2026-47774 CVE-2026-47220 CVE-2026-48706 CVE-2026-48042 CVE-2026-48044 CVE-2026-47204 CVE-2026-47221 CVE-2026-48497 CVE-2026-48743 CVE-2026-27145 CVE-2026-42504",
+        "id": "CVE-2026-34182CVE-2026-45447CVE-2026-34180CVE-2026-7383CVE-2026-45445CVE-2026-9076CVE-2026-47774CVE-2026-47220CVE-2026-48706"
+      },
+      {
+        "description": "CVE-2026-34182 CVE-2026-45447 CVE-2026-34180 CVE-2026-7383 CVE-2026-45445 CVE-2026-9076 CVE-2026-47774 CVE-2026-47220 CVE-2026-48706",
+        "id": "CVE-2026-48042CVE-2026-48044CVE-2026-47204CVE-2026-47221CVE-2026-48497CVE-2026-48743CVE-2026-27145CVE-2026-42504"
+      }
+    ],
+    "full_text_snippet": "July 8, 2026\nMuleSoft announces the release of Omni Gateway 1.13.3.\nWhat’s New\nEnvoy is now upgraded to version 1.37.5.\nFixed Issues\nIssue Resolution\nID\nOmni Replicas no longer fail to receive configuration updates in Connected Mode when the hostname changed.\nW-23123632\nOmni Gateway now supports deployments in environments using non-standard IP address ranges (240.0.0.0/4).\nW-22771253\nThe handling",
+    "detected_at": "2026-07-09T10:35:47+00:00"
+  },
   "1.13.2": {
     "version": "1.13.2",
     "url": "https://docs.mulesoft.com/release-notes/flex-gateway/flex-gateway-release-notes#1-13-2",
