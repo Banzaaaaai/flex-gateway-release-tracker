@@ -164,6 +164,61 @@
     "full_text_snippet": "May 11, 2026\nMuleSoft announces the release of Omni Gateway 1.13.0.\nWhat’s New\nFlex Gateway is now named to Omni Gateway.\nCurrently, this is a non-breaking change and only cosmetically affects the UI and documentation. This change shouldn’t affect CI/CD pipelines. There are no changes to these areas:\nAnypoint Platform CLI\nAnypoint Platform APIs\nLogging\nEnvironment variables\nDocumentation URL links",
     "detected_at": "2026-05-18T17:20:03+00:00"
   },
+  "1.12.8": {
+    "version": "1.12.8",
+    "url": "https://docs.mulesoft.com/release-notes/flex-gateway/flex-gateway-release-notes#1-12-8",
+    "date": "July 21, 2026",
+    "summary": "MuleSoft announces the release of Omni Gateway 1.12.8.",
+    "whats_new": [],
+    "fixed_issues": [
+      {
+        "description": "Omni Replicas no longer fail to receive configuration updates in Connected Mode when the hostname changed.",
+        "id": "W-23123632"
+      },
+      {
+        "description": "Omni Gateway now supports deployments in environments using non-standard IP address ranges (240.0.0.0/4).",
+        "id": "W-22771253"
+      },
+      {
+        "description": "The handling of rate-limited responses when downloading API configurations is now improved to reduce failures during high-traffic periods.",
+        "id": "W-23202349"
+      },
+      {
+        "description": "The readiness probe accuracy is now improved to ensure Omni Gateway only reports as ready when all API configurations are successfully loaded and available for processing traffic. Set --allow-api-errors to false to enable this behavior.",
+        "id": "W-23297348"
+      },
+      {
+        "description": "The XML Threat Protection policy now correctly validates and processes XML payloads.",
+        "id": "W-18172654"
+      },
+      {
+        "description": "The Injection Protection policy pattern matching is now improved for better threat detection accuracy.",
+        "id": "W-22693332"
+      },
+      {
+        "description": "HTTP retry logic now drains response bodies between retry attempts to prevent connection pool exhaustion.",
+        "id": "W-23252601"
+      },
+      {
+        "description": "Configuration caching (control node) now works with AWS ElastiCache Serverless. Redis shared storage now uses the non-blocking SCAN command instead of KEYS . If your Redis access policy allows the KEYS command, update it to allow SCAN .",
+        "id": "W-23399906"
+      },
+      {
+        "description": "Policy initialization during Envoy configuration generation is now faster. Wasm module inspection and compilation are now cached across policies that share the same module.",
+        "id": "W-23480384"
+      },
+      {
+        "description": "These vulnerabilities detected by scanners are now fixed: CVE-2026-34182 CVE-2026-34180 CVE-2026-45445 CVE-2026-45447 CVE-2026-7383 CVE-2026-9076 CVE-2026-39822 CVE-2026-42504 CVE-2026-27145 CVE-2026-42766 CVE-2026-45446 CVE-2026-42505 CVE-2026-42507 CVE-2026-42770",
+        "id": "CVE-2026-34182CVE-2026-34180CVE-2026-45445CVE-2026-45447CVE-2026-7383CVE-2026-9076CVE-2026-39822"
+      },
+      {
+        "description": "CVE-2026-34182 CVE-2026-34180 CVE-2026-45445 CVE-2026-45447 CVE-2026-7383 CVE-2026-9076 CVE-2026-39822",
+        "id": "CVE-2026-42504CVE-2026-27145CVE-2026-42766CVE-2026-45446CVE-2026-42505CVE-2026-42507CVE-2026-42770"
+      }
+    ],
+    "full_text_snippet": "July 21, 2026\nMuleSoft announces the release of Omni Gateway 1.12.8.\nFixed Issues\nIssue Resolution\nID\nOmni Replicas no longer fail to receive configuration updates in Connected Mode when the hostname changed.\nW-23123632\nOmni Gateway now supports deployments in environments using non-standard IP address ranges (240.0.0.0/4).\nW-22771253\nThe handling of rate-limited responses when downloading API con",
+    "detected_at": "2026-07-23T09:43:27+00:00"
+  },
   "1.12.7": {
     "version": "1.12.7",
     "url": "https://docs.mulesoft.com/release-notes/flex-gateway/flex-gateway-release-notes#1-12-7",
@@ -643,6 +698,33 @@
     ],
     "full_text_snippet": "This version of the product has entered\nExtended Support\n.\nOctober 13, 2025\nMuleSoft announces the release of Anypoint Flex Gateway 1.11.0.\nWhat’s New\nEnvoy is now updated to version 1.35.3.\nTLS 1.1 support is removed for enhanced security compliance.\nFlex Gateway now provides the outbound AWS Signature policy to inject client credentials into upstream requests.\nFlex Gateway now provides the outbo",
     "detected_at": "2026-05-18T17:20:03+00:00"
+  },
+  "1.9.15": {
+    "version": "1.9.15",
+    "url": "https://docs.mulesoft.com/release-notes/flex-gateway/flex-gateway-release-notes#1-9-15",
+    "date": "July 21, 2026",
+    "summary": "MuleSoft announces the release of Omni Gateway 1.9.15.",
+    "whats_new": [],
+    "fixed_issues": [
+      {
+        "description": "Omni Replicas no longer fail to receive configuration updates in Connected Mode when the hostname changed.",
+        "id": "W-23123632"
+      },
+      {
+        "description": "HTTP retry logic now drains response bodies between retry attempts to prevent connection pool exhaustion.",
+        "id": "W-23252601"
+      },
+      {
+        "description": "These vulnerabilities detected by scanners are now fixed: CVE-2026-34182 CVE-2026-34180 CVE-2026-45445 CVE-2026-45447 CVE-2026-7383 CVE-2026-9076 CVE-2026-39822 CVE-2026-42504 CVE-2026-27145 CVE-2026-42766 CVE-2026-45446 CVE-2026-42505 CVE-2026-42507 CVE-2026-42770",
+        "id": "CVE-2026-34182CVE-2026-34180CVE-2026-45445CVE-2026-45447CVE-2026-7383CVE-2026-9076CVE-2026-39822"
+      },
+      {
+        "description": "CVE-2026-34182 CVE-2026-34180 CVE-2026-45445 CVE-2026-45447 CVE-2026-7383 CVE-2026-9076 CVE-2026-39822",
+        "id": "CVE-2026-42504CVE-2026-27145CVE-2026-42766CVE-2026-45446CVE-2026-42505CVE-2026-42507CVE-2026-42770"
+      }
+    ],
+    "full_text_snippet": "July 21, 2026\nMuleSoft announces the release of Omni Gateway 1.9.15.\nFixed Issues\nIssue Resolution\nID\nOmni Replicas no longer fail to receive configuration updates in Connected Mode when the hostname changed.\nW-23123632\nHTTP retry logic now drains response bodies between retry attempts to prevent connection pool exhaustion.\nW-23252601\nThese vulnerabilities detected by scanners are now fixed:\nCVE-2",
+    "detected_at": "2026-07-23T09:43:27+00:00"
   },
   "1.9.14": {
     "version": "1.9.14",
