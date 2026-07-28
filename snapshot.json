@@ -1,4 +1,43 @@
 {
+  "1.13.4": {
+    "version": "1.13.4",
+    "url": "https://docs.mulesoft.com/release-notes/flex-gateway/flex-gateway-release-notes#1-13-4",
+    "date": "July 23, 2026",
+    "summary": "MuleSoft announces the release of Omni Gateway 1.13.4.",
+    "whats_new": [],
+    "fixed_issues": [
+      {
+        "description": "Policy initialization during Envoy configuration generation is now faster. Wasm module inspection and compilation are now cached across policies that share the same module.",
+        "id": "W-23480384"
+      },
+      {
+        "description": "Configuration caching (control node) now works with AWS ElastiCache Serverless. Redis shared storage now uses the non-blocking SCAN command instead of KEYS . If your Redis access policy allows the KEYS command, update it to allow SCAN .",
+        "id": "W-23399906"
+      },
+      {
+        "description": "The SOAP Validation policy no longer leaks temporary directories during configuration delivery. It now loads schema files whose paths contain spaces.",
+        "id": "W-23442789"
+      },
+      {
+        "description": "The contract collector now honors the Retry-After header and properly waits between polls when downloading API configurations.",
+        "id": "W-23460693"
+      },
+      {
+        "description": "The JSON Threat Protection policy now accepts valid JSON containing an escaped forward slash ( \\/ ), per RFC 8259.",
+        "id": "W-23510751"
+      },
+      {
+        "description": "These vulnerabilities detected by scanners are now fixed: CVE-2026-34182 CVE-2026-34180 CVE-2026-45445 CVE-2026-45447 CVE-2026-7383 CVE-2026-9076 CVE-2026-39822 CVE-2026-42504 CVE-2026-27145 CVE-2026-42766 CVE-2026-45446 CVE-2026-42505 CVE-2026-42507 CVE-2026-42770",
+        "id": "CVE-2026-34182CVE-2026-34180CVE-2026-45445CVE-2026-45447CVE-2026-7383CVE-2026-9076CVE-2026-39822"
+      },
+      {
+        "description": "CVE-2026-34182 CVE-2026-34180 CVE-2026-45445 CVE-2026-45447 CVE-2026-7383 CVE-2026-9076 CVE-2026-39822",
+        "id": "CVE-2026-42504CVE-2026-27145CVE-2026-42766CVE-2026-45446CVE-2026-42505CVE-2026-42507CVE-2026-42770"
+      }
+    ],
+    "full_text_snippet": "July 23, 2026\nMuleSoft announces the release of Omni Gateway 1.13.4.\nFixed Issues\nIssue Resolution\nID\nPolicy initialization during Envoy configuration generation is now faster. Wasm module inspection and compilation are now cached across policies that share the same module.\nW-23480384\nConfiguration caching (control node) now works with AWS ElastiCache Serverless. Redis shared storage now uses the ",
+    "detected_at": "2026-07-28T10:02:17+00:00"
+  },
   "1.13.3": {
     "version": "1.13.3",
     "url": "https://docs.mulesoft.com/release-notes/flex-gateway/flex-gateway-release-notes#1-13-3",
