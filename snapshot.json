@@ -1,4 +1,95 @@
 {
+  "1.13.5": {
+    "version": "1.13.5",
+    "url": "https://docs.mulesoft.com/release-notes/flex-gateway/flex-gateway-release-notes#1-13-5",
+    "date": "August 27, 2026",
+    "summary": "MuleSoft announces the release of Omni Gateway 1.13.5.",
+    "whats_new": [],
+    "fixed_issues": [
+      {
+        "description": "Omni Gateway running in Connected Mode no longer disconnects unexpectedly from Anypoint Platform under high-traffic conditions or when the remote server sends data without replying with protocol-level pong frames.",
+        "id": "W-23560278"
+      },
+      {
+        "description": "Custom policies no longer crash Omni Gateway with a segmentation fault when a response payload is larger than the buffer limit (1 MB by default). Use the FLEX_DOWNSTREAM_CONNECTION_BUFFER_LIMIT_BYTES environment variable to increase the buffer limit.",
+        "id": "W-23692178"
+      },
+      {
+        "description": "The Basic Authentication: LDAP policy no longer lets specially crafted usernames to manipulate the underlying LDAP search filter.",
+        "id": "W-23573199"
+      },
+      {
+        "description": "Resetting Redis shared storage no longer fails with a cross-slot error in cluster-mode deployments (such as AWS ElastiCache).",
+        "id": "W-23687400"
+      },
+      {
+        "description": "Control node no longer discards synchronization state after 14 days to prevent inconsistencies when a gateway reconnects following an extended outage.",
+        "id": "W-23692384"
+      },
+      {
+        "description": "Control node Redis shared storage no longer grows without bound over time from historical configuration-change data.",
+        "id": "W-23748466"
+      },
+      {
+        "description": "Omni Gateway running in Connected Mode no longer disrupts running pods when its registration credentials are renewed.",
+        "id": "W-23820257"
+      },
+      {
+        "description": "Control node no longer delays propagating a configuration update or logs a false inconsistency warning after a transient failure while committing that update.",
+        "id": "W-23754016"
+      },
+      {
+        "description": "Control node no longer fails to apply deployment updates when multiple replicas write to the same resource at nearly the same time.",
+        "id": "W-23748463, W-23748465"
+      },
+      {
+        "description": "Custom policies no longer cause a memory leak that can increase memory usage over time.",
+        "id": "W-23941703"
+      },
+      {
+        "description": "Omni Gateway no longer produces a malformed path predicate (such as a duplicate or missing slash) when a negative-lookahead path pattern is combined with an API base path.",
+        "id": "W-23912976"
+      },
+      {
+        "description": "Omni Gateway running in Connected Mode no longer sends duplicate deployment-status updates to Anypoint Platform.",
+        "id": "W-23862236"
+      },
+      {
+        "description": "The JWT Validation policy no longer bypasses the configured forward proxy when fetching JWKS keys.",
+        "id": "W-23840697"
+      },
+      {
+        "description": "The Credential Injection OAuth 2.0 policy no longer ignores the configured caching duration when the OAuth 2.0 provider’s token response omits the token expiration value.",
+        "id": "W-23705875"
+      },
+      {
+        "description": "The Rate Limiting SLA policy with distributed rate limiting enabled no longer crashes the gateway (WASM trap, returning a 503 error instead of 429) under Redis latency and high concurrency on the same SLA tier.",
+        "id": "W-23652660"
+      },
+      {
+        "description": "The OpenID Connect OAuth 2.0 Token Enforcement and OAuth 2.0 Token Introspection policies no longer forward the raw error response from the introspection server to the client.",
+        "id": "W-23665332"
+      },
+      {
+        "description": "The OpenID Connect OAuth 2.0 Token Enforcement and OAuth 2.0 Token Introspection policies no longer return a 503 error on all requests when the exposeHeaders option is enabled and a token claim’s name contains characters that aren’t valid in an HTTP header name.",
+        "id": "W-23940967"
+      },
+      {
+        "description": "The OAuth 2.0 Token Introspection policy no longer fails when the introspection URL includes an explicit default port.",
+        "id": "W-23471294"
+      },
+      {
+        "description": "These vulnerabilities detected by scanners are now fixed: CVE-2022-27943 CVE-2025-27587 CVE-2026-41178 CVE-2026-42767 CVE-2026-56852 CVE-2026-73500 GHSA-259r-337f-4rfw GHSA-hrxh-6v49-42gf",
+        "id": "CVE-2022-27943CVE-2025-27587CVE-2026-41178CVE-2026-42767"
+      },
+      {
+        "description": "CVE-2022-27943 CVE-2025-27587 CVE-2026-41178 CVE-2026-42767",
+        "id": "CVE-2026-56852CVE-2026-73500GHSA-259r-337f-4rfwGHSA-hrxh-6v49-42gf"
+      }
+    ],
+    "full_text_snippet": "August 27, 2026\nMuleSoft announces the release of Omni Gateway 1.13.5.\nFixed Issues\nIssue Resolution\nID\nOmni Gateway running in Connected Mode no longer disconnects unexpectedly from Anypoint Platform under high-traffic conditions or when the remote server sends data without replying with protocol-level pong frames.\nW-23560278\nCustom policies no longer crash Omni Gateway with a segmentation fault ",
+    "detected_at": "2026-08-28T19:29:54+00:00"
+  },
   "1.13.4": {
     "version": "1.13.4",
     "url": "https://docs.mulesoft.com/release-notes/flex-gateway/flex-gateway-release-notes#1-13-4",
@@ -202,6 +293,99 @@
     ],
     "full_text_snippet": "May 11, 2026\nMuleSoft announces the release of Omni Gateway 1.13.0.\nWhat’s New\nFlex Gateway is now named to Omni Gateway.\nCurrently, this is a non-breaking change and only cosmetically affects the UI and documentation. This change shouldn’t affect CI/CD pipelines. There are no changes to these areas:\nAnypoint Platform CLI\nAnypoint Platform APIs\nLogging\nEnvironment variables\nDocumentation URL links",
     "detected_at": "2026-05-18T17:20:03+00:00"
+  },
+  "1.12.9": {
+    "version": "1.12.9",
+    "url": "https://docs.mulesoft.com/release-notes/flex-gateway/flex-gateway-release-notes#1-12-9",
+    "date": "August 27, 2026",
+    "summary": "MuleSoft announces the release of Omni Gateway 1.12.9.",
+    "whats_new": [
+      "The OpenTelemetry Collector is now upgraded to version 0.158.0."
+    ],
+    "fixed_issues": [
+      {
+        "description": "Omni Gateway running in Connected Mode no longer disconnects unexpectedly from Anypoint Platform under high-traffic conditions or when the remote server sends data without replying with protocol-level pong frames.",
+        "id": "W-23560278"
+      },
+      {
+        "description": "Custom policies no longer crash Omni Gateway with a segmentation fault when a response payload is larger than the buffer limit (1 MB by default). Use the FLEX_DOWNSTREAM_CONNECTION_BUFFER_LIMIT_BYTES environment variable to increase the buffer limit.",
+        "id": "W-23692178"
+      },
+      {
+        "description": "The Basic Authentication: LDAP policy no longer lets specially crafted usernames to manipulate the underlying LDAP search filter.",
+        "id": "W-23573199"
+      },
+      {
+        "description": "Resetting Redis shared storage no longer fails with a cross-slot error in cluster-mode deployments (such as AWS ElastiCache).",
+        "id": "W-23687400"
+      },
+      {
+        "description": "Control node no longer discards synchronization state after 14 days to prevent inconsistencies when a gateway reconnects following an extended outage.",
+        "id": "W-23692384"
+      },
+      {
+        "description": "Control node Redis shared storage no longer grows without bound over time from historical configuration-change data.",
+        "id": "W-23748466"
+      },
+      {
+        "description": "The configuration caching (control-node) temporal inconsistency in the watcher and notifier is now fixed.",
+        "id": "W-21764662"
+      },
+      {
+        "description": "Omni Gateway running in Connected Mode no longer disrupts running pods when its registration credentials are renewed.",
+        "id": "W-23820257"
+      },
+      {
+        "description": "Control node no longer delays propagating a configuration update or logs a false inconsistency warning after a transient failure while committing that update.",
+        "id": "W-23754016"
+      },
+      {
+        "description": "Control node no longer fails to apply deployment updates when multiple replicas write to the same resource at nearly the same time.",
+        "id": "W-23748463, W-23748465"
+      },
+      {
+        "description": "Custom policies no longer cause a memory leak that can increase memory usage over time.",
+        "id": "W-23941703"
+      },
+      {
+        "description": "Omni Gateway no longer produces a malformed path predicate (such as a duplicate or missing slash) when a negative-lookahead path pattern is combined with an API base path.",
+        "id": "W-23912976"
+      },
+      {
+        "description": "The Credential Injection OAuth 2.0 policy no longer ignores the configured caching duration when the OAuth 2.0 provider’s token response omits the token expiration value.",
+        "id": "W-23705875"
+      },
+      {
+        "description": "The Rate Limiting SLA policy with distributed rate limiting enabled no longer crashes the gateway (WASM trap, returning a 503 error instead of 429) under Redis latency and high concurrency on the same SLA tier.",
+        "id": "W-23652660"
+      },
+      {
+        "description": "The OpenID Connect OAuth 2.0 Token Enforcement and OAuth 2.0 Token Introspection policies no longer forward the raw error response from the introspection server to the client.",
+        "id": "W-23665332"
+      },
+      {
+        "description": "The OpenID Connect OAuth 2.0 Token Enforcement and OAuth 2.0 Token Introspection policies no longer return a 503 error on all requests when the exposeHeaders option is enabled and a token claim’s name contains characters that aren’t valid in an HTTP header name.",
+        "id": "W-23940967"
+      },
+      {
+        "description": "The contract collector now honors the Retry-After header and properly waits between polls when downloading API configurations.",
+        "id": "W-23460693"
+      },
+      {
+        "description": "The OAuth 2.0 Token Introspection policy no longer fails when the introspection URL includes an explicit default port.",
+        "id": "W-23471294"
+      },
+      {
+        "description": "These vulnerabilities detected by scanners are now fixed: CVE-2022-27943 CVE-2025-27587 CVE-2026-41178 CVE-2026-42767 CVE-2026-56852 CVE-2026-73500 GHSA-259r-337f-4rfw GHSA-hrxh-6v49-42gf",
+        "id": "CVE-2022-27943CVE-2025-27587CVE-2026-41178CVE-2026-42767"
+      },
+      {
+        "description": "CVE-2022-27943 CVE-2025-27587 CVE-2026-41178 CVE-2026-42767",
+        "id": "CVE-2026-56852CVE-2026-73500GHSA-259r-337f-4rfwGHSA-hrxh-6v49-42gf"
+      }
+    ],
+    "full_text_snippet": "August 27, 2026\nMuleSoft announces the release of Omni Gateway 1.12.9.\nWhat’s New\nThe OpenTelemetry Collector is now upgraded to version 0.158.0.\nFixed Issues\nIssue Resolution\nID\nOmni Gateway running in Connected Mode no longer disconnects unexpectedly from Anypoint Platform under high-traffic conditions or when the remote server sends data without replying with protocol-level pong frames.\nW-23560",
+    "detected_at": "2026-08-28T19:29:54+00:00"
   },
   "1.12.8": {
     "version": "1.12.8",
@@ -737,6 +921,65 @@
     ],
     "full_text_snippet": "This version of the product has entered\nExtended Support\n.\nOctober 13, 2025\nMuleSoft announces the release of Anypoint Flex Gateway 1.11.0.\nWhat’s New\nEnvoy is now updated to version 1.35.3.\nTLS 1.1 support is removed for enhanced security compliance.\nFlex Gateway now provides the outbound AWS Signature policy to inject client credentials into upstream requests.\nFlex Gateway now provides the outbo",
     "detected_at": "2026-05-18T17:20:03+00:00"
+  },
+  "1.9.16": {
+    "version": "1.9.16",
+    "url": "https://docs.mulesoft.com/release-notes/flex-gateway/flex-gateway-release-notes#1-9-16",
+    "date": "August 27, 2026",
+    "summary": "MuleSoft announces the release of Omni Gateway 1.9.16.",
+    "whats_new": [],
+    "fixed_issues": [
+      {
+        "description": "The Basic Authentication: LDAP policy no longer lets specially crafted usernames to manipulate the underlying LDAP search filter.",
+        "id": "W-23573199"
+      },
+      {
+        "description": "Resetting Redis shared storage no longer fails with a cross-slot error in cluster-mode deployments (such as AWS ElastiCache).",
+        "id": "W-23687400"
+      },
+      {
+        "description": "Control node no longer discards synchronization state after 14 days to prevent inconsistencies when a gateway reconnects following an extended outage.",
+        "id": "W-23692384"
+      },
+      {
+        "description": "The configuration caching (control-node) temporal inconsistency in the watcher and notifier is now fixed.",
+        "id": "W-21764662"
+      },
+      {
+        "description": "Configuration caching (control node) now works with AWS ElastiCache Serverless. Redis shared storage now uses the non-blocking SCAN command instead of KEYS . If your Redis access policy allows the KEYS command, update it to allow SCAN .",
+        "id": "W-23399906"
+      },
+      {
+        "description": "Control node Redis shared storage no longer grows without bound over time from historical configuration-change data.",
+        "id": "W-23748466"
+      },
+      {
+        "description": "Control node no longer fails to apply deployment updates when multiple replicas write to the same resource at nearly the same time.",
+        "id": "W-23748463, W-23748465"
+      },
+      {
+        "description": "Control node no longer delays propagating a configuration update or logs a false inconsistency warning after a transient failure while committing that update.",
+        "id": "W-23754016"
+      },
+      {
+        "description": "Omni Gateway running in Connected Mode no longer disrupts running pods when its registration credentials are renewed.",
+        "id": "W-23820257"
+      },
+      {
+        "description": "The contract collector now honors the Retry-After header and properly waits between polls when downloading API configurations.",
+        "id": "W-23460693"
+      },
+      {
+        "description": "These vulnerabilities detected by scanners are now fixed: CVE-2026-33818 CVE-2026-39821 CVE-2026-41178 CVE-2026-46600 CVE-2026-56852 CVE-2026-56853 CVE-2026-56858 CVE-2026-56859 CVE-2026-56860 CVE-2026-56862 CVE-2026-56864 CVE-2026-56865 CVE-2026-73500 GHSA-hrxh-6v49-42gf",
+        "id": "CVE-2026-33818CVE-2026-39821CVE-2026-41178CVE-2026-46600CVE-2026-56852CVE-2026-56853CVE-2026-56858"
+      },
+      {
+        "description": "CVE-2026-33818 CVE-2026-39821 CVE-2026-41178 CVE-2026-46600 CVE-2026-56852 CVE-2026-56853 CVE-2026-56858",
+        "id": "CVE-2026-56859CVE-2026-56860CVE-2026-56862CVE-2026-56864CVE-2026-56865CVE-2026-73500GHSA-hrxh-6v49-42gf"
+      }
+    ],
+    "full_text_snippet": "August 27, 2026\nMuleSoft announces the release of Omni Gateway 1.9.16.\nFixed Issues\nIssue Resolution\nID\nThe Basic Authentication: LDAP policy no longer lets specially crafted usernames to manipulate the underlying LDAP search filter.\nW-23573199\nResetting Redis shared storage no longer fails with a cross-slot error in cluster-mode deployments (such as AWS ElastiCache).\nW-23687400\nControl node no lo",
+    "detected_at": "2026-08-28T19:29:54+00:00"
   },
   "1.9.15": {
     "version": "1.9.15",
