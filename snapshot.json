@@ -1,4 +1,67 @@
 {
+  "1.14.0": {
+    "version": "1.14.0",
+    "url": "https://docs.mulesoft.com/release-notes/flex-gateway/flex-gateway-release-notes#1-14-0",
+    "date": "September 2, 2026",
+    "summary": "MuleSoft announces the release of Omni Gateway 1.14.0.",
+    "whats_new": [
+      "The JavaScript Scripting policy is added to run a user-supplied JavaScript module that can inspect and modify requests and responses directly from the gateway. See JavaScript Scripting Policy .",
+      "The GraphQL Access Control policy is added to authorize incoming GraphQL requests by evaluating Cedar-based access-control rules. See GraphQL Access Control Policy .",
+      "Local storage is now file-based instead of in-memory. State used by policies such as Rate Limiting and HTTP Caching are now retained when Omni Gateway is stopped or restarted.",
+      "Configuration caching (control node) is now enabled by default. The FLEX_DATASOURCE_CONTROL_NODE_ENABLED environment variable now defaults to true . To disable it, set the variable to false . See Configuring Omni Gateway Configuration Caching in Connected Mode .",
+      "The OpenID Connect OAuth 2.0 Token Enforcement policy now exposes the Validated Token TTL ( maxFederationExpirationTime ) and Maximum Cache Entries ( maxCacheSize ) settings in Connected Mode to control how long validated tokens are cached and how many entries are stored. See OpenID Connect OAuth 2.0 Token Enforcement Policy .",
+      "The JWT Validation policy now supports OAuth 2.0 Protected Resource Metadata (RFC 9728). When enabled, the policy serves a discovery document at the .well-known/oauth-protected-resource endpoint and adds a resource_metadata hint to the WWW-Authenticate header of 401 responses, so clients can locate the authorization server that protects the API. See JWT Validation Policy .",
+      "The Credential Injection OAuth 2.0 policy now supports adding custom parameters, such as audience , to the OAuth 2.0 token request body. See Credential Injection OAuth 2.0 Policy .",
+      "The Message Logging policy now supports data masking to detect and mask personally identifiable information (PII), such as email addresses, in log messages before they are written. You can select built-in PII types (Email, US SSN, Credit Card, and Phone Number) or add custom regex patterns. Data masking is available for both inbound and outbound message logging, and request and response bodies are forwarded to the upstream service unchanged. See Message Logging Policy and Outbound Message Logging Policy .",
+      "The Schema Validation policy now validates multipart/form-data requests against their OAS schema definitions, in addition to application/json request bodies. See Schema Validation Policy .",
+      "You can now configure the DNS refresh rate for upstream service clusters by setting the FLEX_DNS_REFRESH_RATE environment variable. The value is clamped between 5s and 60s , and defaults to 5s .",
+      "The flexctl dump CLI command now collects a full snapshot of the gateway’s runtime state into a single ZIP file, including resources, logs, and Envoy statistics. You can write the snapshot to a specific path or stream it to standard output. See Troubleshooting with the CLI .",
+      "The implementation of the DataWeave and SOAP policies is updated to improve policy performance, delivering higher throughput and lower latency.",
+      "The flexctl check http command now produces curl-style verbose output, logging request and response headers with > and < prefixes and writing the response body to standard output for easier scripting and inspection.",
+      "Flex Gateway deployments managed by Runtime Fabric for Kubernetes now support pod scheduling customizations (node selectors, tolerations, and affinity rules) defined through a KubernetesTemplate custom resource. Customizations take precedence over the corresponding chart-level settings when both are present.",
+      "Omni Gateway Docker images are now based on Debian 13 Distroless."
+    ],
+    "fixed_issues": [
+      {
+        "description": "The SOAP Validation policy no longer leaks temporary directories during configuration delivery. It now loads schema files whose paths contain spaces.",
+        "id": "W-23442789"
+      },
+      {
+        "description": "The WebSocket Connection Limit policy no longer omits rejected connections from the policy violations reported to Anypoint Monitoring.",
+        "id": "W-23173354"
+      },
+      {
+        "description": "Flex Gateway no longer rejects valid requests when an API specification (OAS) uses a decimal multipleOf constraint (such as 0.01, 0.001, or 0.1).",
+        "id": "W-23192298"
+      },
+      {
+        "description": "Omni Gateway no longer reports as ready when a deployment has failed (for example, when assets could not be downloaded), even when --allow-envoy-errors , --allow-api-errors , or --allow-policy-errors is set to true.",
+        "id": "W-23543048"
+      },
+      {
+        "description": "Flex Gateway no longer hangs when its shared storage configuration changes while the gateway is running.",
+        "id": "W-23573044"
+      },
+      {
+        "description": "Flex Gateway no longer fails to generate a valid FluentBit log configuration when a label used for log metadata (on the gateway, an API instance, or a service) has an empty value or contains spaces.",
+        "id": "W-23147140"
+      },
+      {
+        "description": "Flex Gateway no longer panics when the status and dump endpoints are called before the gateway configuration is fully available during startup.",
+        "id": "W-23950422"
+      },
+      {
+        "description": "These vulnerabilities detected by scanners are now fixed: CVE-2026-33818 CVE-2026-39821 CVE-2026-46600 CVE-2026-56853 CVE-2026-56858 CVE-2026-56859 CVE-2026-56860 CVE-2026-56862",
+        "id": "CVE-2026-33818CVE-2026-39821CVE-2026-46600CVE-2026-56853"
+      },
+      {
+        "description": "CVE-2026-33818 CVE-2026-39821 CVE-2026-46600 CVE-2026-56853",
+        "id": "CVE-2026-56858CVE-2026-56859CVE-2026-56860CVE-2026-56862"
+      }
+    ],
+    "full_text_snippet": "September 2, 2026\nMuleSoft announces the release of Omni Gateway 1.14.0.\nWhat’s New\nThe JavaScript Scripting policy is added to run a user-supplied JavaScript module that can inspect and modify requests and responses directly from the gateway.\nSee\nJavaScript Scripting Policy\n.\nThe GraphQL Access Control policy is added to authorize incoming GraphQL requests by evaluating Cedar-based access-control",
+    "detected_at": "2026-09-05T11:18:52+00:00"
+  },
   "1.13.5": {
     "version": "1.13.5",
     "url": "https://docs.mulesoft.com/release-notes/flex-gateway/flex-gateway-release-notes#1-13-5",
@@ -168,7 +231,7 @@
       },
       {
         "description": "The SOAP Schema Validation policy now correctly processes requests containing nested XOP elements in MTOM payloads",
-        "id": "W-18172654"
+        "id": "W-21779437"
       },
       {
         "description": "These vulnerabilities detected by scanners are now fixed: CVE-2026-34182 CVE-2026-45447 CVE-2026-34180 CVE-2026-7383 CVE-2026-45445 CVE-2026-9076 CVE-2026-47774 CVE-2026-47220 CVE-2026-48706 CVE-2026-48042 CVE-2026-48044 CVE-2026-47204 CVE-2026-47221 CVE-2026-48497 CVE-2026-48743 CVE-2026-27145 CVE-2026-42504",
