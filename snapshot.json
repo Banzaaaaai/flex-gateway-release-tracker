@@ -1,4 +1,56 @@
 {
+  "1.14.1": {
+    "version": "1.14.1",
+    "url": "https://docs.mulesoft.com/release-notes/flex-gateway/flex-gateway-release-notes#1-14-1",
+    "date": "September 25, 2026",
+    "summary": "MuleSoft announces the release of Omni Gateway 1.14.1.",
+    "whats_new": [
+      "Managed Omni Gateway deployments on Runtime Fabric now support forward proxy configuration.",
+      "Configuration resources now support environment variable expansion in string and scalar values.",
+      "Self-Managed Omni Gateway can now internally rewrite requests that exactly match a configured slashless API base path, such as /api , to its slash-terminated form ( /api/ ). Set FLEX_BASE_PATH_CANONICALIZER_ENABLED to true to enable this behavior.",
+      "The Message Logging policy now supports masking regex capture groups while preserving the rest of the matched value."
+    ],
+    "fixed_issues": [
+      {
+        "description": "Configuration caching (control node) reliability is improved, including Redis recovery, deployment status, and configuration synchronization.",
+        "id": "W-22456427"
+      },
+      {
+        "description": "Log records larger than 32 KB no longer split into separate lines that lose their logging metadata. Oversized records are truncated instead.",
+        "id": "W-24055090"
+      },
+      {
+        "description": "Omni Gateway running in Connected Mode no longer sends duplicate runtime logs to Anypoint Platform after logging configuration changes.",
+        "id": "W-24037601"
+      },
+      {
+        "description": "Managed Omni Gateway deployments on Runtime Fabric no longer fail when the same image pull secret is supplied twice.",
+        "id": "W-24195540"
+      },
+      {
+        "description": "The Basic Authentication: LDAP policy no longer includes sensitive authentication data in logs.",
+        "id": "W-24118398"
+      },
+      {
+        "description": "The OpenID Connect OAuth 2.0 Token Enforcement policy now correctly applies defaultTLS.outboundPolicyCalls to identity-provider token requests without applying those settings to Anypoint Platform connections.",
+        "id": "W-24268807"
+      },
+      {
+        "description": "Tracing now preserves custom server span names without forwarding the x-envoy-decorator-operation header to upstream services. Upstream-only span tags no longer appear on server spans.",
+        "id": "W-23923463"
+      },
+      {
+        "description": "These vulnerabilities detected by scanners are now fixed: CVE-2026-5450 CVE-2026-5928 GHSA-2v4p-qf9q-27wj GHSA-8wmf-6v46-5gfg",
+        "id": "CVE-2026-5450CVE-2026-5928"
+      },
+      {
+        "description": "CVE-2026-5450 CVE-2026-5928",
+        "id": "GHSA-2v4p-qf9q-27wjGHSA-8wmf-6v46-5gfg"
+      }
+    ],
+    "full_text_snippet": "September 25, 2026\nMuleSoft announces the release of Omni Gateway 1.14.1.\nWhat’s New\nManaged Omni Gateway deployments on Runtime Fabric now support forward proxy configuration.\nConfiguration\nresources now support environment variable expansion in string and scalar values.\nSelf-Managed Omni Gateway can now internally rewrite requests that exactly match a configured slashless API base path, such as\n",
+    "detected_at": "2026-09-29T14:10:21+00:00"
+  },
   "1.14.0": {
     "version": "1.14.0",
     "url": "https://docs.mulesoft.com/release-notes/flex-gateway/flex-gateway-release-notes#1-14-0",
@@ -61,6 +113,57 @@
     ],
     "full_text_snippet": "September 2, 2026\nMuleSoft announces the release of Omni Gateway 1.14.0.\nWhat’s New\nThe JavaScript Scripting policy is added to run a user-supplied JavaScript module that can inspect and modify requests and responses directly from the gateway.\nSee\nJavaScript Scripting Policy\n.\nThe GraphQL Access Control policy is added to authorize incoming GraphQL requests by evaluating Cedar-based access-control",
     "detected_at": "2026-09-05T11:18:52+00:00"
+  },
+  "1.13.6": {
+    "version": "1.13.6",
+    "url": "https://docs.mulesoft.com/release-notes/flex-gateway/flex-gateway-release-notes#1-13-6",
+    "date": "September 24, 2026",
+    "summary": "MuleSoft announces the release of Omni Gateway 1.13.6.",
+    "whats_new": [],
+    "fixed_issues": [
+      {
+        "description": "Updating gateway.configuration through the Omni Gateway Helm chart no longer causes a full pod rollout or removes the active configuration.",
+        "id": "W-23969934"
+      },
+      {
+        "description": "Configuration caching (control node) reliability is improved, including Redis recovery, deployment status, and configuration synchronization.",
+        "id": "W-22456427"
+      },
+      {
+        "description": "The FLEX_FLUENTBIT_OUTPUT_STORAGE_TOTAL_LIMIT_SIZE environment variable now limits filesystem buffering for all Fluent Bit outputs.",
+        "id": "W-24062935"
+      },
+      {
+        "description": "Log records larger than 32 KB no longer split into separate lines that lose their logging metadata. Oversized records are truncated instead.",
+        "id": "W-24055090"
+      },
+      {
+        "description": "Omni Gateway running in Connected Mode no longer sends duplicate runtime logs to Anypoint Platform after logging configuration changes.",
+        "id": "W-24037601"
+      },
+      {
+        "description": "Managed Omni Gateway deployments on Runtime Fabric no longer fail when the same image pull secret is supplied twice.",
+        "id": "W-24195540"
+      },
+      {
+        "description": "The OpenID Connect OAuth 2.0 Token Enforcement policy now correctly applies defaultTLS.outboundPolicyCalls to identity-provider token requests without applying those settings to Anypoint Platform connections.",
+        "id": "W-24268807"
+      },
+      {
+        "description": "The Basic Authentication: LDAP policy no longer includes sensitive authentication data in logs.",
+        "id": "W-24118398"
+      },
+      {
+        "description": "These vulnerabilities detected by scanners are now fixed: CVE-2026-14456 CVE-2026-14457 CVE-2026-18798 CVE-2026-33818 CVE-2026-39821 CVE-2026-46600 CVE-2026-5450 CVE-2026-54874 CVE-2026-56853 CVE-2026-56854 CVE-2026-56855 CVE-2026-56858 CVE-2026-56859 CVE-2026-56860 CVE-2026-56862 CVE-2026-5928 CVE-2026-63072 CVE-2026-63073 CVE-2026-63074 CVE-2026-63075 CVE-2026-63076 CVE-2026-75803 CVE-2026-78662 CVE-2026-81870 CVE-2026-81871 CVE-2026-84303 CVE-2026-84304 CVE-2026-84445 GHSA-w67g-5rqw-f597",
+        "id": "CVE-2026-14456CVE-2026-14457CVE-2026-18798CVE-2026-33818CVE-2026-39821CVE-2026-46600CVE-2026-5450CVE-2026-54874CVE-2026-56853CVE-2026-56854CVE-2026-56855CVE-2026-56858CVE-2026-56859CVE-2026-56860CVE-2026-56862"
+      },
+      {
+        "description": "CVE-2026-14456 CVE-2026-14457 CVE-2026-18798 CVE-2026-33818 CVE-2026-39821 CVE-2026-46600 CVE-2026-5450 CVE-2026-54874 CVE-2026-56853 CVE-2026-56854 CVE-2026-56855 CVE-2026-56858 CVE-2026-56859 CVE-2026-56860 CVE-2026-56862",
+        "id": "CVE-2026-5928CVE-2026-63072CVE-2026-63073CVE-2026-63074CVE-2026-63075CVE-2026-63076CVE-2026-75803CVE-2026-78662CVE-2026-81870CVE-2026-81871CVE-2026-84303CVE-2026-84304CVE-2026-84445GHSA-w67g-5rqw-f597"
+      }
+    ],
+    "full_text_snippet": "September 24, 2026\nMuleSoft announces the release of Omni Gateway 1.13.6.\nFixed Issues\nIssue Resolution\nID\nUpdating\ngateway.configuration\nthrough the Omni Gateway Helm chart no longer causes a full pod rollout or removes the active configuration.\nW-23969934\nConfiguration caching (control node) reliability is improved, including Redis recovery, deployment status, and configuration synchronization.\n",
+    "detected_at": "2026-09-29T14:10:21+00:00"
   },
   "1.13.5": {
     "version": "1.13.5",
@@ -356,6 +459,41 @@
     ],
     "full_text_snippet": "May 11, 2026\nMuleSoft announces the release of Omni Gateway 1.13.0.\nWhat’s New\nFlex Gateway is now named to Omni Gateway.\nCurrently, this is a non-breaking change and only cosmetically affects the UI and documentation. This change shouldn’t affect CI/CD pipelines. There are no changes to these areas:\nAnypoint Platform CLI\nAnypoint Platform APIs\nLogging\nEnvironment variables\nDocumentation URL links",
     "detected_at": "2026-05-18T17:20:03+00:00"
+  },
+  "1.12.10": {
+    "version": "1.12.10",
+    "url": "https://docs.mulesoft.com/release-notes/flex-gateway/flex-gateway-release-notes#1-12-10",
+    "date": "September 25, 2026",
+    "summary": "MuleSoft announces the release of Omni Gateway 1.12.10.",
+    "whats_new": [],
+    "fixed_issues": [
+      {
+        "description": "Configuration caching (control node) reliability is improved, including Redis recovery, deployment status, and configuration synchronization.",
+        "id": "W-22456427"
+      },
+      {
+        "description": "The FLEX_FLUENTBIT_OUTPUT_STORAGE_TOTAL_LIMIT_SIZE environment variable now limits filesystem buffering for all Fluent Bit outputs.",
+        "id": "W-24062935"
+      },
+      {
+        "description": "Omni Gateway no longer splits log entries longer than 8 KB into continuation lines that can be misclassified. Lines up to 32 KB are preserved, and longer lines are truncated and marked.",
+        "id": "W-24055090"
+      },
+      {
+        "description": "Managed Omni Gateway deployments on Runtime Fabric no longer fail when the same image pull secret is supplied by both Gateway Manager and Runtime Fabric.",
+        "id": "W-24195540"
+      },
+      {
+        "description": "These vulnerabilities detected by scanners are now fixed: CVE-2026-14456 CVE-2026-14457 CVE-2026-18798 CVE-2026-33818 CVE-2026-39821 CVE-2026-46600 CVE-2026-5450 CVE-2026-54874 CVE-2026-56853 CVE-2026-56854 CVE-2026-56855 CVE-2026-56858 CVE-2026-56859 CVE-2026-56860 CVE-2026-56862 CVE-2026-5928 CVE-2026-63072 CVE-2026-63073 CVE-2026-63074 CVE-2026-63075 CVE-2026-63076 CVE-2026-75803 CVE-2026-78662 CVE-2026-81870 CVE-2026-81871 CVE-2026-84303 CVE-2026-84304 CVE-2026-84445 GHSA-w67g-5rqw-f597",
+        "id": "CVE-2026-14456CVE-2026-14457CVE-2026-18798CVE-2026-33818CVE-2026-39821CVE-2026-46600CVE-2026-5450CVE-2026-54874CVE-2026-56853CVE-2026-56854CVE-2026-56855CVE-2026-56858CVE-2026-56859CVE-2026-56860CVE-2026-56862"
+      },
+      {
+        "description": "CVE-2026-14456 CVE-2026-14457 CVE-2026-18798 CVE-2026-33818 CVE-2026-39821 CVE-2026-46600 CVE-2026-5450 CVE-2026-54874 CVE-2026-56853 CVE-2026-56854 CVE-2026-56855 CVE-2026-56858 CVE-2026-56859 CVE-2026-56860 CVE-2026-56862",
+        "id": "CVE-2026-5928CVE-2026-63072CVE-2026-63073CVE-2026-63074CVE-2026-63075CVE-2026-63076CVE-2026-75803CVE-2026-78662CVE-2026-81870CVE-2026-81871CVE-2026-84303CVE-2026-84304CVE-2026-84445GHSA-w67g-5rqw-f597"
+      }
+    ],
+    "full_text_snippet": "September 25, 2026\nMuleSoft announces the release of Omni Gateway 1.12.10.\nFixed Issues\nIssue Resolution\nID\nConfiguration caching (control node) reliability is improved, including Redis recovery, deployment status, and configuration synchronization.\nW-22456427\nThe\nFLEX_FLUENTBIT_OUTPUT_STORAGE_TOTAL_LIMIT_SIZE\nenvironment variable now limits filesystem buffering for all Fluent Bit outputs.\nW-24062",
+    "detected_at": "2026-09-29T14:10:21+00:00"
   },
   "1.12.9": {
     "version": "1.12.9",
@@ -716,6 +854,92 @@
     ],
     "full_text_snippet": "February 25, 2026\nMuleSoft announces the release of Anypoint Flex Gateway 1.12.0.\nWhat’s New\nManaged Flex Gateway now supports Runtime Fabric deployments.\nSee\nDeploying Managed Flex Gateway on Runtime Fabric\n.\nExtra Large Managed Flex Gateway is now available for production purposes with higher throughput and more process demanding policies.\nTo learn more about the performance metrics for Extra La",
     "detected_at": "2026-05-18T17:20:03+00:00"
+  },
+  "1.9.17": {
+    "version": "1.9.17",
+    "url": "https://docs.mulesoft.com/release-notes/flex-gateway/flex-gateway-release-notes#1-9-17",
+    "date": "September 24, 2026",
+    "summary": "MuleSoft announces the release of Omni Gateway 1.9.17.",
+    "whats_new": [],
+    "fixed_issues": [
+      {
+        "description": "Updating gateway.configuration through the Omni Gateway Helm chart no longer causes a full pod rollout or removes the active configuration.",
+        "id": "W-23969934"
+      },
+      {
+        "description": "Configuration caching (control node) reliability is improved, including Redis recovery, deployment status, and configuration synchronization.",
+        "id": "W-22456427"
+      },
+      {
+        "description": "The FLEX_FLUENTBIT_OUTPUT_STORAGE_TOTAL_LIMIT_SIZE environment variable now limits filesystem buffering for all Fluent Bit outputs.",
+        "id": "W-24062935"
+      },
+      {
+        "description": "Managed Omni Gateway deployments on Runtime Fabric no longer fail when the same image pull secret is supplied by both Gateway Manager and Runtime Fabric.",
+        "id": "W-24195540"
+      }
+    ],
+    "full_text_snippet": "September 24, 2026\nMuleSoft announces the release of Omni Gateway 1.9.17.\nFixed Issues\nIssue Resolution\nID\nUpdating\ngateway.configuration\nthrough the Omni Gateway Helm chart no longer causes a full pod rollout or removes the active configuration.\nW-23969934\nConfiguration caching (control node) reliability is improved, including Redis recovery, deployment status, and configuration synchronization.\n",
+    "detected_at": "2026-09-29T14:10:21+00:00"
+  },
+  "1.9.16": {
+    "version": "1.9.16",
+    "url": "https://docs.mulesoft.com/release-notes/flex-gateway/flex-gateway-release-notes#1-9-16",
+    "date": "August 27, 2026",
+    "summary": "MuleSoft announces the release of Omni Gateway 1.9.16.",
+    "whats_new": [],
+    "fixed_issues": [
+      {
+        "description": "The Basic Authentication: LDAP policy no longer lets specially crafted usernames to manipulate the underlying LDAP search filter.",
+        "id": "W-23573199"
+      },
+      {
+        "description": "Resetting Redis shared storage no longer fails with a cross-slot error in cluster-mode deployments (such as AWS ElastiCache).",
+        "id": "W-23687400"
+      },
+      {
+        "description": "Control node no longer discards synchronization state after 14 days to prevent inconsistencies when a gateway reconnects following an extended outage.",
+        "id": "W-23692384"
+      },
+      {
+        "description": "The configuration caching (control-node) temporal inconsistency in the watcher and notifier is now fixed.",
+        "id": "W-21764662"
+      },
+      {
+        "description": "Configuration caching (control node) now works with AWS ElastiCache Serverless. Redis shared storage now uses the non-blocking SCAN command instead of KEYS . If your Redis access policy allows the KEYS command, update it to allow SCAN .",
+        "id": "W-23399906"
+      },
+      {
+        "description": "Control node Redis shared storage no longer grows without bound over time from historical configuration-change data.",
+        "id": "W-23748466"
+      },
+      {
+        "description": "Control node no longer fails to apply deployment updates when multiple replicas write to the same resource at nearly the same time.",
+        "id": "W-23748463, W-23748465"
+      },
+      {
+        "description": "Control node no longer delays propagating a configuration update or logs a false inconsistency warning after a transient failure while committing that update.",
+        "id": "W-23754016"
+      },
+      {
+        "description": "Omni Gateway running in Connected Mode no longer disrupts running pods when its registration credentials are renewed.",
+        "id": "W-23820257"
+      },
+      {
+        "description": "The contract collector now honors the Retry-After header and properly waits between polls when downloading API configurations.",
+        "id": "W-23460693"
+      },
+      {
+        "description": "These vulnerabilities detected by scanners are now fixed: CVE-2026-33818 CVE-2026-39821 CVE-2026-41178 CVE-2026-46600 CVE-2026-56852 CVE-2026-56853 CVE-2026-56858 CVE-2026-56859 CVE-2026-56860 CVE-2026-56862 CVE-2026-56864 CVE-2026-56865 CVE-2026-73500 GHSA-hrxh-6v49-42gf",
+        "id": "CVE-2026-33818CVE-2026-39821CVE-2026-41178CVE-2026-46600CVE-2026-56852CVE-2026-56853CVE-2026-56858"
+      },
+      {
+        "description": "CVE-2026-33818 CVE-2026-39821 CVE-2026-41178 CVE-2026-46600 CVE-2026-56852 CVE-2026-56853 CVE-2026-56858",
+        "id": "CVE-2026-56859CVE-2026-56860CVE-2026-56862CVE-2026-56864CVE-2026-56865CVE-2026-73500GHSA-hrxh-6v49-42gf"
+      }
+    ],
+    "full_text_snippet": "August 27, 2026\nMuleSoft announces the release of Omni Gateway 1.9.16.\nFixed Issues\nIssue Resolution\nID\nThe Basic Authentication: LDAP policy no longer lets specially crafted usernames to manipulate the underlying LDAP search filter.\nW-23573199\nResetting Redis shared storage no longer fails with a cross-slot error in cluster-mode deployments (such as AWS ElastiCache).\nW-23687400\nControl node no lo",
+    "detected_at": "2026-09-29T14:10:21+00:00"
   },
   "1.9.15": {
     "version": "1.9.15",
