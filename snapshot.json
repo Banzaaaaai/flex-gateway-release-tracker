@@ -1,4 +1,27 @@
 {
+  "1.14.2": {
+    "version": "1.14.2",
+    "url": "https://docs.mulesoft.com/release-notes/flex-gateway/flex-gateway-release-notes#1-14-2",
+    "date": "October 1, 2026",
+    "summary": "MuleSoft announces the release of Omni Gateway 1.14.2.",
+    "whats_new": [],
+    "fixed_issues": [
+      {
+        "description": "The JWT Validation, OpenID Connect OAuth 2.0 Token Enforcement, and OAuth 2.0 Token Introspection policies now preserve path segments and trailing slashes from consumer URLs when generating protected resource metadata URLs.",
+        "id": "W-24119444"
+      },
+      {
+        "description": "Omni Gateway now preserves percent-encoded reserved characters, such as %2F and %3A , in upstream URL paths when forwarding requests to backend services.",
+        "id": "W-24135806"
+      },
+      {
+        "description": "Per-API message logs in API Manager now populate correctly for Omni Gateway registrations that use v1 URLs.",
+        "id": "W-24332213"
+      }
+    ],
+    "full_text_snippet": "October 1, 2026\nMuleSoft announces the release of Omni Gateway 1.14.2.\nFixed Issues\nIssue Resolution\nID\nThe JWT Validation, OpenID Connect OAuth 2.0 Token Enforcement, and OAuth 2.0 Token Introspection policies now preserve path segments and trailing slashes from consumer URLs when generating protected resource metadata URLs.\nW-24119444\nOmni Gateway now preserves percent-encoded reserved character",
+    "detected_at": "2026-10-02T13:58:42+00:00"
+  },
   "1.14.1": {
     "version": "1.14.1",
     "url": "https://docs.mulesoft.com/release-notes/flex-gateway/flex-gateway-release-notes#1-14-1",
@@ -103,7 +126,7 @@
         "id": "W-23950422"
       },
       {
-        "description": "These vulnerabilities detected by scanners are now fixed: CVE-2026-33818 CVE-2026-39821 CVE-2026-46600 CVE-2026-56853 CVE-2026-56858 CVE-2026-56859 CVE-2026-56860 CVE-2026-56862",
+        "description": "These vulnerabilities detected by scanners are now fixed: CVE-2026-33818 CVE-2026-39821 CVE-2026-46600 CVE-2026-56853 CVE-2026-56858 CVE-2026-56859 CVE-2026-56860 CVE-2026-56862 CVE-2026-56864 CVE-2026-56865",
         "id": "CVE-2026-33818CVE-2026-39821CVE-2026-46600CVE-2026-56853"
       },
       {
