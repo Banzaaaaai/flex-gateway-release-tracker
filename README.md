@@ -17,7 +17,6 @@ Runs automatically every day at **09:25 Madrid time** via GitHub Actions (DST-ad
 | **DST auto-adjustment** | `dst_adjuster.yml` patches the cron each March/October — 09:25 Madrid year-round |
 | **Run log** | Appends a JSON entry to `run_log.json` after every run (status, counts, duration) |
 | **Status badge** | Writes `badge.json` (Shields.io endpoint format) after every run |
-| **Monthly digest** | First day of each month: sends a stats summary (runs, new releases, version breakdown) |
 | **Snapshot size guard** | When `snapshot.json` exceeds 500 KB, archives entries older than 2 years automatically |
 | **Offline unit tests** | `tests/test_parser.py` — 25 tests covering parser, version classifier, and diff logic |
 
@@ -88,7 +87,7 @@ Runs automatically every day at **09:25 Madrid time** via GitHub Actions (DST-ad
 | `run_log.json` | Per-run audit log (auto-updated, last 365 entries) |
 | `badge.json` | Shields.io endpoint — embed in README as a live badge |
 | `requirements.txt` | Python dependencies |
-| `.github/workflows/tracker.yml` | Daily + monthly schedule |
+| `.github/workflows/tracker.yml` | Daily schedule |
 | `.github/workflows/dst_adjuster.yml` | Automatic DST cron patching |
 | `tests/test_parser.py` | Offline unit tests for parser, classifier, diff |
 
@@ -101,12 +100,6 @@ After the first run, add this to any README or dashboard:
 ```markdown
 ![Flex Tracker](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/Banzaaaaai/flex-gateway-release-tracker/main/badge.json)
 ```
-
----
-
-## Monthly digest
-
-Sent automatically on the 1st of each month. Includes: runs, successful runs, new releases found, emails sent, staleness alerts, and a MAJOR/MINOR/PATCH breakdown of the full snapshot. Trigger manually via **Run workflow → `monthly_digest = true`**.
 
 ---
 
@@ -148,12 +141,10 @@ Delete `snapshot.json` before the first local run to treat all current versions 
 
 ## Schedule
 
-| Tracker | Daily cron | Monthly digest |
-|---|---|---|
-| Qualys Release Tracker | `25 3–8 * * *` (DST-adjusted) | `0 8 1 * *` |
-| **Flex Gateway Tracker** | **`25 7–8 * * *` (DST-adjusted)** | **`30 8 1 * *`** |
-
-Staggered by 30 minutes on the monthly digest to avoid concurrent runs.
+| Tracker | Daily cron |
+|---|---|
+| Qualys Release Tracker | `25 3–8 * * *` (DST-adjusted) |
+| **Flex Gateway Tracker** | **`25 7–8 * * *` (DST-adjusted)** |
 
 ---
 

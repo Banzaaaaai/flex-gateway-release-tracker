@@ -8,13 +8,11 @@ Improvements vs v1:
   • Staleness detection                        (check_staleness)
   • Run log in the repo                        (append_run_log)
   • GitHub Pages status badge                  (write_badge)
-  • Monthly digest summary                     (send_monthly_digest, MONTHLY_DIGEST env)
   • Snapshot size guard + auto-archive         (snapshot_size_guard)
 
 Environment variables (GitHub Actions secrets):
   SMTP_HOST, SMTP_PORT, SMTP_USER, SMTP_PASSWORD, EMAIL_TO
   FORCE_NOTIFY    — "true" to send email even when no new releases
-  MONTHLY_DIGEST  — "true" to send monthly stats digest instead of tracker run
   LOG_LEVEL       — DEBUG | INFO (default INFO)
 """
 
@@ -586,134 +584,6 @@ def build_staleness_email_html(days: int, total: int) -> str:
 </body></html>"""
 
 
-VERSION_RE = re.compile(r"^\d+(\.\d+)*$")
-
-
-def build_monthly_digest_html(
-    run_log: list[dict], snapshot: dict, target_month: datetime | None = None
-) -> str:
-    now        = datetime.now(timezone.utc)
-    target     = target_month or now
-    month_name = target.strftime("%B %Y")
-
-    month_start = target.replace(day=1, hour=0, minute=0, second=0, microsecond=0)
-    month_end = (
-        month_start.replace(year=month_start.year + 1, month=1)
-        if month_start.month == 12
-        else month_start.replace(month=month_start.month + 1)
-    )
-    ms_iso = month_start.isoformat(timespec="seconds")
-    me_iso = month_end.isoformat(timespec="seconds")
-
-    month_entries = [
-        e for e in run_log
-        if ms_iso <= e.get("timestamp", "") < me_iso
-    ]
-    total_runs   = len(month_entries)
-    success_runs = sum(1 for e in month_entries if e.get("status") == "success")
-    new_found    = sum(e.get("new_releases", 0) for e in month_entries)
-    emails_sent  = sum(1 for e in month_entries if e.get("email_sent"))
-    stale_alerts = sum(1 for e in month_entries if e.get("stale_alert"))
-
-    # Version type breakdown across snapshot
-    major = sum(1 for v in snapshot if classify_version(v) == "major")
-    minor = sum(1 for v in snapshot if classify_version(v) == "minor")
-    patch = sum(1 for v in snapshot if classify_version(v) == "patch")
-
-    # Versions actually detected/released this calendar month
-    released = sorted(
-        ((v, e) for v, e in snapshot.items()
-         if ms_iso <= e.get("detected_at", "") < me_iso),
-        key=lambda ve: ve[1].get("detected_at", ""),
-    )
-    released_rows = ""
-    for version, entry in released:
-        suspect = not VERSION_RE.match(version)
-        vtype = classify_version(version) if not suspect else "?"
-        colour = VERSION_COLORS.get(vtype, "#757575")
-        label = f"{version}" + (" \u26a0\ufe0f not a version-like string" if suspect else "")
-        badge = f"<span style='{BADGE_STYLE}background:{colour}'>{vtype.upper()}</span>"
-        date_str = entry.get("date") or "&mdash;"
-        url = entry.get("url", "")
-        released_rows += f"""
-        <tr>
-          <td style="padding:10px 12px;border-bottom:1px solid #eee;vertical-align:top;">
-            <a href="{url}" style="color:#0d47a1;font-weight:600;text-decoration:none;font-size:13px;">{label}</a>
-          </td>
-          <td style="padding:10px 12px;border-bottom:1px solid #eee;vertical-align:top;">{badge}</td>
-          <td style="padding:10px 12px;border-bottom:1px solid #eee;vertical-align:top;font-size:12px;white-space:nowrap;">{date_str}</td>
-        </tr>"""
-    if not released_rows:
-        released_rows = '<tr><td colspan="3" style="padding:10px 12px;color:#888;">No versions detected this month.</td></tr>'
-    released_section = f"""
-    <h3 style="font-size:14px;color:#0d47a1;margin:22px 0 10px;">
-      Versions released &mdash; {month_name} ({len(released)})
-    </h3>
-    <table style="width:100%;border-collapse:collapse;font-size:13px;">
-      <thead>
-        <tr style="background:#f0f4f8;">
-          <th style="padding:8px 12px;text-align:left;color:#444;font-weight:700;border-bottom:2px solid #dde3ea;width:45%;">Version</th>
-          <th style="padding:8px 12px;text-align:left;color:#444;font-weight:700;border-bottom:2px solid #dde3ea;width:20%;">Type</th>
-          <th style="padding:8px 12px;text-align:left;color:#444;font-weight:700;border-bottom:2px solid #dde3ea;width:35%;">Date</th>
-        </tr>
-      </thead>
-      <tbody>{released_rows}</tbody>
-    </table>"""
-
-    def stat_cell(value, label, colour="#0d47a1"):
-        return (
-            f"<td style='text-align:center;padding:16px 10px;'>"
-            f"<div style='font-size:28px;font-weight:700;color:{colour};'>{value}</div>"
-            f"<div style='font-size:11px;color:#888;margin-top:4px;'>{label}</div></td>"
-        )
-
-    return f"""<!DOCTYPE html>
-<html><head><meta charset="utf-8"></head>
-<body style="font-family:Arial,sans-serif;background:#f4f6f9;margin:0;padding:20px;">
-<div style="max-width:680px;margin:0 auto;background:#fff;border-radius:6px;
-            box-shadow:0 2px 8px rgba(0,0,0,.09);overflow:hidden;">
-  <div style="background:#0d47a1;padding:24px 28px;">
-    <h1 style="margin:0;color:#fff;font-size:20px;">📊 Flex Gateway Tracker — Monthly Digest</h1>
-    <p style="margin:6px 0 0;color:#90caf9;font-size:13px;">{month_name}</p>
-  </div>
-  <div style="padding:20px 28px;">
-    <p style="color:#555;font-size:13px;margin-top:0;">Activity summary for the past 30 days.</p>
-    <table style="width:100%;border-collapse:collapse;background:#f8fafc;border-radius:6px;">
-      <tr>
-        {stat_cell(total_runs,   "Runs")}
-        {stat_cell(success_runs, "Successful")}
-        {stat_cell(new_found,    "New Releases", "#2e7d32")}
-        {stat_cell(emails_sent,  "Emails Sent")}
-        {stat_cell(stale_alerts, "Staleness Alerts", "#f57c00" if stale_alerts else "#0d47a1")}
-      </tr>
-    </table>
-
-    <h3 style="font-size:14px;color:#0d47a1;margin:22px 0 10px;">
-      Snapshot version type breakdown ({len(snapshot)} total)
-    </h3>
-    <table style="width:100%;border-collapse:collapse;font-size:13px;">
-      <tr>
-        <td style="padding:8px 12px;background:#ffebee;border-radius:4px;font-weight:700;color:#c62828;">MAJOR releases</td>
-        <td style="padding:8px 12px;text-align:right;font-weight:700;">{major}</td>
-      </tr>
-      <tr>
-        <td style="padding:8px 12px;background:#e3f2fd;border-radius:4px;font-weight:700;color:#1565c0;">MINOR releases</td>
-        <td style="padding:8px 12px;text-align:right;font-weight:700;">{minor}</td>
-      </tr>
-      <tr>
-        <td style="padding:8px 12px;background:#e8f5e9;border-radius:4px;font-weight:700;color:#2e7d32;">PATCH releases</td>
-        <td style="padding:8px 12px;text-align:right;font-weight:700;">{patch}</td>
-      </tr>
-    </table>
-    {released_section}
-  </div>
-  <div style="background:#f0f4f8;padding:12px 28px;font-size:11px;color:#aaa;text-align:center;">
-    Automated by <strong>flex-gateway-release-tracker</strong> · GitHub Actions
-  </div>
-</div>
-</body></html>"""
-
-
 # ── Email sender ───────────────────────────────────────────────────────────────
 
 def _send(subject: str, html_body: str) -> None:
@@ -750,33 +620,8 @@ def send_failure_email(error_summary: str) -> None:
 def main() -> None:
     t_start      = time.monotonic()
     force_notify = os.getenv("FORCE_NOTIFY",   "").lower() in ("true", "1", "yes")
-    monthly      = os.getenv("MONTHLY_DIGEST", "").lower() in ("true", "1", "yes")
 
     log.info("=== Flex Gateway Release Tracker starting ===")
-
-    # Monthly digest mode — send stats then exit (no fetch needed)
-    if monthly:
-        log.info("MONTHLY_DIGEST=true — sending digest and exiting")
-        snapshot = load_snapshot() if SNAPSHOT_PATH.exists() else {}
-        run_log: list[dict] = []
-        if RUN_LOG_FILE.exists():
-            try:
-                run_log = json.loads(RUN_LOG_FILE.read_text(encoding="utf-8"))
-            except json.JSONDecodeError:
-                pass
-        digest_month_env = os.getenv("DIGEST_MONTH", "").strip()
-        target_month = None
-        if digest_month_env:
-            target_month = datetime.strptime(digest_month_env, "%Y-%m").replace(
-                tzinfo=timezone.utc
-            )
-            log.info("DIGEST_MONTH=%s — targeting that month", digest_month_env)
-        month_name = (target_month or datetime.now(timezone.utc)).strftime("%B %Y")
-        _send(
-            f"[Flex Tracker] \U0001F4CA Monthly digest — {month_name}",
-            build_monthly_digest_html(run_log, snapshot, target_month),
-        )
-        return
 
     status     = "success"
     error_msg  = ""

@@ -5,22 +5,12 @@ on:
     # Daily tracker — 07:25 UTC = 09:25 Madrid (CEST, summer)
     # DST adjuster patches this line automatically each Oct/Mar
     - cron: "25 7 * * *"
-    # Monthly digest — first day of each month at 08:30 UTC (staggered from Qualys)
-    - cron: "30 8 1 * *"
   workflow_dispatch:
     inputs:
       force_notify:
         description: "Send email even if no new releases (true/false)"
         required: false
         default: "false"
-      monthly_digest:
-        description: "Send monthly digest email now (true/false)"
-        required: false
-        default: "false"
-      digest_month:
-        description: "Digest target month, e.g. 2026-06 (optional; blank = current month)"
-        required: false
-        default: ""
 
 permissions:
   contents: write   # needed to commit snapshot.json, run_log.json, badge.json
@@ -48,19 +38,7 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements.txt
 
-      # ── 3. Detect if this is a monthly-digest run ──────────────────────────
-      - name: Set MONTHLY_DIGEST flag
-        id: flags
-        run: |
-          DAY=$(date -u +%d)
-          MANUAL="${{ github.event.inputs.monthly_digest }}"
-          if [[ "$DAY" == "01" && "${{ github.event_name }}" == "schedule" ]] || [[ "$MANUAL" == "true" ]]; then
-            echo "monthly_digest=true" >> "$GITHUB_OUTPUT"
-          else
-            echo "monthly_digest=false" >> "$GITHUB_OUTPUT"
-          fi
-
-      # ── 4. Run tracker ─────────────────────────────────────────────────────
+      # ── 3. Run tracker ─────────────────────────────────────────────────────
       - name: Run release tracker
         env:
           SMTP_HOST:      ${{ secrets.SMTP_HOST }}
@@ -69,12 +47,10 @@ jobs:
           SMTP_PASSWORD:  ${{ secrets.SMTP_PASSWORD }}
           EMAIL_TO:       ${{ secrets.EMAIL_TO }}
           FORCE_NOTIFY:   ${{ github.event.inputs.force_notify }}
-          MONTHLY_DIGEST: ${{ steps.flags.outputs.monthly_digest }}
-          DIGEST_MONTH:   ${{ github.event.inputs.digest_month }}
           LOG_LEVEL:      INFO
         run: python scraper.py
 
-      # ── 5. Commit updated files ────────────────────────────────────────────
+      # ── 4. Commit updated files ────────────────────────────────────────────
       - name: Commit updated files
         run: |
           git config user.name  "github-actions[bot]"
