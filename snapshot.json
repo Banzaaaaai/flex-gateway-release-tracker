@@ -1,4 +1,63 @@
 {
+  "1.14.3": {
+    "version": "1.14.3",
+    "url": "https://docs.mulesoft.com/release-notes/flex-gateway/flex-gateway-release-notes#1-14-3",
+    "date": "October 20, 2026",
+    "summary": "MuleSoft announces the release of Omni Gateway 1.14.3.",
+    "whats_new": [
+      "Envoy is now upgraded to version 1.37.8.",
+      "Tracing custom labels now support integer, floating-point, and boolean OpenTelemetry attributes, and values resolved through Envoy substitution expressions.",
+      "The Credential Injection API Key policy now supports DataWeave expressions to resolve the API key from request attributes or payloads at runtime."
+    ],
+    "fixed_issues": [
+      {
+        "description": "Path normalization is now disabled by default. To enable it, set FLEX_PATH_NORMALIZATION_ENABLED to true .",
+        "id": "W-24443266"
+      },
+      {
+        "description": "Helm deployments now preserve a configured API address trailing slash and enable base-path canonicalization by default. APIs configured with a slashless base path can accept requests to that exact base path.",
+        "id": "W-24541915"
+      },
+      {
+        "description": "Omni Gateway now uses /var/tmp for temporary files, avoiding failures in containers with a read-only root filesystem.",
+        "id": "W-24279051"
+      },
+      {
+        "description": "Runtime Fabric Helm deployments now normalize wildcard-prefixed forward-proxy exclusions and omit unsupported CIDR entries.",
+        "id": "W-24460337"
+      },
+      {
+        "description": "Helm-generated inbound TLS bindings now apply the correct TLS-context precedence when APIs share a listener.",
+        "id": "W-24511699"
+      },
+      {
+        "description": "Gateway-agent configuration generation now uses less memory when multiple distinct WebAssembly policies are applied.",
+        "id": "W-24390601"
+      },
+      {
+        "description": "The Injection Protection policy no longer incorrectly rejects legitimate multipart SOAP requests with binary attachments when body scanning is enabled.",
+        "id": "W-24361237"
+      },
+      {
+        "description": "The JWT Validation policy now accepts RSA keys with padded base64url parameters in JWKS responses.",
+        "id": "W-24309516"
+      },
+      {
+        "description": "Control-node replicas now retry concurrent revision updates with backoff instead of failing deployments with a precondition error.",
+        "id": "W-24580345"
+      },
+      {
+        "description": "These vulnerabilities detected by scanners are now fixed: CVE-2026-48521 CVE-2026-50572 CVE-2026-56857 CVE-2026-56866 CVE-2026-73511 CVE-2026-73512 CVE-2026-73513 CVE-2026-73546 CVE-2026-73547 CVE-2026-73548 CVE-2026-73549 CVE-2026-73550 CVE-2026-73551 CVE-2026-73552 CVE-2026-73553 CVE-2026-78667 CVE-2026-94439 CVE-2026-94440 CVE-2026-94448 CVE-2026-97030 CVE-2026-97031",
+        "id": "CVE-2026-48521CVE-2026-50572CVE-2026-56857CVE-2026-56866CVE-2026-73511CVE-2026-73512CVE-2026-73513CVE-2026-73546CVE-2026-73547CVE-2026-73548CVE-2026-73549"
+      },
+      {
+        "description": "CVE-2026-48521 CVE-2026-50572 CVE-2026-56857 CVE-2026-56866 CVE-2026-73511 CVE-2026-73512 CVE-2026-73513 CVE-2026-73546 CVE-2026-73547 CVE-2026-73548 CVE-2026-73549",
+        "id": "CVE-2026-73550CVE-2026-73551CVE-2026-73552CVE-2026-73553CVE-2026-78667CVE-2026-94439CVE-2026-94440CVE-2026-94448CVE-2026-97030CVE-2026-97031"
+      }
+    ],
+    "full_text_snippet": "October 20, 2026\nMuleSoft announces the release of Omni Gateway 1.14.3.\nWhat’s New\nEnvoy is now upgraded to version 1.37.8.\nTracing custom labels now support integer, floating-point, and boolean OpenTelemetry attributes, and values resolved through Envoy substitution expressions.\nThe Credential Injection API Key policy now supports DataWeave expressions to resolve the API key from request attribut",
+    "detected_at": "2026-10-21T13:01:58+00:00"
+  },
   "1.14.2": {
     "version": "1.14.2",
     "url": "https://docs.mulesoft.com/release-notes/flex-gateway/flex-gateway-release-notes#1-14-2",
