@@ -196,6 +196,64 @@
     "full_text_snippet": "September 2, 2026\nMuleSoft announces the release of Omni Gateway 1.14.0.\nWhat’s New\nThe JavaScript Scripting policy is added to run a user-supplied JavaScript module that can inspect and modify requests and responses directly from the gateway.\nSee\nJavaScript Scripting Policy\n.\nThe GraphQL Access Control policy is added to authorize incoming GraphQL requests by evaluating Cedar-based access-control",
     "detected_at": "2026-09-05T11:18:52+00:00"
   },
+  "1.13.7": {
+    "version": "1.13.7",
+    "url": "https://docs.mulesoft.com/release-notes/flex-gateway/flex-gateway-release-notes#1-13-7",
+    "date": "October 21, 2026",
+    "summary": "MuleSoft announces the release of Omni Gateway 1.13.7.",
+    "whats_new": [
+      "Envoy is now upgraded to version 1.37.8.",
+      "The Credential Injection API Key policy now supports DataWeave expressions to resolve the API key from request attributes or payloads at runtime."
+    ],
+    "fixed_issues": [
+      {
+        "description": "Path normalization is now disabled by default. To enable it, set FLEX_PATH_NORMALIZATION_ENABLED to true .",
+        "id": "W-24443266"
+      },
+      {
+        "description": "Omni Gateway now uses /var/tmp for temporary files, avoiding failures in containers with a read-only root filesystem.",
+        "id": "W-24279051"
+      },
+      {
+        "description": "Helm-generated inbound TLS bindings now apply the correct TLS-context precedence when APIs share a listener.",
+        "id": "W-24511699"
+      },
+      {
+        "description": "Omni Gateway no longer crashes during startup in disconnected Runtime Fabric deployments when platform logging, monitoring, or metering endpoints are unavailable.",
+        "id": "W-24525793"
+      },
+      {
+        "description": "The Header Injection policy no longer crashes Omni Gateway when a DataWeave string literal contains Unicode characters outside the Latin-1 range on AMD64 and ARM64 platforms.",
+        "id": "W-24090265"
+      },
+      {
+        "description": "The JWT Validation, OpenID Connect OAuth 2.0 Token Enforcement, and OAuth 2.0 Token Introspection policies now preserve path segments and trailing slashes from consumer URLs when generating protected resource metadata URLs.",
+        "id": "W-24119444"
+      },
+      {
+        "description": "The Injection Protection policy no longer incorrectly rejects legitimate multipart SOAP requests with binary attachments when body scanning is enabled.",
+        "id": "W-24361237"
+      },
+      {
+        "description": "The JWT Validation policy now accepts RSA keys with padded base64url parameters in JWKS responses.",
+        "id": "W-24309516"
+      },
+      {
+        "description": "Control-node replicas now retry concurrent revision updates with backoff instead of failing deployments with a precondition error.",
+        "id": "W-24580345"
+      },
+      {
+        "description": "Omni Gateway now preserves component output during shutdown and no longer waits indefinitely when a descendant process keeps output streams open.",
+        "id": "W-24129984, W-24141774"
+      },
+      {
+        "description": "These vulnerabilities detected by scanners are now fixed: CVE-2026-48521 CVE-2026-50572 CVE-2026-73511 CVE-2026-73512 CVE-2026-73513 CVE-2026-73546 CVE-2026-73547 CVE-2026-73548 CVE-2026-73549 CVE-2026-73550 CVE-2026-73551 CVE-2026-73552 CVE-2026-73553",
+        "id": "CVE-2026-48521CVE-2026-50572CVE-2026-73511CVE-2026-73512CVE-2026-73513CVE-2026-73546CVE-2026-73547CVE-2026-73548CVE-2026-73549CVE-2026-73550CVE-2026-73551CVE-2026-73552CVE-2026-73553"
+      }
+    ],
+    "full_text_snippet": "October 21, 2026\nMuleSoft announces the release of Omni Gateway 1.13.7.\nWhat’s New\nEnvoy is now upgraded to version 1.37.8.\nThe Credential Injection API Key policy now supports DataWeave expressions to resolve the API key from request attributes or payloads at runtime.\nFixed Issues\nIssue Resolution\nID\nPath normalization is now disabled by default. To enable it, set\nFLEX_PATH_NORMALIZATION_ENABLED\n",
+    "detected_at": "2026-10-22T13:03:37+00:00"
+  },
   "1.13.6": {
     "version": "1.13.6",
     "url": "https://docs.mulesoft.com/release-notes/flex-gateway/flex-gateway-release-notes#1-13-6",
@@ -541,6 +599,47 @@
     ],
     "full_text_snippet": "May 11, 2026\nMuleSoft announces the release of Omni Gateway 1.13.0.\nWhat’s New\nFlex Gateway is now named to Omni Gateway.\nCurrently, this is a non-breaking change and only cosmetically affects the UI and documentation. This change shouldn’t affect CI/CD pipelines. There are no changes to these areas:\nAnypoint Platform CLI\nAnypoint Platform APIs\nLogging\nEnvironment variables\nDocumentation URL links",
     "detected_at": "2026-05-18T17:20:03+00:00"
+  },
+  "1.12.11": {
+    "version": "1.12.11",
+    "url": "https://docs.mulesoft.com/release-notes/flex-gateway/flex-gateway-release-notes#1-12-11",
+    "date": "October 21, 2026",
+    "summary": "MuleSoft announces the release of Omni Gateway 1.12.11.",
+    "whats_new": [
+      "The Credential Injection API Key policy now supports DataWeave expressions to resolve the API key from request attributes or payloads at runtime."
+    ],
+    "fixed_issues": [
+      {
+        "description": "Path normalization is now disabled by default. To enable it, set FLEX_PATH_NORMALIZATION_ENABLED to true .",
+        "id": "W-24443266"
+      },
+      {
+        "description": "Omni Gateway now uses /var/tmp for temporary files, avoiding failures in containers with a read-only root filesystem.",
+        "id": "W-24279051"
+      },
+      {
+        "description": "Helm-generated inbound TLS bindings now apply the correct TLS-context precedence when APIs share a listener.",
+        "id": "W-24511699"
+      },
+      {
+        "description": "Omni Gateway no longer crashes during startup in disconnected Runtime Fabric deployments when platform logging, monitoring, or metering endpoints are unavailable.",
+        "id": "W-24525793"
+      },
+      {
+        "description": "The Header Injection policy no longer crashes Omni Gateway when a DataWeave string literal contains Unicode characters outside the Latin-1 range on AMD64 and ARM64 platforms.",
+        "id": "W-24090265"
+      },
+      {
+        "description": "Control-node replicas now retry concurrent revision updates with backoff instead of failing deployments with a precondition error.",
+        "id": "W-24580345"
+      },
+      {
+        "description": "Omni Gateway now preserves component output during shutdown and no longer waits indefinitely when a descendant process keeps output streams open.",
+        "id": "W-24129984, W-24141774"
+      }
+    ],
+    "full_text_snippet": "October 21, 2026\nMuleSoft announces the release of Omni Gateway 1.12.11.\nWhat’s New\nThe Credential Injection API Key policy now supports DataWeave expressions to resolve the API key from request attributes or payloads at runtime.\nFixed Issues\nIssue Resolution\nID\nPath normalization is now disabled by default. To enable it, set\nFLEX_PATH_NORMALIZATION_ENABLED\nto\ntrue\n.\nW-24443266\nOmni Gateway now us",
+    "detected_at": "2026-10-22T13:03:37+00:00"
   },
   "1.12.10": {
     "version": "1.12.10",
@@ -936,6 +1035,41 @@
     ],
     "full_text_snippet": "February 25, 2026\nMuleSoft announces the release of Anypoint Flex Gateway 1.12.0.\nWhat’s New\nManaged Flex Gateway now supports Runtime Fabric deployments.\nSee\nDeploying Managed Flex Gateway on Runtime Fabric\n.\nExtra Large Managed Flex Gateway is now available for production purposes with higher throughput and more process demanding policies.\nTo learn more about the performance metrics for Extra La",
     "detected_at": "2026-05-18T17:20:03+00:00"
+  },
+  "1.9.18": {
+    "version": "1.9.18",
+    "url": "https://docs.mulesoft.com/release-notes/flex-gateway/flex-gateway-release-notes#1-9-18",
+    "date": "October 21, 2026",
+    "summary": "MuleSoft announces the release of Omni Gateway 1.9.18.",
+    "whats_new": [],
+    "fixed_issues": [
+      {
+        "description": "Path normalization is now disabled by default. To enable it, set FLEX_PATH_NORMALIZATION_ENABLED to true .",
+        "id": "W-24443266"
+      },
+      {
+        "description": "Omni Gateway now uses /var/tmp for temporary files, avoiding failures in containers with a read-only root filesystem.",
+        "id": "W-24279051"
+      },
+      {
+        "description": "Helm-generated inbound TLS bindings now apply the correct TLS-context precedence when APIs share a listener.",
+        "id": "W-24511699"
+      },
+      {
+        "description": "The Header Injection policy no longer crashes Omni Gateway when a DataWeave string literal contains Unicode characters outside the Latin-1 range on AMD64 and ARM64 platforms.",
+        "id": "W-24090265"
+      },
+      {
+        "description": "Control-node replicas now retry concurrent revision updates with backoff instead of failing deployments with a precondition error.",
+        "id": "W-24580345"
+      },
+      {
+        "description": "These vulnerabilities detected by scanners are now fixed: CVE-2026-56857 CVE-2026-56866 CVE-2026-78667 CVE-2026-94439 CVE-2026-94440 CVE-2026-94448 CVE-2026-97030 CVE-2026-97031",
+        "id": "CVE-2026-56857CVE-2026-56866CVE-2026-78667CVE-2026-94439CVE-2026-94440CVE-2026-94448CVE-2026-97030CVE-2026-97031"
+      }
+    ],
+    "full_text_snippet": "October 21, 2026\nMuleSoft announces the release of Omni Gateway 1.9.18.\nFixed Issues\nIssue Resolution\nID\nPath normalization is now disabled by default. To enable it, set\nFLEX_PATH_NORMALIZATION_ENABLED\nto\ntrue\n.\nW-24443266\nOmni Gateway now uses\n/var/tmp\nfor temporary files, avoiding failures in containers with a read-only root filesystem.\nW-24279051\nHelm-generated inbound TLS bindings now apply th",
+    "detected_at": "2026-10-22T13:03:37+00:00"
   },
   "1.9.17": {
     "version": "1.9.17",
