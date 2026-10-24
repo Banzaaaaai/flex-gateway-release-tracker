@@ -1,4 +1,29 @@
 {
+  "1.14.4": {
+    "version": "1.14.4",
+    "url": "https://docs.mulesoft.com/release-notes/flex-gateway/flex-gateway-release-notes#1-14-4",
+    "date": "October 23, 2026",
+    "summary": "MuleSoft announces the release of Omni Gateway 1.14.4.",
+    "whats_new": [
+      "Custom PDK policies can now access an API instance’s configured consumer URL through api.consumerUri in API Context."
+    ],
+    "fixed_issues": [
+      {
+        "description": "Omni Gateway now rejects certificates chaining through known compromised eMudhra intermediate certificates.",
+        "id": "W-24628768"
+      },
+      {
+        "description": "These vulnerabilities detected by scanners are now fixed: CVE-2026-35189 CVE-2026-35191 CVE-2026-42772 CVE-2026-54872 CVE-2026-54873 CVE-2026-54875 CVE-2026-72897 CVE-2026-75804 CVE-2026-75805 CVE-2026-75806 CVE-2026-77696 CVE-2026-78659 CVE-2026-78660 CVE-2026-78663 CVE-2026-78669 CVE-2026-84782 CVE-2026-84784 CVE-2026-97032 CVE-2026-111943",
+        "id": "CVE-2026-35189CVE-2026-35191CVE-2026-42772CVE-2026-54872CVE-2026-54873CVE-2026-54875CVE-2026-72897CVE-2026-75804CVE-2026-75805CVE-2026-75806"
+      },
+      {
+        "description": "CVE-2026-35189 CVE-2026-35191 CVE-2026-42772 CVE-2026-54872 CVE-2026-54873 CVE-2026-54875 CVE-2026-72897 CVE-2026-75804 CVE-2026-75805 CVE-2026-75806",
+        "id": "CVE-2026-77696CVE-2026-78659CVE-2026-78660CVE-2026-78663CVE-2026-78669CVE-2026-84782CVE-2026-84784CVE-2026-97032CVE-2026-111943"
+      }
+    ],
+    "full_text_snippet": "October 23, 2026\nMuleSoft announces the release of Omni Gateway 1.14.4.\nWhat’s New\nCustom PDK policies can now access an API instance’s configured consumer URL through\napi.consumerUri\nin API Context.\nFixed Issues\nIssue Resolution\nID\nOmni Gateway now rejects certificates chaining through known compromised eMudhra intermediate certificates.\nW-24628768\nThese vulnerabilities detected by scanners are n",
+    "detected_at": "2026-10-24T12:06:42+00:00"
+  },
   "1.14.3": {
     "version": "1.14.3",
     "url": "https://docs.mulesoft.com/release-notes/flex-gateway/flex-gateway-release-notes#1-14-3",
@@ -195,6 +220,31 @@
     ],
     "full_text_snippet": "September 2, 2026\nMuleSoft announces the release of Omni Gateway 1.14.0.\nWhat’s New\nThe JavaScript Scripting policy is added to run a user-supplied JavaScript module that can inspect and modify requests and responses directly from the gateway.\nSee\nJavaScript Scripting Policy\n.\nThe GraphQL Access Control policy is added to authorize incoming GraphQL requests by evaluating Cedar-based access-control",
     "detected_at": "2026-09-05T11:18:52+00:00"
+  },
+  "1.13.8": {
+    "version": "1.13.8",
+    "url": "https://docs.mulesoft.com/release-notes/flex-gateway/flex-gateway-release-notes#1-13-8",
+    "date": "October 23, 2026",
+    "summary": "MuleSoft announces the release of Omni Gateway 1.13.8.",
+    "whats_new": [
+      "Custom PDK policies can now access an API instance’s configured consumer URL through api.consumerUri in API Context."
+    ],
+    "fixed_issues": [
+      {
+        "description": "Omni Gateway now rejects certificates chaining through known compromised eMudhra intermediate certificates.",
+        "id": "W-24628768"
+      },
+      {
+        "description": "These vulnerabilities detected by scanners are now fixed: CVE-2026-35189 CVE-2026-35191 CVE-2026-42772 CVE-2026-54872 CVE-2026-54873 CVE-2026-54875 CVE-2026-72897 CVE-2026-56857 CVE-2026-56866 CVE-2026-78667 CVE-2026-84782 CVE-2026-75804 CVE-2026-75805 CVE-2026-75806 CVE-2026-77696 CVE-2026-84784 CVE-2026-94439 CVE-2026-94440 CVE-2026-94448 CVE-2026-97030 CVE-2026-97031 CVE-2026-111943",
+        "id": "CVE-2026-35189CVE-2026-35191CVE-2026-42772CVE-2026-54872CVE-2026-54873CVE-2026-54875CVE-2026-72897CVE-2026-56857CVE-2026-56866CVE-2026-78667CVE-2026-84782"
+      },
+      {
+        "description": "CVE-2026-35189 CVE-2026-35191 CVE-2026-42772 CVE-2026-54872 CVE-2026-54873 CVE-2026-54875 CVE-2026-72897 CVE-2026-56857 CVE-2026-56866 CVE-2026-78667 CVE-2026-84782",
+        "id": "CVE-2026-75804CVE-2026-75805CVE-2026-75806CVE-2026-77696CVE-2026-84784CVE-2026-94439CVE-2026-94440CVE-2026-94448CVE-2026-97030CVE-2026-97031CVE-2026-111943"
+      }
+    ],
+    "full_text_snippet": "October 23, 2026\nMuleSoft announces the release of Omni Gateway 1.13.8.\nWhat’s New\nCustom PDK policies can now access an API instance’s configured consumer URL through\napi.consumerUri\nin API Context.\nFixed Issues\nIssue Resolution\nID\nOmni Gateway now rejects certificates chaining through known compromised eMudhra intermediate certificates.\nW-24628768\nThese vulnerabilities detected by scanners are n",
+    "detected_at": "2026-10-24T12:06:42+00:00"
   },
   "1.13.7": {
     "version": "1.13.7",
@@ -599,6 +649,31 @@
     ],
     "full_text_snippet": "May 11, 2026\nMuleSoft announces the release of Omni Gateway 1.13.0.\nWhat’s New\nFlex Gateway is now named to Omni Gateway.\nCurrently, this is a non-breaking change and only cosmetically affects the UI and documentation. This change shouldn’t affect CI/CD pipelines. There are no changes to these areas:\nAnypoint Platform CLI\nAnypoint Platform APIs\nLogging\nEnvironment variables\nDocumentation URL links",
     "detected_at": "2026-05-18T17:20:03+00:00"
+  },
+  "1.12.12": {
+    "version": "1.12.12",
+    "url": "https://docs.mulesoft.com/release-notes/flex-gateway/flex-gateway-release-notes#1-12-12",
+    "date": "October 23, 2026",
+    "summary": "MuleSoft announces the release of Omni Gateway 1.12.12.",
+    "whats_new": [
+      "Custom PDK policies can now access an API instance’s configured consumer URL through api.consumerUri in API Context."
+    ],
+    "fixed_issues": [
+      {
+        "description": "Omni Gateway now rejects certificates chaining through known compromised eMudhra intermediate certificates.",
+        "id": "W-24628768"
+      },
+      {
+        "description": "These vulnerabilities detected by scanners are now fixed: CVE-2026-35189 CVE-2026-35191 CVE-2026-42772 CVE-2026-54872 CVE-2026-54873 CVE-2026-54875 CVE-2026-72897 CVE-2026-56857 CVE-2026-56866 CVE-2026-78667 CVE-2026-84782 CVE-2026-75804 CVE-2026-75805 CVE-2026-75806 CVE-2026-77696 CVE-2026-84784 CVE-2026-94439 CVE-2026-94440 CVE-2026-94448 CVE-2026-97030 CVE-2026-97031 CVE-2026-111943",
+        "id": "CVE-2026-35189CVE-2026-35191CVE-2026-42772CVE-2026-54872CVE-2026-54873CVE-2026-54875CVE-2026-72897CVE-2026-56857CVE-2026-56866CVE-2026-78667CVE-2026-84782"
+      },
+      {
+        "description": "CVE-2026-35189 CVE-2026-35191 CVE-2026-42772 CVE-2026-54872 CVE-2026-54873 CVE-2026-54875 CVE-2026-72897 CVE-2026-56857 CVE-2026-56866 CVE-2026-78667 CVE-2026-84782",
+        "id": "CVE-2026-75804CVE-2026-75805CVE-2026-75806CVE-2026-77696CVE-2026-84784CVE-2026-94439CVE-2026-94440CVE-2026-94448CVE-2026-97030CVE-2026-97031CVE-2026-111943"
+      }
+    ],
+    "full_text_snippet": "October 23, 2026\nMuleSoft announces the release of Omni Gateway 1.12.12.\nWhat’s New\nCustom PDK policies can now access an API instance’s configured consumer URL through\napi.consumerUri\nin API Context.\nFixed Issues\nIssue Resolution\nID\nOmni Gateway now rejects certificates chaining through known compromised eMudhra intermediate certificates.\nW-24628768\nThese vulnerabilities detected by scanners are ",
+    "detected_at": "2026-10-24T12:06:42+00:00"
   },
   "1.12.11": {
     "version": "1.12.11",
@@ -1035,6 +1110,29 @@
     ],
     "full_text_snippet": "February 25, 2026\nMuleSoft announces the release of Anypoint Flex Gateway 1.12.0.\nWhat’s New\nManaged Flex Gateway now supports Runtime Fabric deployments.\nSee\nDeploying Managed Flex Gateway on Runtime Fabric\n.\nExtra Large Managed Flex Gateway is now available for production purposes with higher throughput and more process demanding policies.\nTo learn more about the performance metrics for Extra La",
     "detected_at": "2026-05-18T17:20:03+00:00"
+  },
+  "1.9.19": {
+    "version": "1.9.19",
+    "url": "https://docs.mulesoft.com/release-notes/flex-gateway/flex-gateway-release-notes#1-9-19",
+    "date": "October 23, 2026",
+    "summary": "MuleSoft announces the release of Omni Gateway 1.9.19.",
+    "whats_new": [],
+    "fixed_issues": [
+      {
+        "description": "Omni Gateway now rejects certificates chaining through known compromised eMudhra intermediate certificates.",
+        "id": "W-24628768"
+      },
+      {
+        "description": "These vulnerabilities detected by scanners are now fixed: CVE-2026-42767 CVE-2026-54874 CVE-2026-63072 CVE-2026-63074 CVE-2026-63076 CVE-2026-75803 CVE-2026-78659 CVE-2026-78660 CVE-2026-78663 CVE-2026-78669 CVE-2026-97032 CVE-2026-111943",
+        "id": "CVE-2026-42767CVE-2026-54874CVE-2026-63072CVE-2026-63074CVE-2026-63076CVE-2026-75803"
+      },
+      {
+        "description": "CVE-2026-42767 CVE-2026-54874 CVE-2026-63072 CVE-2026-63074 CVE-2026-63076 CVE-2026-75803",
+        "id": "CVE-2026-78659CVE-2026-78660CVE-2026-78663CVE-2026-78669CVE-2026-97032CVE-2026-111943"
+      }
+    ],
+    "full_text_snippet": "October 23, 2026\nMuleSoft announces the release of Omni Gateway 1.9.19.\nFixed Issues\nIssue Resolution\nID\nOmni Gateway now rejects certificates chaining through known compromised eMudhra intermediate certificates.\nW-24628768\nThese vulnerabilities detected by scanners are now fixed:\nCVE-2026-42767\nCVE-2026-54874\nCVE-2026-63072\nCVE-2026-63074\nCVE-2026-63076\nCVE-2026-75803\nCVE-2026-78659\nCVE-2026-7866",
+    "detected_at": "2026-10-24T12:06:42+00:00"
   },
   "1.9.18": {
     "version": "1.9.18",
