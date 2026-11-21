@@ -1,4 +1,60 @@
 {
+  "1.15.0": {
+    "version": "1.15.0",
+    "url": "https://docs.mulesoft.com/release-notes/flex-gateway/flex-gateway-release-notes#1-15-0",
+    "date": "November 19, 2026",
+    "summary": "MuleSoft announces the release of Omni Gateway 1.15.0.",
+    "whats_new": [
+      "Envoy is now upgraded to version 1.40.0.",
+      "Fluent Bit is now upgraded to version 5.1.3.",
+      "Omni Gateway and the Schema Validation policy now support OpenAPI Specification (OAS) 3.1 and 3.2 for REST API instances. See Schema Validation Policy .",
+      "Omni Gateway now supports Red Hat Enterprise Linux (RHEL) 10. See Red Hat Enterprise Linux .",
+      "You can now configure default inbound and outbound TLS context that apply to all API instances and upstream services that use https:// paths. Applying a TLS policy or a TLS context in the UI overrides the default TLS context. The outbound default also applies to outbound calls made by policies. For Local Mode gateways, configure default TLS contexts by using the defaultTLS.inbound and defaultTLS.outbound fields of the Configuration resource. The defaultTLS.outboundPolicyCalls field is deprecated. Use defaultTLS.outbound instead. If both fields are set, Omni Gateway ignores defaultTLS.outboundPolicyCalls . See Configure Default TLS Contexts with a Configuration Resource and Deprecated outboundPolicyCalls Parameter . In Connected Mode and managed gateways, configure the default inbound and outbound TLS contexts configured in Runtime Manager. See Configure Default TLS Contexts in Runtime Manager and Configure Default TLS Contexts in Runtime Manager . For managed gateways on Runtime Fabric with last-mile security enabled, a default inbound TLS context that includes a keystore replaces the generated self-signed certificate. See Configure Default TLS Contexts in Runtime Manager .",
+      "Managed Omni Gateway on Runtime Fabric now uses the forward proxy settings of Runtime Fabric. You no longer need to apply a Configuration resource to each gateway to configure the proxy. See Configure a Forward Proxy for Managed Omni Gateway on Runtime Fabric .",
+      "You can now configure a correlation ID for all API instances. See Configuring a Correlation ID in Local Mode , Configuring a Correlation ID in Connected Mode , and Configuring a Correlation ID for Managed Omni Gateway .",
+      "The Correlation ID Override policy is added to override the global correlation ID header and generation expression for a single API instance. See Correlation ID Override Policy .",
+      "The External Authorization policy now supports caching authorization decisions per client identity. Matching requests skip the call to the authorization service. Authorization service errors and timeouts are never cached. See Authorization Decision Caching .",
+      "The DataWeave Body Transformation Outbound and DataWeave Headers Transformation Outbound policies are added to transform, with a DataWeave script, the body or headers of requests sent to a specific upstream service and of its responses. See DataWeave Body Transformation Outbound Policy and DataWeave Headers Transformation Outbound Policy .",
+      "The Credential Injection OAuth 2.1 Token Broker (Authorization Code) policy is added to inject each user’s own upstream access token into outbound requests. When no token is available, the policy returns a link that the user follows to connect their account. See Credential Injection OAuth 2.1 Token Broker (Authorization Code) Policy .",
+      "The OAuth 2.1 Token Broker Connect (Authorization Code) policy is added to host the browser login and consent flow for connecting upstream accounts. The policy also presents authorization-required responses in a format that MCP clients understand. See OAuth 2.1 Token Broker Connect (Authorization Code) Policy .",
+      "In Connected Mode, Runtime Manager runtime configurations now take precedence over Configuration resources. To adjust precedence the edit the flex.mulesoft.com/resource-priority label in the Configuration resource. For an example of how to set the priority value, see Runtime Manager Runtime Configuration and Configuration Resource Priority .",
+      "Base-path canonicalization is now enabled by default in all Self-Managed Omni Gateway deployments. To restore the previous behavior, set FLEX_BASE_PATH_CANONICALIZER_ENABLED to false . See Configure Omni Gateway Environment Variables in Local Mode and Configure Omni Gateway Environment Variables in Connected Mode .",
+      "Configuration caching (control node) now encrypts cached data from Anypoint Platform, such as private keys and client secrets, in shared storage. By default, the encryption key is derived from the registration private key. To use a different key, set FLEX_STORAGE_ENCRYPTION_KEY . To disable encryption, set FLEX_CONTROL_NODE_STORAGE_ENCRYPTION_ENABLED to false . Existing data isn’t migrated. To encrypt it, run flexctl reset and restart all replicas. Replicas running earlier versions and 1.15.0 replicas can’t share the same Redis storage. See Configuring Omni Gateway Configuration Caching in Connected Mode .",
+      "Omni Gateway now uses the X-Forwarded-Host header for host-based routing and policy rule matching. If a request doesn’t include it, Omni Gateway sets it from the Host header, so upstream services also receive it. See Traffic Management for Multiple Upstream Services and Declarative Configuration Reference Guide .",
+      "You can now set how long Omni Gateway in Connected Mode waits for the initial configuration to settle at startup with the FLEX_STARTUP_DEBOUNCE_TIME environment variable or the gateway.startupDebounceTime Helm value. See Configure Omni Gateway Environment Variables in Connected Mode and Combine the Readiness Probe with the Startup Debounce Time .",
+      "The Omni Gateway Helm chart can now create a PodDisruptionBudget ( podDisruptionBudget.enabled , default maxUnavailable: 1 ) and a VerticalPodAutoscaler ( verticalPodAutoscaler.enabled , default updateMode: Off ) for the gateway Deployment. The VerticalPodAutoscaler requires the Kubernetes Vertical Pod Autoscaler in the cluster. See Configure a Pod Disruption Budget and Configure Vertical Pod Autoscaling .",
+      "Omni Gateway deployments managed by Runtime Fabric now support custom labels set through kubernetes.deployment.metadata.labels in a KubernetesTemplate custom resource. These labels apply to the Deployment, its pods, and related resources. The reserved app and version labels can’t be overridden. See Customize Kubernetes Resources for Managed Omni Gateway on Runtime Fabric .",
+      "Omni Gateway no longer sets the CAP_NET_BIND_SERVICE file capability on the Envoy binary. The flex-gateway systemd service now grants it instead. For container deployments outside the Helm chart that listen on ports below 1024, allow unprivileged port binding ( net.ipv4.ip_unprivileged_port_start ) or grant the NET_BIND_SERVICE capability. See Ports, IPs, and Hostnames Allowlist Requirements ."
+    ],
+    "fixed_issues": [
+      {
+        "description": "Omni Gateway no longer sends runtime log records that have no message.",
+        "id": "W-24430178"
+      },
+      {
+        "description": "The DataWeave and SOAP Schema Validation policies no longer omit their logs from the Omni Gateway logs. These logs now include the policy, API instance, and request ID, and respect the configured log level.",
+        "id": "W-24078475"
+      },
+      {
+        "description": "Omni Gateway no longer leaves empty or incomplete registration.yaml or certificate.yaml files in the output directory when the flexctl registration create or flexctl registration renew command fails.",
+        "id": "W-12717907"
+      },
+      {
+        "description": "The flexctl check connections command no longer reports a successful connection when the configured forward proxy rejects the request with a 407 Proxy Authentication Required response.",
+        "id": "W-23969867"
+      },
+      {
+        "description": "The Schema Validation policy no longer fails to apply when an OAS 3.0 specification includes null in the enum of a nullable integer , number , or boolean schema.",
+        "id": "W-24409155"
+      },
+      {
+        "description": "These vulnerabilities detected by scanners are now fixed:",
+        "id": "W-23425257, W-24470081"
+      }
+    ],
+    "full_text_snippet": "November 19, 2026\nMuleSoft announces the release of Omni Gateway 1.15.0.\nWhat’s New\nEnvoy is now upgraded to version 1.40.0.\nFluent Bit is now upgraded to version 5.1.3.\nOmni Gateway and the Schema Validation policy now support OpenAPI Specification (OAS) 3.1 and 3.2 for REST API instances.\nSee\nSchema Validation Policy\n.\nOmni Gateway now supports Red Hat Enterprise Linux (RHEL) 10.\nSee\nRed Hat Ent",
+    "detected_at": "2026-11-21T16:15:51+00:00"
+  },
   "1.14.5": {
     "version": "1.14.5",
     "url": "https://docs.mulesoft.com/release-notes/flex-gateway/flex-gateway-release-notes#1-14-5",
@@ -484,7 +540,7 @@
         "id": "W-23687400"
       },
       {
-        "description": "Control node no longer discards synchronization state after 14 days to prevent inconsistencies when a gateway reconnects following an extended outage.",
+        "description": "Control node no longer discards synchronization state after 14 days to prevent inconsistencies when a gateway reconnects following an extended outage. If you upgrade from an earlier version, see Configuration Caching (Control Node) Store Expiration After Upgrade .",
         "id": "W-23692384"
       },
       {
@@ -927,7 +983,7 @@
         "id": "W-23687400"
       },
       {
-        "description": "Control node no longer discards synchronization state after 14 days to prevent inconsistencies when a gateway reconnects following an extended outage.",
+        "description": "Control node no longer discards synchronization state after 14 days to prevent inconsistencies when a gateway reconnects following an extended outage. If you upgrade from an earlier version, see Configuration Caching (Control Node) Store Expiration After Upgrade .",
         "id": "W-23692384"
       },
       {
@@ -1397,7 +1453,7 @@
         "id": "W-23687400"
       },
       {
-        "description": "Control node no longer discards synchronization state after 14 days to prevent inconsistencies when a gateway reconnects following an extended outage.",
+        "description": "Control node no longer discards synchronization state after 14 days to prevent inconsistencies when a gateway reconnects following an extended outage. If you upgrade from an earlier version, see Configuration Caching (Control Node) Store Expiration After Upgrade .",
         "id": "W-23692384"
       },
       {
